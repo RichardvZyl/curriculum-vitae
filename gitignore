@@ -1,0 +1,9 @@
+# Keep private files out of this public repository.
+# Anything matching *.private.md (e.g. COMPENSATION.private.md) is never committed.
+*.private.md
+
+# Common editor / OS noise
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/
