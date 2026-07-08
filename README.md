@@ -4,8 +4,13 @@ Professional profile, CV, and skills matrix for **Richard van Zyl** — Solution
 Technical Lead specialising in backend engineering and high-throughput, data-intensive financial
 systems (C#/.NET, SQL Server, Azure).
 
-This repository is intended to be **easily consumable by both humans and AI models** (for role
-matching, cover-letter generation, and interview prep).
+This is a **public repository, intended for potential employers, recruiters, and collaborators** —
+and built to be **easily consumable by both humans and AI models** (for role matching,
+cover-letter generation, and interview prep).
+
+> **Note:** what's public here is a **subset** of Richard's work. Additional repositories and
+> NuGet packages are private (proprietary, client, or pre-release) and are deliberately not
+> shown — see [`PROJECTS.md`](./PROJECTS.md). Detail available on request or under NDA.
 
 ## Contents
 
@@ -13,7 +18,9 @@ matching, cover-letter generation, and interview prep).
 |---|---|
 | [`PROFILE.md`](./PROFILE.md) | **Start here.** Structured profile and AI context — snapshot, summary, skills matrix, achievements, experience overview, honest skill boundaries. |
 | [`CV.md`](./CV.md) | The CV in narrative form (summary, competencies, achievements, full role history, education). |
-| [`SKILLS-MATRIX.md`](./SKILLS-MATRIX.md) | Full 2026 skills matrix with years of experience, a SQL performance-tuning deep-dive, and a project-by-project breakdown per employer. |
+| [`SKILLSMATRIX.md`](./SKILLSMATRIX.md) | Full 2026 skills matrix with years of experience, a SQL performance-tuning deep-dive, and a project-by-project breakdown per employer. |
+| [`AI-CONTEXT.md`](./AI-CONTEXT.md) | **For AI assistants.** How to work with Richard on engineering tasks — stack, coding & database standards, architectural defaults, and a self-update rule. |
+| [`PROJECTS.md`](./PROJECTS.md) | Open-source portfolio, with an explicit note that additional **private** repos/packages exist and are excluded. |
 
 ## Contact
 
