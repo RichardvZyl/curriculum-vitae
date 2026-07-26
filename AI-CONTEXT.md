@@ -10,7 +10,6 @@
 > _Last updated: 2026-07-08._
 
 ---
-
 ## 1. Who I'm assisting
 
 Richard is a **Solutions Architect / Technical Lead** specialising in **high-throughput,
@@ -35,7 +34,7 @@ a beginner walkthrough.
 
 | Layer | Tools / versions |
 |---|---|
-| Language | **C# (.NET 8 / .NET 10)**, T-SQL; some TypeScript/Node, Go (KTK) |
+| Language | **C# .NET**, T-SQL; some TypeScript/Node |
 | Data | **SQL Server / Azure SQL** (primary), **PostgreSQL**, Redis, MongoDB |
 | ORM / access | **Entity Framework Core**; custom repository/UoW/specification SDK (`Bedrock.*`) |
 | Patterns | DDD, CQRS, Event Sourcing/EDA, SAGA, Clean Architecture, Result types |
