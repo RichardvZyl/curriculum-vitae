@@ -4,9 +4,11 @@
 > compiled from his CV, 2026 skills matrix, and job-application correspondence. It exists so an
 > AI assistant can help with CV/cover-letter generation, role matching, interview prep, and
 > general career assistance without re-deriving context each time. It is a *reference document*,
-> not project code.
+> not project code. For **how to collaborate with Richard on engineering work**, see
+> `AI-CONTEXT.md`; for his **open-source projects** (and a note on excluded private repos),
+> see `PROJECTS.md`.
 >
-> _Last compiled: 2026-07-02._
+> _Last compiled: 2026-07-08._
 
 ---
 
