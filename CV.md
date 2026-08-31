@@ -74,7 +74,6 @@ Architect (UML), Swagger, Postman, SSRS; Angular, Angular Material; Agile, Scrum
 - **Solved problems others had abandoned:** completed a .NET 6 migration that had been attempted
   and rolled back by previous developers, and resolved a 2-year Angular Universal SEO blocker in
   one week.
-- **IKM C# Assessment:** 73rd percentile of all test takers (assessed twice, six months apart).
 
 ---
 
@@ -141,7 +140,7 @@ fintech consulting space for clients including Nedbank, Standard Bank, and PSG W
   BotFramework backend from .NET Standard to .NET 6, resolving critical breaking changes and
   package dependencies — previously attempted and rolled back by others. Live and stable in
   production since February 2022. Also handled monetization design and payment validations.
-  _(Azure SQL, BotFramework, C# .NET Standard, MediatR, Q&A Maker.)_
+  _(Azure SQL, BotFramework, C# .NET 6 (from .NET Standard), MediatR, Q&A Maker.)_
 - **Angular Universal SSR (PSG Wealth):** Implemented server-side rendering to resolve a 2-year SEO
   bottleneck in one week. _(C# .NET 6, Angular, Azure SQL, BotFramework, Docker, Node.js, Umbraco
   CMS, MediatR, Bootstrap / Material.)_
@@ -244,6 +243,3 @@ Bankserv (now PayInc), Standard Bank, Nedbank, PSG Wealth, Libstar Holdings, Tra
 
 - **IKM C# Assessment:** 73rd percentile of all test takers (assessed twice, six months apart).
 - **National Diploma — IT: Software Development:** Varsity College, 2014–2016.
-- **DISC & Values Index:** High D (decisive, results-driven) / High I (communicative) / Low S
-  (adaptable, thrives in change) / Moderate C. Motivators: Very High Theoretical and Political;
-  pragmatic and results-focused.
