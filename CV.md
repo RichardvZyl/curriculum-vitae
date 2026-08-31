@@ -1,29 +1,36 @@
 # Richard van Zyl
 ### Solutions Architect / Technical Lead — Backend & Data-Intensive Systems
 
-Pretoria, Gauteng, South Africa · richardvzyl@gmail.com · [linkedin.com/in/richard-van-zyl](https://www.linkedin.com/in/richard-van-zyl) · [github.com/RichardvZyl](https://github.com/RichardvZyl)
+Pretoria, Gauteng, South Africa · richardvzyl@gmail.com · [linkedin.com/in/richardvzyl](https://www.linkedin.com/in/richardvzyl) · [github.com/RichardvZyl](https://github.com/RichardvZyl)
 
 ---
 
 ## Professional Summary
 
-Solutions Architect and Technical Lead with **9+ years** architecting high-throughput,
-multi-tenant financial systems where data integrity is non-negotiable — backed by a decade of
-hands-on C#/.NET and T-SQL. Deep specialist in backend engineering and relational data:
-execution-plan tuning, concurrency control, partitioning, and idempotent transaction design for
-ledgers processing millions of transactions daily across Africa.
+Solutions Architect and Technical Lead with **nine years** across C#/.NET and SQL Server —
+~5 of them leading teams and ~3.5 as Solutions Architect — building high-throughput,
+multi-tenant financial systems where data integrity is non-negotiable. Deep specialist in
+backend engineering and relational data: execution-plan tuning, concurrency control,
+partitioning, and idempotent transaction design for ledgers operating across African markets.
+Requirements and solution design have run through the whole of that — specifying and modelling
+systems as a business analyst since 2017, pitched to whichever audience had to sign them off.
 
-I own architecture end-to-end — from concurrency and multi-tenancy strategy through to CI/CD and
-production telemetry — while leading delivery teams and bridging engineering with business
-stakeholders. A problem solver at heart; languages and frameworks are simply tools. Regularly
-handed the challenges others could not solve, from turning around failed legacy migrations to
+I own delivery end-to-end — from eliciting the requirement and modelling the solution, through
+concurrency and multi-tenancy strategy, to CI/CD and production telemetry — while leading teams
+and acting as the translation layer between engineering and the business. A problem solver at
+heart; languages and frameworks are simply tools. Regularly handed the challenges others could not solve, from turning around failed legacy migrations to
 designing the financial engine that replaced a legacy banking platform.
 
 ---
 
 ## Core Competencies
 
-**Architecture & Design** — Domain-Driven Design (DDD), CQRS, Event Sourcing, Event-Driven
+**Requirements & Solution Design** — Business (BRS), user (URS), functional (FRS) and technical
+(TRS) requirements specification; business- and problem-domain analysis; solution design and
+solution architecture; process and system modelling (UML / Enterprise Architect); stakeholder
+engagement and translation between business and engineering; audience-tailored technical writing.
+
+**Architecture & Design** — Domain-Driven Design (DDD), CQRS, Event-Driven
 Architecture, Microservices, Multi-tenancy & Tenant Isolation, Idempotency / Exactly-Once
 Processing, RESTful API design, Clean Architecture.
 
@@ -43,6 +50,11 @@ CI/CD, GitHub, Trunk-based & GitFlow branching, Feature Flags, Azure Monitor / A
 
 **Security & Compliance** — OAuth2 / OpenID Connect / JWT, Role-Based Access Control (RBAC), KYC /
 AML domains, SOX-aligned data segregation, data-protection-aware design (POPIA / GDPR).
+
+**AI & Agentic Engineering** — Multi-model routing and evaluation (Claude, GitHub Copilot,
+Cursor, OpenAI Codex, Grok); agent orchestration with dependency-aware planning and budget
+governance; MCP server integration; automated standards review and analyzer-enforced quality
+gates; ADR-driven decision capture.
 
 **Testing & Tooling** — xUnit, NUnit, Moq, Integration Testing (TestContainers); Enterprise
 Architect (UML), Swagger, Postman, SSRS; Angular, Angular Material; Agile, Scrum.
@@ -69,7 +81,7 @@ Architect (UML), Swagger, Postman, SSRS; Angular, Angular Material; Agile, Scrum
 ## Professional Experience
 
 ### Solutions Architect / Technical Lead — Core Financial Systems
-**Raging River Trading (Pty) Ltd** · Fintech / Gaming · Dec 2022 – Apr 2026
+**Raging River Trading (Pty) Ltd** · Fintech / Gaming · Dec 2022 – Mar 2026
 
 Led the architectural transformation of core financial systems, replacing a legacy banking
 platform with a modern, white-label engine handling high-volume transactions across Africa's
@@ -106,8 +118,21 @@ strategy, and concurrency design, working in close partnership with the Enterpri
   business analysts, marketing, client retention), translating feature needs into a sustainable
   architecture without sacrificing long-term integrity for short-term wins.
 
+_Role concluded via voluntary severance during a post-acquisition restructure._
+
+### Software Developer
+**MeterMo** · Utilities / Automated Metering · Apr 2022 – Dec 2022
+
+Platform development and modernisation across an automated utility-metering estate — electricity,
+water and gas usage capture and reporting.
+
+- Migrated six projects from Team Foundation Server to Azure DevOps.
+- Upgraded projects to current frameworks and package versions.
+- Maintained and supported two APIs, two cross-platform applications (Xamarin, Cordova) and two
+  websites (ASP.NET, Angular).
+
 ### Software Developer (Specialist Problem-Solver)
-**Dotcom Software Solutions** · Fintech consulting · Jan 2022 – Dec 2022
+**Dotcom Software Solutions** · Fintech consulting · Jan 2022 – Apr 2022
 
 Specialist problem-solver for complex challenges other team members could not resolve, within the
 fintech consulting space for clients including Nedbank, Standard Bank, and PSG Wealth.
@@ -161,6 +186,51 @@ both developer and analyst, including solution-architecture design.
 Sole developer and IT administrator for a recruitment firm: designed, built, and deployed a
 complete ERP from the ground up, including Linux server setup, domain hosting, and general IT
 support. _(C# .NET WinForms, MySQL, Linux.)_
+
+---
+
+## AI & Multi-Model Engineering
+
+**Multi-model evaluation practice.** Runs five commercial assistants concurrently — Claude
+(primary), GitHub Copilot, Cursor, OpenAI Codex and Grok — as a deliberate comparison harness
+rather than a single-vendor commitment, with a considered position on where each is strongest and
+where consistency breaks down. Workflows are kept OpenAI API-compatible so any conformant
+provider is a drop-in.
+
+**Agent orchestration framework.** Designed and built an end-to-end pipeline that decomposes a
+brief into a dependency-aware DAG of work items — each tagged with complexity, a preferred model
+tier and a token/tool-call budget — then executes them in parallel across specialist sub-agents
+under an overseer that resolves blockers, re-plans failed items and downgrades models on weighted
+cost/performance criteria. Architecture decisions are captured as ADRs *while the plan is formed*,
+not retrofitted afterwards.
+
+**Cost governance.** Sub-agent execution is gated by user-defined session budgets with pre-flight
+estimates of token and tool-call spend and a live plan-versus-actual dashboard — the control layer
+that makes multi-agent work economically predictable rather than open-ended.
+
+**Automated quality gate ("strict mode").** A review workflow that grades output — from
+orchestration runs, peers or personal work — against versioned design-guideline references, then
+enforces it: all analyzers enabled, warnings as errors, a tiered diagnostic list and a
+self-extending recipe book of resolution strategies. Mechanical fixes route to cheaper models;
+only unknown diagnostics and public-API-affecting changes escalate to a senior model. Includes
+custom Roslyn analyzers and a templated `.editorconfig` injected per project.
+
+**Two-axis automated code review.** Separates *"does this follow our documented standards and
+ADRs?"* from *"does this do what the work item actually asked for?"*, running both as parallel
+sub-agents and reporting them side by side rather than collapsing them into a single verdict.
+
+**Reusable engineering tooling.** Maintains a versioned library of skills, agents, commands and
+hooks with a two-layer publish/capture model, distributed across machines and packaged as a
+portable plugin. Conventions are published openly as
+[`engineering-standards`](https://github.com/RichardvZyl/engineering-standards) — vendored into
+downstream repositories and kept current by an automated sync PR. Model context is extended
+through MCP server integration across cloud, design and developer tooling.
+
+**Frontier tooling evaluation.** Runs a standing evaluation of emerging agent infrastructure
+beyond the mainstream assistants — agent frameworks (Hermes / Nous Research), model-routing layers
+(Omniroute, 9Router) and persistent memory and context systems (Perseus, Mnemonic AI) — to track
+where the practical ceiling on context persistence, routing economics and agent autonomy is
+moving, ahead of it becoming standard practice.
 
 ---
 

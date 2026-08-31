@@ -1,9 +1,28 @@
 # Keep private files out of this public repository.
-# Anything matching *.private.md (e.g. PROJECTS.private.md) is never committed.
+# Anything matching *.private.md is never committed. Current private files:
+#   PROJECTS.private.md      — full project inventory incl. private/client work
+#   MEMORY.private.md        — agent-memory extract
+#   REVAMP-PLAN.private.md   — CV/portfolio rework plan
+#   PREFCAP-FRAMING.private.md
+#   AI-SECTION-DRAFT.private.md
 *.private.md
+
+# Never commit career documents containing PII or compensation data.
+*.pdf
+*.docx
+payslip*
+Payslip*
 
 # Common editor / OS noise
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+
+# Perseus generated output
+.hermes.md
+.perseus/cache/
+live-context.md
+
+# Claude Code personal settings (settings.json is shared, .local is not)
+.claude/settings.local.json
