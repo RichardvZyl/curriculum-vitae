@@ -221,9 +221,6 @@ Nedbank, PSG Wealth, Libstar Holdings, Translution.
 
 - **National Diploma — IT: Software Development**, Varsity College, 2014–2016.
 - **IKM C# Assessment:** 73rd percentile (assessed twice, six months apart).
-- **DISC & Values Index:** High D (decisive, results-driven) / High I (communicative) / Low S
-  (adaptable, thrives in change) / Moderate C. Motivators: Very High Theoretical and Political;
-  pragmatic and results-focused.
 
 ---
 
@@ -257,8 +254,7 @@ stay defensible in interviews.
   leave) or non-monetary perks (remote work, office close to home, autonomy).
 
 > _Rate/CTC figures, phone number, and personal-background details are kept out of this public
-> repository. They live in `PRIVATE-DETAILS.private.md`, which is git-ignored and not published —
-> available on request or shared directly with recruiters._
+> repository — available on request or shared directly with recruiters._
 
 ---
 

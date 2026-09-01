@@ -1,28 +1,47 @@
-# Keep private files out of this public repository.
-# Anything matching *.private.md is never committed. Current private files:
-#   PROJECTS.private.md      — full project inventory incl. private/client work
-#   MEMORY.private.md        — agent-memory extract
-#   REVAMP-PLAN.private.md   — CV/portfolio rework plan
-#   PREFCAP-FRAMING.private.md
-#   AI-SECTION-DRAFT.private.md
-*.private.md
+# ============================================================================
+# THIS REPOSITORY IS PUBLIC.
+# Everything below stays local. Read this before adding a file to the root.
+# ============================================================================
 
-# Never commit career documents containing PII or compensation data.
+# --- Working / planning documents -------------------------------------------
+# Any *.private.md is never committed. These hold planning notes, drafts,
+# employment detail and compensation figures. Filenames are deliberately not
+# listed here - this file is public.
+*.private.md
+*.private.*
+
+# --- Source evidence --------------------------------------------------------
+# Ignored as a whole directory. Contains documents with ID number, date of
+# birth, bank account, branch code, tax reference and home address.
+# NEVER force-add anything from here.
+.career-source/
+.career-source/**
+
+# --- Generated output -------------------------------------------------------
+dist/
+dist/**
+
+# --- Career documents anywhere in the tree ----------------------------------
+# Belt-and-braces: these apply wherever they appear, at any depth.
 *.pdf
 *.docx
+*.doc
+*.xlsx
+*.htm
 payslip*
 Payslip*
+PAYSLIP*
+*ayslip*
 
-# Common editor / OS noise
+# --- Generated context render -----------------------------------------------
+# Re-renders from workspace contents, which include private files.
+live-context.md
+
+# --- Editor / OS noise ------------------------------------------------------
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
 
-# Perseus generated output
-.hermes.md
-.perseus/cache/
-live-context.md
-
-# Claude Code personal settings (settings.json is shared, .local is not)
+# --- Claude Code personal settings (settings.json is shared, .local is not) --
 .claude/settings.local.json
