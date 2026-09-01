@@ -79,6 +79,25 @@ Architect (UML), Swagger, Postman, SSRS; Angular, Angular Material; Agile, Scrum
 
 ## Professional Experience
 
+### Co-owner / Solutions Architect
+**Yuno Technologies** · Digital consultancy · Apr 2026 – present
+
+Half-owner of a South African digital consultancy, leading technical delivery — architecture,
+backend engineering and security design across client platforms.
+
+- **Four-plane deployment topology** with one-way initiation between planes: a public edge behind
+  CDN and WAF; an SPA plane running a backend-for-frontend that holds the session rather than the
+  tokens; an application plane owning the signing key; and a response-only identity plane on
+  Keycloak issuing OIDC / JWT. Each plane deploys independently with its own secrets, identity and
+  network boundary. _(Vite / React SPA, .NET services, PostgreSQL, Redis, RabbitMQ, outbox and
+  dispatcher pattern, mTLS between planes.)_
+- **Containerised platform across four environments** (development, staging, production and a
+  legacy-migration path) — nginx edge, Django / Django REST Framework on PostgreSQL, Redis, Azure
+  Functions, Azure Blob Storage and Communication Services, with Prometheus, Grafana and the
+  Elastic Stack for observability, behind an isolated container network.
+- Architecture decisions recorded as **ADRs with formal supersession**, so topology changes carry
+  their own rationale rather than being reconstructed from commit history.
+
 ### Solutions Architect / Technical Lead — Core Financial Systems
 **Raging River Trading (Pty) Ltd** · Fintech / Gaming · Dec 2022 – Mar 2026
 
