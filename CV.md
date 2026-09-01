@@ -115,20 +115,29 @@ platform with a modern, white-label engine handling high-volume transactions acr
 largest gaming brands. Architecturally responsible for the processing flow, multi-tenancy
 strategy, and concurrency design, working in close partnership with the Enterprise Architect.
 
-- **Multi-tenancy & data segregation:** Designed a configuration-driven engine serving multiple
-  legal entities from one codebase. Each legal entity held its own database, and every brand (by
-  country) lived in its own schema sharing a common structural design; the correct database and
-  schema were resolved per request via a brand identifier, behind load-balanced, round-robin
-  instances with health checks — purpose-built for SOX-aligned separation.
+- **Multi-tenancy & data segregation:** Designed a three-level hierarchy — tenant, brand, payment
+  method — in which **configuration inherits top-down and is overridable at any level, while
+  financial data inherits nothing and is hard-segregated per brand**, each brand sitting
+  independently in SOX scope. Brand does not reliably map to country (a cryptocurrency brand maps
+  to none), so resolution ran per brand-and-payment-method with tenant defaults beneath rather
+  than a country lookup. In production: 2 tenants, 25 brands, 150+ payment methods.
+- **Schema-per-brand under a hard constraint:** Separate databases per brand were priced out and
+  the data already sat in SQL Server, so 25 brands shared one database by schema separation — one
+  EF Core code-first model defined once and deployed 25 times, giving every brand an identical
+  shape and a single migration path instead of 25 divergent ones. Per-brand context instances with
+  capped pools, bound to the request by an edge auth filter resolving API key to brand; contexts
+  scoped per request and never shared, so isolation followed the request scope.
 - **Concurrency & ledger integrity:** Designed exactly-once, idempotent withdrawal processing to
   prevent double spends. Each request created an attempt record keyed to a unique identifier; on
   confirmation that identifier drove the ledger deduction, guarded by a rowversion (SQL timestamp)
   optimistic-concurrency check so updates only succeeded if the row was unchanged since read.
   Supported both back-office-reviewed and automated "auto-cash-in" approval flows.
-- **High-throughput scaling:** Engineered for sustained throughput and live-event spikes using
-  hash-partitioned work queues (partitioning by account so the running-balance constraint could be
-  validated against a subset), with multiple consumers converging on a single source of truth at a
-  controlled write rate.
+- **Work discovery & delivery:** Replaced chronological state-polling — contention by design, and
+  liable to miss a row that commits after the scan has passed its timestamp — with a
+  **transactional outbox committed inside `SaveChangesAsync`**, so a state change and the message
+  announcing it land together and nothing scans business tables to find work. Drained to per-brand
+  queues with dead-lettering, so segregation held to the messaging layer and no brand backlog
+  could stall another.
 - **Performance & storage strategy:** Applied in-memory tables with non-sequential keys and tuned
   fill factors on high-contention paths, and implemented tiered partitioning with progressive
   cold-archiving (detaching yearly partitions into separate databases on colder servers) to meet
@@ -144,6 +153,11 @@ strategy, and concurrency design, working in close partnership with the Enterpri
 - **Stakeholders:** Acted as the bridge between engineering and the business (product owners,
   business analysts, marketing, client retention), translating feature needs into a sustainable
   architecture without sacrificing long-term integrity for short-term wins.
+
+_Segregation was enforced in application code — an auth filter and a resolver deciding which
+schema a request reached. It satisfies an auditor, but a single bug in that path has nothing
+beneath it; the barrier belongs in the engine, which on PostgreSQL is `SET LOCAL search_path`
+scoped to the transaction plus row-level security, where a missed predicate returns zero rows._
 
 _Role concluded via voluntary severance during a post-acquisition restructure._
 
