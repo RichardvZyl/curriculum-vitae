@@ -89,8 +89,17 @@ backend engineering and security design across client platforms.
   CDN and WAF; an SPA plane running a backend-for-frontend that holds the session rather than the
   tokens; an application plane owning the signing key; and a response-only identity plane on
   Keycloak issuing OIDC / JWT. Each plane deploys independently with its own secrets, identity and
-  network boundary. _(Vite / React SPA, .NET services, PostgreSQL, Redis, RabbitMQ, outbox and
-  dispatcher pattern, mTLS between planes.)_
+  network boundary.
+- **Inter-plane trust model:** specified mutual TLS with SPIFFE/SPIRE workload identities at the
+  service-mesh boundary, sequenced as a phase-two deliverable rather than forcing a
+  Kubernetes-shaped stack onto the first release — with Keycloak service accounts as the
+  documented interim, and the gap recorded as a critical open item rather than left implicit.
+  _(Vite / React SPA, .NET services, PostgreSQL, Redis, RabbitMQ, outbox and dispatcher pattern,
+  gRPC over HTTP/2 for service-to-service.)_
+- **Isolation strategy for the ledger boundary:** moving the plane that carries the banking core
+  off shared-kernel containers onto **KVM-backed microVM isolation** (RustVMM-based sandboxing —
+  hardware-level separation at tens-of-milliseconds startup), so a container escape in an adjacent
+  workload cannot reach the ledger. Currently under evaluation rather than in production.
 - **Containerised platform across four environments** (development, staging, production and a
   legacy-migration path) — nginx edge, Django / Django REST Framework on PostgreSQL, Redis, Azure
   Functions, Azure Blob Storage and Communication Services, with Prometheus, Grafana and the
