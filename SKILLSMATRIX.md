@@ -181,8 +181,8 @@ Blob Storage, Keycloak, Prometheus / Grafana / ELK._
 Full-scale rewrite of a legacy banking platform into a white-label financial engine handling
 deposits & withdrawals for multiple brands across Africa. Architected for horizontal scalability
 with APIs that safely interact with a concurrent financial ledger during high-volume operations.
-Schema-per-brand under one SQL Server (separate databases priced out); deployed shape of four
-health-checked Docker instances behind a load balancer; transactional outbox to per-brand queues.
+Schema-per-brand under one SQL Server (separate databases priced out); transactional outbox to
+per-brand queues with dead-lettering.
 _Tech: Azure SQL, C# .NET, Docker, RabbitMQ, EF Core._
 
 **Project 2 — Integration Layer & Back-Office APIs** *(Solutions Architect / Technical Lead · Team 5 · Backend)*

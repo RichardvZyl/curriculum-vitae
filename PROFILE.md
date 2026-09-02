@@ -178,17 +178,10 @@ the notes in §10. Full detail lives in `SKILLSMATRIX.md`._
   isolation was database-per-brand; production constraint was one SQL Server with schema-per-brand
   and request-scoped contexts, because separate databases were priced out.
 - **Sustained deposit volumes in excess of €10M on peak trading days**, absorbing steady casino
-  throughput plus large spikes during live sporting events — volumes exceeding conventional
-  banking workloads.
+  throughput plus large spikes during live sporting events.
 - **Eliminated double-spend race conditions** under heavy contention via idempotent attempt
   records keyed to a unique identifier and rowversion-based optimistic concurrency on the ledger —
   exactly-once withdrawal processing under contention.
-- **Designed the deployed shape of that ledger:** four health-checked Docker instances behind a
-  load balancer, a single SQL source of truth with replicas used only for reporting, a
-  transactional outbox drained to per-brand queues with dead-lettering, and match-day shedding of
-  the hot payment method onto a separate consumer so the synchronous path stayed up.
-- **Published CombinatorialOptimiser** — a dependency-free .NET library with 20+ solvers and a
-  registry that selects by instance size.
 - **Solved problems others had abandoned:** completed a .NET 6 migration previously attempted and
   rolled back; resolved a 2-year Angular Universal SEO blocker in one week.
 - **IKM C# Assessment:** 73rd percentile of all test takers (assessed twice, six months apart).
