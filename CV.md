@@ -63,14 +63,22 @@ Architect (UML), Swagger, Postman, SSRS; Angular, Angular Material; Agile, Scrum
 
 ## Selected Achievements
 
-- **Architected a multi-tenant, white-label financial engine** serving two separate legal entities
-  (Betway and Jackpot City) from a single, configuration-driven codebase — with per-entity database
-  isolation and per-brand schema separation to satisfy SOX-aligned segregation.
+- **Architected a multi-tenant, white-label financial engine** serving two operators (Betway and
+  Jackpot City) from one configuration-driven codebase — 2 tenants, 25 brands, 150+ payment
+  methods. Target isolation was database-per-brand; production constraint was one SQL Server with
+  schema-per-brand and request-scoped contexts, because separate databases were priced out.
 - **Sustained deposit volumes in excess of €10M on peak trading days**, absorbing both steady
   casino throughput and large spikes during live sporting events — transaction volumes that
   exceeded those of conventional banking workloads.
 - **Eliminated double-spend race conditions** under heavy contention by designing idempotent,
   exactly-once withdrawal processing with rowversion-based optimistic concurrency on the ledger.
+- **Designed the deployed shape of that ledger:** four health-checked Docker instances behind a
+  load balancer, a single SQL source of truth with replicas used only for reporting, a
+  transactional outbox drained to per-brand queues with dead-lettering, and match-day shedding of
+  the hot payment method onto a separate consumer so the synchronous path stayed up.
+- **Published CombinatorialOptimiser** — a dependency-free .NET library with 20+ exact,
+  construction, improvement and metaheuristic solvers and a registry that selects by instance
+  size. Built to make algorithm choice an explicit complexity decision, not a default.
 - **Solved problems others had abandoned:** completed a .NET 6 migration that had been attempted
   and rolled back by previous developers, and resolved a 2-year Angular Universal SEO blocker in
   one week.
@@ -127,11 +135,25 @@ strategy, and concurrency design, working in close partnership with the Enterpri
   shape and a single migration path instead of 25 divergent ones. Per-brand context instances with
   capped pools, bound to the request by an edge auth filter resolving API key to brand; contexts
   scoped per request and never shared, so isolation followed the request scope.
+- **Deployed shape:** Four Docker/.NET instances behind a load balancer (round-robin,
+  health-checked). One SQL Server for writes; replicas for back-office reporting only.
+  Orchestration API in front of a locked-down data-access API — only orchestration could mutate
+  the ledger. Brand resolved from an API key at an edge filter. On known spikes (kick-off, World
+  Cup) instances were warmed in advance; on contention a configured threshold shed the hot payment
+  method onto RabbitMQ and a separate long-running consumer rather than blocking the request path.
+  Cloudflare sat in front; voucher traffic was also rate-limited in-app because a valid session at
+  the operator proxy could still hammer the ledger — we had watched that happen.
 - **Concurrency & ledger integrity:** Designed exactly-once, idempotent withdrawal processing to
   prevent double spends. Each request created an attempt record keyed to a unique identifier; on
   confirmation that identifier drove the ledger deduction, guarded by a rowversion (SQL timestamp)
   optimistic-concurrency check so updates only succeeded if the row was unchanged since read.
   Supported both back-office-reviewed and automated "auto-cash-in" approval flows.
+- **Request path (withdrawal):** REST initiation → input validation → configured strategy rules
+  (FICA / playthrough / AML as required by brand and method, executed via an integration adapter)
+  → attempt record keyed by a unique trace id (the idempotency key) → confirmation drives the
+  ledger debit under `rowversion` → state change and outbox message commit in the same
+  `SaveChangesAsync` → consumers drain; poison goes to a DLQ. A retry of the same trace id is the
+  same attempt.
 - **Work discovery & delivery:** Replaced chronological state-polling — contention by design, and
   liable to miss a row that commits after the scan has passed its timestamp — with a
   **transactional outbox committed inside `SaveChangesAsync`**, so a state change and the message
@@ -165,12 +187,13 @@ _Role concluded via voluntary severance during a post-acquisition restructure._
 **MeterMo** · Utilities / Automated Metering · Apr 2022 – Dec 2022
 
 Platform development and modernisation across an automated utility-metering estate — electricity,
-water and gas usage capture and reporting.
+water and gas usage capture and reporting from field devices. Two APIs, two cross-platform field
+apps (Xamarin, Cordova) and two websites. The work was device telemetry and usage integrity, not
+trading, but it is the same class of problem as wallbox meter values: readings that must arrive,
+persist, and not be double-counted.
 
 - Migrated six projects from Team Foundation Server to Azure DevOps.
 - Upgraded projects to current frameworks and package versions.
-- Maintained and supported two APIs, two cross-platform applications (Xamarin, Cordova) and two
-  websites (ASP.NET, Angular).
 
 ### Software Developer (Specialist Problem-Solver)
 **Dotcom Software Solutions** · Fintech consulting · Jan 2022 – Apr 2022
@@ -278,6 +301,18 @@ moving, ahead of it becoming standard practice.
 ## Notable Clients Engaged (Across Consulting Roles)
 
 Bankserv (now PayInc), Standard Bank, Nedbank, PSG Wealth, Libstar Holdings, Translution.
+
+---
+
+## Open source
+
+- **CombinatorialOptimiser** — https://github.com/RichardvZyl/CombinatorialOptimiser —
+  permutation (TSP), subset selection (knapsack) and constraint assignment (graph colouring).
+  Exact (Held-Karp, DP, branch-and-bound), construction, improvement (2-opt, Lin-Kernighan) and
+  metaheuristics (simulated annealing, genetic algorithm, ILS). A solver registry recommends by
+  instance size so O(n!) is never the plan.
+- **engineering-standards** — repository conventions used across delivery work.
+- **pseudo-random-guaranteed-unique** — T-SQL uniqueness without a random collision window.
 
 ---
 

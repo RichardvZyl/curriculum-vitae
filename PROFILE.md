@@ -173,14 +173,21 @@ the notes in §9. Full detail lives in `SKILLSMATRIX.md`._
 
 ## 5. Selected Achievements
 
-- **Multi-tenant, white-label financial engine** serving two separate legal entities (Betway and
-  Jackpot City) from a single, configuration-driven codebase — with per-entity database isolation
-  and per-brand schema separation to satisfy SOX-aligned segregation.
+- **Multi-tenant, white-label financial engine** serving two operators (Betway and Jackpot City)
+  from one configuration-driven codebase — 2 tenants, 25 brands, 150+ payment methods. Target
+  isolation was database-per-brand; production constraint was one SQL Server with schema-per-brand
+  and request-scoped contexts, because separate databases were priced out.
 - **Sustained deposit volumes in excess of €10M on peak trading days**, absorbing steady casino
   throughput plus large spikes during live sporting events — volumes exceeding conventional
   banking workloads.
 - **Eliminated double-spend race conditions** under heavy contention via idempotent, exactly-once
   withdrawal processing with rowversion-based optimistic concurrency on the ledger.
+- **Designed the deployed shape of that ledger:** four health-checked Docker instances behind a
+  load balancer, a single SQL source of truth with replicas used only for reporting, a
+  transactional outbox drained to per-brand queues with dead-lettering, and match-day shedding of
+  the hot payment method onto a separate consumer so the synchronous path stayed up.
+- **Published CombinatorialOptimiser** — a dependency-free .NET library with 20+ solvers and a
+  registry that selects by instance size.
 - **Solved problems others had abandoned:** completed a .NET 6 migration previously attempted and
   rolled back; resolved a 2-year Angular Universal SEO blocker in one week.
 - **IKM C# Assessment:** 73rd percentile of all test takers (assessed twice, six months apart).
