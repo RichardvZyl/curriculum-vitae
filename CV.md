@@ -188,9 +188,8 @@ _Role concluded via voluntary severance during a post-acquisition restructure._
 
 Platform development and modernisation across an automated utility-metering estate — electricity,
 water and gas usage capture and reporting from field devices. Two APIs, two cross-platform field
-apps (Xamarin, Cordova) and two websites. The work was device telemetry and usage integrity, not
-trading, but it is the same class of problem as wallbox meter values: readings that must arrive,
-persist, and not be double-counted.
+apps (Xamarin, Cordova) and two websites. Device telemetry and usage integrity: readings that must
+arrive, persist, and not be double-counted.
 
 - Migrated six projects from Team Foundation Server to Azure DevOps.
 - Upgraded projects to current frameworks and package versions.
