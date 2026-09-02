@@ -85,7 +85,7 @@ migrations to designing the financial engine that replaced a legacy banking plat
 
 _From the 2026 Expanded Technical Skills Matrix. **Years are professional only**, counted from
 April 2017 — nothing exceeds 9. Formal study began 2014. Where the CV framing and the matrix differ, see
-the notes in §9. Full detail lives in `SKILLSMATRIX.md`._
+the notes in §10. Full detail lives in `SKILLSMATRIX.md`._
 
 ### Logical Languages
 | Skill | Years (professional) |

@@ -142,8 +142,8 @@ strategy, and concurrency design, working in close partnership with the Enterpri
   the ledger. Brand resolved from an API key at an edge filter. On known spikes (kick-off, World
   Cup) instances were warmed in advance; on contention a configured threshold shed the hot payment
   method onto RabbitMQ and a separate long-running consumer rather than blocking the request path.
-  Cloudflare sat in front; voucher traffic was also rate-limited in-app because a valid session at
-  the operator proxy could still hammer the ledger — we had watched that happen.
+  A CDN/WAF sat in front, with rate limiting applied in the application as well as at the
+  edge.
 - **Concurrency & ledger integrity:** Designed idempotent withdrawal processing under contention:
   each request creates an attempt record keyed to a unique identifier; on confirmation that
   identifier drives the ledger deduction, guarded by a rowversion (SQL timestamp) optimistic-
