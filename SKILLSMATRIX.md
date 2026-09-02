@@ -3,15 +3,22 @@
 Expanded technical skills matrix with years of experience, followed by a deep-dive on SQL
 performance tuning and a full project-by-project breakdown per employer.
 
+> **How to read the Years column.** Values are **professional years only**, counted from the
+> start of paid work in **April 2017** — so nothing exceeds **9**. Formal study began in 2014
+> (National Diploma in IT: Software Development, Varsity College, 2014–2016), during which
+> development was hands-on; those years are deliberately *not* counted here. Skills tied to a
+> specific engagement (PostgreSQL, Redis, MongoDB, Azure Functions) carry the span of that
+> engagement, not the whole career.
+
 ---
 
 ## Expanded Technical Skills Matrix
 
 ### Logical Languages
-| Skill | Years |
+| Skill | Years (professional) |
 |---|---|
-| C#/.NET | 10 |
-| T-SQL | 10 |
+| C#/.NET | 9 |
+| T-SQL | 9 |
 | PostgreSQL | 7 |
 | TypeScript | 5 |
 | JavaScript | 5 |
@@ -21,18 +28,18 @@ performance tuning and a full project-by-project breakdown per employer.
 | Java | 2 |
 
 ### Design Languages / Data Formats
-| Skill | Years |
+| Skill | Years (professional) |
 |---|---|
-| JSON | 10 |
+| JSON | 9 |
 | XML | 8 |
 | XAML | 7 |
 | YAML | 6 |
 | HTML | 3 |
 
 ### Databases
-| Skill | Years |
+| Skill | Years (professional) |
 |---|---|
-| Microsoft SQL Server Management Studio | 10 |
+| Microsoft SQL Server Management Studio | 9 |
 | SQL Performance Tuning | 8 |
 | Azure SQL | 7 |
 | MySQL Workbench | 6 |
@@ -44,17 +51,27 @@ performance tuning and a full project-by-project breakdown per employer.
 | In-Memory OLTP | 4 |
 
 ### Architecture & Design
-| Skill | Years |
+| Skill | Years (professional) |
 |---|---|
-| Clean Architecture | 10 |
+| Clean Architecture | 9 |
 | Microservices | 7 |
 | Event-Driven Architecture | 5 |
 | Idempotency / Exactly-Once Processing | 4 |
 
-### Frameworks, Libraries & Methodologies
-| Skill | Years |
+### Business Analysis & Solution Design
+| Skill | Years (professional) |
 |---|---|
-| Entity Framework | 10 |
+| Business & Problem-Domain Analysis | 9 |
+| Requirements Specification (BRS / URS / FRS / TRS) | 9 |
+| Solution Design & Solution Architecture | 9 |
+| Technical Documentation (audience-tailored) | 9 |
+| Stakeholder Engagement & Translation | 8 |
+| Process & System Modelling (UML) | 8 |
+
+### Frameworks, Libraries & Methodologies
+| Skill | Years (professional) |
+|---|---|
+| Entity Framework | 9 |
 | Domain-Driven Design (DDD) | 8 |
 | Scrum | 8 |
 | MediatR | 7 |
@@ -67,7 +84,6 @@ performance tuning and a full project-by-project breakdown per employer.
 | CQRS | 6 |
 | Unit Testing (xUnit / NUnit / Moq) | 6 |
 | OAuth2 / OpenID Connect / JWT | 6 |
-| Event Sourcing | 5 |
 | Integration Testing (TestContainers) | 5 |
 | Feature Flags (Azure App Configuration) | 4 |
 | ASP.NET | 3 |
@@ -75,14 +91,14 @@ performance tuning and a full project-by-project breakdown per employer.
 | SignalR / WebSockets | 3 |
 
 ### Development Tools, Cloud & DevOps
-| Skill | Years |
+| Skill | Years (professional) |
 |---|---|
-| Visual Studio | 10 |
-| GitHub | 10 |
-| Azure DevOps (previously TFS) | 10 |
-| VS Code | 10 |
-| Postman | 10 |
-| Swagger | 10 |
+| Visual Studio | 9 |
+| GitHub | 9 |
+| Azure DevOps (previously TFS) | 9 |
+| VS Code | 9 |
+| Postman | 9 |
+| Swagger | 9 |
 | Enterprise Architect (UML) | 8 |
 | Azure CI/CD | 7 |
 | Docker | 7 |
@@ -98,7 +114,7 @@ performance tuning and a full project-by-project breakdown per employer.
 | DevExpress | 3 |
 
 ### Security & Compliance
-| Skill | Years |
+| Skill | Years (professional) |
 |---|---|
 | Role-Based Access Control (RBAC) | 8 |
 | Data-protection-aware design (POPIA / GDPR) | 5 |
@@ -108,8 +124,8 @@ performance tuning and a full project-by-project breakdown per employer.
 
 ## Deep Dive: SQL Performance Tuning (Execution Plans / Indexing / Locking)
 
-**Years of experience:** 10 · **Context:** Built and optimised high-volume financial ledger
-systems supporting millions of users and 150+ money processors.
+**Years of experience:** 8 · **Context:** Built and optimised high-volume financial ledger
+systems integrating 150+ money processors across multiple African markets.
 
 | Sub-skill | Description |
 |---|---|
@@ -126,16 +142,17 @@ systems supporting millions of users and 150+ money processors.
 
 ## Employment & Project Profiles
 
-### Raging River Trading (Pty) Ltd — *Current*
+### Raging River Trading (Pty) Ltd
 - **Industry:** Fintech / Financial Technology
-- **Job title:** Technical Lead — Core Financial Systems
-- **Period:** Dec 2022 – Apr 2026
+- **Job title:** Technical Lead / Solutions Architect — Core Financial Systems
+  *(payroll title: Software Developer)*
+- **Period:** Dec 2022 – Mar 2026
 - **Consulting clients:** No
-- **Reason for leaving:** Seeking new challenges — open to opportunities
+- **Reason for leaving:** Concluded via voluntary severance during a post-acquisition restructure.
 
-**Overall duties (Software Developer):**
+**Overall duties:**
 - Product transformation: led the full-scale rewrite of a legacy banking platform into a white-label
-  financial engine handling deposits & withdrawals for millions of users across Africa, supporting
+  financial engine handling deposits & withdrawals across multiple African markets, supporting
   major brands including Betway and Jackpot City.
 - High-volume architecture: engineered the system for horizontal and vertical scalability,
   supporting major gaming brands across multiple African markets.
@@ -158,9 +175,21 @@ Designed and implemented the high-availability architecture supporting concurren
 transactions across multiple brands and markets, ensuring data integrity, system resilience, and
 reliable ledger operations at scale. _Tech: C# .NET, Azure SQL._
 
+### MeterMo
+- **Industry:** Utilities — automated electricity, water and gas usage metering & reporting · **Consulting clients:** No
+- **Job title:** Software Developer · **Period:** Apr 2022 – Dec 2022
+- **Reason for leaving:** Mandate complete; sole developer — sought a larger engineering team with scope to learn and grow.
+
+**Duties:** Platform development and modernisation across an automated utility-metering estate
+(electricity, water and gas usage capture and reporting). Migrated six projects from Team
+Foundation Server to Azure DevOps; upgraded projects to current frameworks and package versions;
+maintenance and support across two APIs, two cross-platform applications (Xamarin, Cordova) and
+two websites (ASP.NET, Angular).
+_Tech: C# .NET, ASP.NET, Angular, Xamarin, Cordova, Azure DevOps, TFS._
+
 ### Dotcom Software Solutions
 - **Industry:** Consulting (Fintech) · **Consulting clients:** Yes
-- **Job title:** Software Developer · **Period:** Jan 2022 – Dec 2022
+- **Job title:** Software Developer · **Period:** Jan 2022 – Apr 2022
 - **Reason for leaving:** No longer remote / not a culture fit
 
 **Duties:** Specialist problem-solver tackling complex development challenges other team members
@@ -172,12 +201,12 @@ payment validations.
 Schemes (Stokvel / Chama) BotFramework backend upgrade to .NET 6, including package-dependency
 updates and breaking-change fixes. Repository history showed this had been attempted and rolled
 back; successfully completed the update — live in production with the changes/fixes. _Tech: Azure
-SQL, BotFramework, C# .NET Standard, MediatR, Q&A Maker._
+SQL, BotFramework, C# .NET 6 (from .NET Standard), MediatR, Q&A Maker._
 
 **Project 2 — PSG Wealth Website (PSG Wealth client)** *(Software Developer / Analyst / Architect · Team 6 · Backend · Feb–Mar 2022)*
 Implemented Angular Universal for server-side rendering for SEO — Dotcom had struggled with this for
-two years; solved it in a week. _Tech: Docker, Angular, Bootstrap, Material, Node.js, C# .NET
-Standard, Umbraco CMS._
+two years; solved it in a week. _Tech: Docker, Angular, Bootstrap, Material, Node.js, C# .NET 6,
+Umbraco CMS._
 
 ### Payteq
 - **Industry:** Fintech · **Consulting clients:** No

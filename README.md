@@ -25,7 +25,7 @@ cover-letter generation, and interview prep).
 ## Contact
 
 - **Email:** richardvzyl@gmail.com
-- **LinkedIn:** https://www.linkedin.com/in/richard-van-zyl
+- **LinkedIn:** https://www.linkedin.com/in/richardvzyl
 - **GitHub:** https://github.com/RichardvZyl
 
 > Rate/CTC, phone number, and personal-background details are kept private and are available on

@@ -61,8 +61,8 @@ Tables and tight bullets are the preferred shape here — they hold many angles 
 |---|---|
 | Language | **C# .NET**, T-SQL; some TypeScript/Node |
 | Data | **SQL Server / Azure SQL** (primary), **PostgreSQL**, Redis, MongoDB |
-| ORM / access | **Entity Framework Core**; custom repository/UoW/specification SDK (`Bedrock.*`) |
-| Patterns | DDD, CQRS, Event Sourcing/EDA, SAGA, Clean Architecture, Result types |
+| ORM / access | **Entity Framework Core**; a custom repository / unit-of-work / specification SDK (private) |
+| Patterns | DDD, CQRS, Event-Driven Architecture, SAGA, Clean Architecture, Result types |
 | Messaging | Azure Service Bus, RabbitMQ; gRPC, REST, SignalR |
 | Cloud/DevOps | Azure, Azure DevOps + GitHub, Docker, AKS, CI/CD, feature flags |
 | Testing | xUnit, NUnit, Moq, TestContainers (integration) |
@@ -74,7 +74,7 @@ Tables and tight bullets are the preferred shape here — they hold many angles 
   segregation is required (per-DB or per-schema). Never let a query cross tenants.
 - **CQRS read/write separation** — reference the read side only where a component
   must be physically incapable of writing.
-- **Result/outcome types over exceptions** for expected failures (see `Bedrock.Results`).
+- **Result/outcome types over exceptions** for expected failures.
 - **Idempotency / exactly-once** for anything touching money: attempt records keyed to
   a unique id, guarded by **rowversion optimistic concurrency** on the ledger row.
 - **Design for contention:** hash/partition work by account so running-balance

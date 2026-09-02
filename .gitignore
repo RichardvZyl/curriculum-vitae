@@ -1,9 +1,47 @@
-# Keep private files out of this public repository.
-# Anything matching *.private.md (e.g. PROJECTS.private.md) is never committed.
-*.private.md
+# ============================================================================
+# THIS REPOSITORY IS PUBLIC.
+# Everything below stays local. Read this before adding a file to the root.
+# ============================================================================
 
-# Common editor / OS noise
+# --- Working / planning documents -------------------------------------------
+# Any *.private.md is never committed. These hold planning notes, drafts,
+# employment detail and compensation figures. Filenames are deliberately not
+# listed here - this file is public.
+*.private.md
+*.private.*
+
+# --- Source evidence --------------------------------------------------------
+# Ignored as a whole directory. Contains documents with ID number, date of
+# birth, bank account, branch code, tax reference and home address.
+# NEVER force-add anything from here.
+.career-source/
+.career-source/**
+
+# --- Generated output -------------------------------------------------------
+dist/
+dist/**
+
+# --- Career documents anywhere in the tree ----------------------------------
+# Belt-and-braces: these apply wherever they appear, at any depth.
+*.pdf
+*.docx
+*.doc
+*.xlsx
+*.htm
+payslip*
+Payslip*
+PAYSLIP*
+*ayslip*
+
+# --- Generated context render -----------------------------------------------
+# Re-renders from workspace contents, which include private files.
+live-context.md
+
+# --- Editor / OS noise ------------------------------------------------------
 .DS_Store
 Thumbs.db
 .vscode/
 .idea/
+
+# --- Claude Code personal settings (settings.json is shared, .local is not) --
+.claude/settings.local.json

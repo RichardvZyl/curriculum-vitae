@@ -18,37 +18,44 @@
 |---|---|
 | **Name** | Richard van Zyl |
 | **Title** | Solutions Architect / Technical Lead — Backend & Data-Intensive Systems |
-| **Experience** | 9+ years architecting systems; ~10 years hands-on C#/.NET and T-SQL |
+| **Experience** | 9 years professional (from Apr 2017); ~5 leading teams; ~3.5 as Solutions Architect / Technical Lead |
 | **Location** | Pretoria, Gauteng, South Africa |
 | **Relocation** | Willing to relocate to Johannesburg if relocation costs are covered |
 | **Email** | richardvzyl@gmail.com |
-| **LinkedIn** | linkedin.com/in/richard-van-zyl (also referenced as /richardvzyl) |
+| **LinkedIn** | linkedin.com/in/richardvzyl |
 | **GitHub** | https://github.com/RichardvZyl |
 | **Citizenship** | South African citizen (no work permit / visa required) |
-| **Availability** | Immediate notice period |
+| **Availability** | Immediately available |
 | **References** | Available upon formal offer (per SA labour-law norms) |
 
 ---
 
 ## 2. Professional Summary
 
-Solutions Architect and Technical Lead with 9+ years architecting high-throughput, multi-tenant
-financial systems where data integrity is non-negotiable — backed by roughly a decade of hands-on
-C#/.NET and T-SQL. Deep specialist in backend engineering and relational data: execution-plan
-tuning, concurrency control, partitioning, and idempotent transaction design for ledgers
-processing millions of transactions daily across Africa.
+Solutions Architect and Technical Lead with nine years across C#/.NET and SQL Server — ~5 of
+them leading teams and ~3.5 as Solutions Architect — building high-throughput, multi-tenant
+financial systems where data integrity is non-negotiable. Deep specialist in backend engineering
+and relational data: execution-plan tuning, concurrency control, partitioning, and idempotent
+transaction design for ledgers operating across African markets. Requirements and solution
+design have run through the whole of that — specifying and modelling systems as a business
+analyst since 2017, pitched to whichever audience had to sign them off.
 
-Owns architecture end-to-end — from concurrency and multi-tenancy strategy through to CI/CD and
-production telemetry — while leading delivery teams and bridging engineering with business
-stakeholders. A problem solver at heart; languages and frameworks are treated as tools.
-Regularly handed the challenges others could not solve, from turning around failed legacy
+Owns delivery end-to-end — from eliciting the requirement and modelling the solution, through
+concurrency and multi-tenancy strategy, to CI/CD and production telemetry — while leading teams
+and acting as the translation layer between engineering and the business. A problem solver at
+heart; languages and frameworks are treated as tools. Regularly handed the challenges others could not solve, from turning around failed legacy
 migrations to designing the financial engine that replaced a legacy banking platform.
 
 ---
 
 ## 3. Core Competencies
 
-- **Architecture & Design:** Domain-Driven Design (DDD), CQRS, Event Sourcing, Event-Driven
+- **Requirements & Solution Design:** Business (BRS), user (URS), functional (FRS) and technical
+  (TRS) requirements specification; business- and problem-domain analysis; solution design and
+  solution architecture; process and system modelling (UML / Enterprise Architect); stakeholder
+  engagement and translation between business and engineering; audience-tailored technical
+  writing pitched to the team it is written for.
+- **Architecture & Design:** Domain-Driven Design (DDD), CQRS, Event-Driven
   Architecture, Microservices, Multi-tenancy & Tenant Isolation, Idempotency / Exactly-Once
   Processing, RESTful API design, Clean Architecture, Layered Architecture, SAGA patterns.
 - **Databases & Data:** Microsoft SQL Server, Azure SQL, T-SQL, SQL Performance Tuning
@@ -65,6 +72,10 @@ migrations to designing the financial engine that replaced a legacy banking plat
 - **Security & Compliance:** OAuth2 / OpenID Connect / JWT, Role-Based Access Control (RBAC),
   Maker-Checker workflows, Entitlement Management, KYC / AML domains, SOX-aligned data
   segregation, data-protection-aware design (POPIA / GDPR).
+- **AI & Agentic Engineering:** Multi-model routing and evaluation (Claude, GitHub Copilot,
+  Cursor, OpenAI Codex, Grok); agent orchestration with dependency-aware planning and budget
+  governance; MCP server integration; automated standards review and analyzer-enforced quality
+  gates; ADR-driven decision capture. See `CV.md` §AI & Multi-Model Engineering.
 - **Testing & Tooling:** xUnit, NUnit, Moq, Integration Testing (TestContainers); Enterprise
   Architect (UML), Swagger, Postman, SSRS; Angular, Angular Material; Agile, Scrum.
 
@@ -72,14 +83,15 @@ migrations to designing the financial engine that replaced a legacy banking plat
 
 ## 4. Skills Matrix — Years of Experience
 
-_From the 2026 Expanded Technical Skills Matrix. Where the CV framing and the matrix differ, see
-the notes in §9. Full detail lives in `SKILLS-MATRIX.md`._
+_From the 2026 Expanded Technical Skills Matrix. **Years are professional only**, counted from
+April 2017 — nothing exceeds 9. Formal study began 2014. Where the CV framing and the matrix differ, see
+the notes in §9. Full detail lives in `SKILLSMATRIX.md`._
 
 ### Logical Languages
-| Skill | Years |
+| Skill | Years (professional) |
 |---|---|
-| C#/.NET | 10 |
-| T-SQL | 10 |
+| C#/.NET | 9 |
+| T-SQL | 9 |
 | PostgreSQL | 7 |
 | TypeScript | 5 |
 | JavaScript | 5 |
@@ -89,9 +101,9 @@ the notes in §9. Full detail lives in `SKILLS-MATRIX.md`._
 | Java | 2 |
 
 ### Databases
-| Skill | Years |
+| Skill | Years (professional) |
 |---|---|
-| SQL Server Management Studio | 10 |
+| SQL Server Management Studio | 9 |
 | SQL Performance Tuning | 8 |
 | Azure SQL | 7 |
 | MySQL Workbench | 6 |
@@ -103,10 +115,10 @@ the notes in §9. Full detail lives in `SKILLS-MATRIX.md`._
 | In-Memory OLTP | 4 |
 
 ### Architecture, Frameworks & Methodologies
-| Skill | Years |
+| Skill | Years (professional) |
 |---|---|
-| Clean Architecture | 10 |
-| Entity Framework | 10 |
+| Clean Architecture | 9 |
+| Entity Framework | 9 |
 | Domain-Driven Design (DDD) | 8 |
 | Scrum | 8 |
 | Microservices | 7 |
@@ -119,7 +131,17 @@ the notes in §9. Full detail lives in `SKILLS-MATRIX.md`._
 | Unit Testing (xUnit / NUnit / Moq) | 6 |
 | OAuth2 / OpenID Connect / JWT | 6 |
 | Event-Driven Architecture | 5 |
-| Event Sourcing | 5 |
+
+**Business Analysis & Solution Design**
+
+| Skill | Years (professional) |
+|---|---|
+| Business & Problem-Domain Analysis | 9 |
+| Requirements Specification (BRS / URS / FRS / TRS) | 9 |
+| Solution Design & Solution Architecture | 9 |
+| Technical Documentation (audience-tailored) | 9 |
+| Stakeholder Engagement & Translation | 8 |
+| Process & System Modelling (UML) | 8 |
 | Integration Testing (TestContainers) | 5 |
 | Idempotency / Exactly-Once Processing | 4 |
 | Feature Flags (Azure App Configuration) | 4 |
@@ -127,9 +149,9 @@ the notes in §9. Full detail lives in `SKILLS-MATRIX.md`._
 | SignalR / WebSockets | 3 |
 
 ### Cloud & DevOps
-| Skill | Years |
+| Skill | Years (professional) |
 |---|---|
-| Visual Studio / GitHub / Azure DevOps / VS Code / Postman / Swagger | 10 |
+| Visual Studio / GitHub / Azure DevOps / VS Code / Postman / Swagger | 9 |
 | Enterprise Architect (UML) | 8 |
 | Azure CI/CD | 7 |
 | Docker | 7 |
@@ -141,7 +163,7 @@ the notes in §9. Full detail lives in `SKILLS-MATRIX.md`._
 | Elastic Stack (ELK) / Serilog | 4 |
 
 ### Security & Compliance
-| Skill | Years |
+| Skill | Years (professional) |
 |---|---|
 | Role-Based Access Control (RBAC) | 8 |
 | Data-protection-aware design (POPIA / GDPR) | 5 |
@@ -171,8 +193,10 @@ _Full detail in `CV.md`._
 
 | Company | Role | Period |
 |---|---|---|
-| Raging River Trading (Pty) Ltd | Solutions Architect / Technical Lead — Core Financial Systems | Dec 2022 – Apr 2026 |
-| Dotcom Software Solutions | Software Developer (Specialist Problem-Solver) | Jan 2022 – Dec 2022 |
+| Yuno Technologies | Co-owner / Solutions Architect | Apr 2026 – present |
+| Raging River Trading (Pty) Ltd | Solutions Architect / Technical Lead — Core Financial Systems | Dec 2022 – Mar 2026 |
+| MeterMo | Software Developer | Apr 2022 – Dec 2022 |
+| Dotcom Software Solutions | Software Developer (Specialist Problem-Solver) | Jan 2022 – Apr 2022 |
 | Payteq (Pty) Ltd | Senior Developer / Business Analyst / Team Lead | Apr 2020 – Jan 2022 |
 | iPlan Global | Software Developer / Business Analyst | Oct 2017 – Apr 2020 |
 | Novigo (Pty) Ltd | Software Developer (C# .NET) | Apr 2017 – Oct 2017 |
@@ -197,9 +221,6 @@ Nedbank, PSG Wealth, Libstar Holdings, Translution.
 
 - **National Diploma — IT: Software Development**, Varsity College, 2014–2016.
 - **IKM C# Assessment:** 73rd percentile (assessed twice, six months apart).
-- **DISC & Values Index:** High D (decisive, results-driven) / High I (communicative) / Low S
-  (adaptable, thrives in change) / Moderate C. Motivators: Very High Theoretical and Political;
-  pragmatic and results-focused.
 
 ---
 
@@ -218,9 +239,10 @@ stay defensible in interviews.
   consistent within a single application.
 - **Go (GoLang):** no production experience; willing to upskill.
 - **Java:** ~college-level / ~2 years exposure.
-- **Reason for leaving current role:** framed on the 2026 skills matrix as "seeking new challenges
-  – open to opportunities"; in later application correspondence framed as **retrenchment following
-  a corporate takeover**. The retrenchment framing is the more current/accurate status.
+- **Reason for leaving Raging River Trading:** concluded via **voluntary severance during a
+  post-acquisition restructure** (Mar 2026). Keep this neutral, one-line framing on paper. The
+  fuller account — leadership departures and a shift away from the working culture, prompting a
+  deliberate early exit — is interview material, not document material.
 
 ---
 
@@ -232,14 +254,13 @@ stay defensible in interviews.
   leave) or non-monetary perks (remote work, office close to home, autonomy).
 
 > _Rate/CTC figures, phone number, and personal-background details are kept out of this public
-> repository. They live in `PRIVATE-DETAILS.private.md`, which is git-ignored and not published —
-> available on request or shared directly with recruiters._
+> repository — available on request or shared directly with recruiters._
 
 ---
 
 ## 11. Links
 
-- **LinkedIn:** https://www.linkedin.com/in/richard-van-zyl (also seen as /richardvzyl)
+- **LinkedIn:** https://www.linkedin.com/in/richardvzyl
 - **GitHub:** https://github.com/RichardvZyl
 
 ---
