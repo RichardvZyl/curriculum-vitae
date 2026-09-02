@@ -8,7 +8,7 @@
 > `AI-CONTEXT.md`; for his **open-source projects** (and a note on excluded private repos),
 > see `PROJECTS.md`.
 >
-> _Last compiled: 2026-07-08._
+> _Last compiled: 2026-09-02._
 
 ---
 
@@ -180,8 +180,9 @@ the notes in §9. Full detail lives in `SKILLSMATRIX.md`._
 - **Sustained deposit volumes in excess of €10M on peak trading days**, absorbing steady casino
   throughput plus large spikes during live sporting events — volumes exceeding conventional
   banking workloads.
-- **Eliminated double-spend race conditions** under heavy contention via idempotent, exactly-once
-  withdrawal processing with rowversion-based optimistic concurrency on the ledger.
+- **Eliminated double-spend race conditions** under heavy contention via idempotent attempt
+  records keyed to a unique identifier and rowversion-based optimistic concurrency on the ledger —
+  exactly-once withdrawal processing under contention.
 - **Designed the deployed shape of that ledger:** four health-checked Docker instances behind a
   load balancer, a single SQL source of truth with replicas used only for reporting, a
   transactional outbox drained to per-brand queues with dead-lettering, and match-day shedding of
@@ -231,7 +232,17 @@ Nedbank, PSG Wealth, Libstar Holdings, Translution.
 
 ---
 
-## 9. Honest Skill Boundaries & Framing Notes
+## 9. Open source
+
+- **CombinatorialOptimiser** — https://github.com/RichardvZyl/CombinatorialOptimiser —
+  dependency-free .NET library; 20+ solvers; registry selects by instance size. Packable NuGet
+  project; not published to nuget.org.
+- **engineering-standards** — repository conventions used across delivery work.
+- **pseudo-random-guaranteed-unique** — T-SQL uniqueness without a random collision window.
+
+---
+
+## 10. Honest Skill Boundaries & Framing Notes
 
 Deliberate self-assessments and framing nuances — useful when tailoring applications so claims
 stay defensible in interviews.
@@ -253,7 +264,7 @@ stay defensible in interviews.
 
 ---
 
-## 10. Availability
+## 11. Availability
 
 - **Notice period:** immediate.
 - **Open to:** permanent or contract opportunities.
@@ -265,7 +276,7 @@ stay defensible in interviews.
 
 ---
 
-## 11. Links
+## 12. Links
 
 - **LinkedIn:** https://www.linkedin.com/in/richardvzyl
 - **GitHub:** https://github.com/RichardvZyl

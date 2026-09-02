@@ -7,7 +7,7 @@
 > writing code, reviewing designs, or reasoning about his systems.
 >
 > _Public, non-proprietary. No client data, credentials, or private project internals._
-> _Last updated: 2026-07-27._
+> _Last updated: 2026-09-02._
 
 ---
 ## 1. Who I'm assisting
@@ -59,7 +59,7 @@ Tables and tight bullets are the preferred shape here — they hold many angles 
 
 | Layer | Tools / versions |
 |---|---|
-| Language | **C# .NET**, T-SQL; some TypeScript/Node |
+| Language | **C# .NET** (6 through current), T-SQL; some TypeScript/Node |
 | Data | **SQL Server / Azure SQL** (primary), **PostgreSQL**, Redis, MongoDB |
 | ORM / access | **Entity Framework Core**; a custom repository / unit-of-work / specification SDK (private) |
 | Patterns | DDD, CQRS, Event-Driven Architecture, SAGA, Clean Architecture, Result types |

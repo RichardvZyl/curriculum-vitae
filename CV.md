@@ -70,8 +70,9 @@ Architect (UML), Swagger, Postman, SSRS; Angular, Angular Material; Agile, Scrum
 - **Sustained deposit volumes in excess of €10M on peak trading days**, absorbing both steady
   casino throughput and large spikes during live sporting events — transaction volumes that
   exceeded those of conventional banking workloads.
-- **Eliminated double-spend race conditions** under heavy contention by designing idempotent,
-  exactly-once withdrawal processing with rowversion-based optimistic concurrency on the ledger.
+- **Eliminated double-spend race conditions** under heavy contention by designing
+  idempotent attempt records keyed to a unique identifier, with rowversion-based optimistic
+  concurrency on the ledger — exactly-once withdrawal processing under contention.
 - **Designed the deployed shape of that ledger:** four health-checked Docker instances behind a
   load balancer, a single SQL source of truth with replicas used only for reporting, a
   transactional outbox drained to per-brand queues with dead-lettering, and match-day shedding of
@@ -143,11 +144,12 @@ strategy, and concurrency design, working in close partnership with the Enterpri
   method onto RabbitMQ and a separate long-running consumer rather than blocking the request path.
   Cloudflare sat in front; voucher traffic was also rate-limited in-app because a valid session at
   the operator proxy could still hammer the ledger — we had watched that happen.
-- **Concurrency & ledger integrity:** Designed exactly-once, idempotent withdrawal processing to
-  prevent double spends. Each request created an attempt record keyed to a unique identifier; on
-  confirmation that identifier drove the ledger deduction, guarded by a rowversion (SQL timestamp)
-  optimistic-concurrency check so updates only succeeded if the row was unchanged since read.
-  Supported both back-office-reviewed and automated "auto-cash-in" approval flows.
+- **Concurrency & ledger integrity:** Designed idempotent withdrawal processing under contention:
+  each request creates an attempt record keyed to a unique identifier; on confirmation that
+  identifier drives the ledger deduction, guarded by a rowversion (SQL timestamp) optimistic-
+  concurrency check so updates only succeed if the row is unchanged since read — exactly-once
+  behaviour for the debit. Supported both back-office-reviewed and automated "auto-cash-in"
+  approval flows.
 - **Request path (withdrawal):** REST initiation → input validation → configured strategy rules
   (FICA / playthrough / AML as required by brand and method, executed via an integration adapter)
   → attempt record keyed by a unique trace id (the idempotency key) → confirmation drives the
@@ -160,8 +162,9 @@ strategy, and concurrency design, working in close partnership with the Enterpri
   announcing it land together and nothing scans business tables to find work. Drained to per-brand
   queues with dead-lettering, so segregation held to the messaging layer and no brand backlog
   could stall another.
-- **Performance & storage strategy:** Applied in-memory tables with non-sequential keys and tuned
-  fill factors on high-contention paths, and implemented tiered partitioning with progressive
+- **Performance & storage strategy:** Applied in-memory (memory-optimised) tables with
+  non-sequential keys on high-contention paths. Tuned fill factors separately to reduce
+  last-page insert contention on hot indexes. Implemented tiered partitioning with progressive
   cold-archiving (detaching yearly partitions into separate databases on colder servers) to meet
   multi-year regulatory retention while keeping hot ledger tables performant.
 - **Resilience:** Used exponential backoff with retries, circuit breakers, and dead-letter queues
@@ -309,7 +312,7 @@ Bankserv (now PayInc), Standard Bank, Nedbank, PSG Wealth, Libstar Holdings, Tra
   permutation (TSP), subset selection (knapsack) and constraint assignment (graph colouring).
   Exact (Held-Karp, DP, branch-and-bound), construction, improvement (2-opt, Lin-Kernighan) and
   metaheuristics (simulated annealing, genetic algorithm, ILS). A solver registry recommends by
-  instance size so O(n!) is never the plan.
+  instance size so O(n!) is never the plan. Packable as NuGet; not published to nuget.org.
 - **engineering-standards** — repository conventions used across delivery work.
 - **pseudo-random-guaranteed-unique** — T-SQL uniqueness without a random collision window.
 

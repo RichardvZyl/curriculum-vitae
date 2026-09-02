@@ -8,7 +8,7 @@
 > Commercial work is described at a high, non-confidential level in [`CV.md`](./CV.md) and
 > [`SKILLSMATRIX.md`](./SKILLSMATRIX.md).
 >
-> _Last updated: 2026-08-31._
+> _Last updated: 2026-09-02._
 
 ---
 
@@ -28,6 +28,7 @@ Highlights:
   all applicable solvers at a given size.
 - Shared metaheuristic base classes (Simulated Annealing / Genetic Algorithm / ILS).
 - Zero third-party dependencies in the library.
+- The library project is **packable as NuGet**; it is **not** published to nuget.org.
 - Solvers span Brute Force and Held–Karp (exact) through nearest-neighbour,
   2-opt/Or-opt improvement, and metaheuristics — a tour of the accuracy vs. runtime
   trade-off space.
@@ -50,10 +51,17 @@ applied to code applied to the rules about code.
 
 A pseudo-random, **guaranteed-unique** encrypted code generator for SQL Server and PostgreSQL —
 collision-free *by construction* via a keyed Feistel permutation, rather than by retry-on-collision.
+Public for evaluation; proprietary licensing.
 
 Demonstrates: reaching for a correctness guarantee from the structure of the algorithm instead of
 defending against collisions at runtime — the same instinct behind the idempotency and
 concurrency work described in `CV.md`.
+
+### RichardvZyl.github.io
+**Repo:** https://github.com/RichardvZyl/RichardvZyl.github.io · **Stack:** HTML, CSS, JS
+
+Personal site — positioning, problems solved, capabilities, credentials, approach, ventures and
+contact. GitHub Pages at https://richardvzyl.github.io/.
 
 ### curriculum-vitae *(this repo)*
 **Repo:** https://github.com/RichardvZyl/curriculum-vitae
@@ -67,7 +75,7 @@ cover-letter generation, and interview prep without re-deriving context.
 ## Archived / historical
 
 Kept public for continuity, but **not representative of current work** — they predate the
-standards applied in the projects above.
+standards applied in the projects above. Do not treat these as strengths.
 
 | Repo | Status |
 |---|---|
