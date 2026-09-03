@@ -101,6 +101,7 @@ performance tuning and a full project-by-project breakdown per employer.
 | Swagger | 9 |
 | Enterprise Architect (UML) | 8 |
 | Azure CI/CD | 7 |
+| Pipeline-as-code (Azure DevOps YAML) | 6 |
 | Docker | 7 |
 | Telerik | 6 |
 | Message Queues (Azure Service Bus / RabbitMQ) | 6 |

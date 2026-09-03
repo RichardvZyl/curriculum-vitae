@@ -66,9 +66,10 @@ migrations to designing the financial engine that replaced a legacy banking plat
   FluentValidation, AutoMapper, Polly; SQL / T-SQL; TypeScript, JavaScript, Node.js.
 - **Messaging & Integration:** Azure Service Bus, RabbitMQ, API Gateway (Azure API Management),
   SignalR / WebSockets, REST, gRPC, SOAP, GraphQL.
-- **Cloud, DevOps & Observability:** Microsoft Azure, Azure DevOps, Docker, AKS / Kubernetes,
-  Azure CI/CD, GitHub, Trunk-based & GitFlow branching, Feature Flags, Azure Monitor /
-  Application Insights / Log Analytics, Elastic Stack (ELK) / Serilog.
+- **Cloud, DevOps & Observability:** Microsoft Azure, Azure DevOps, **Azure DevOps YAML pipelines
+  (pipeline-as-code)**, Docker on Azure hosts, AKS / Kubernetes, Azure CI/CD, GitHub, Trunk-based &
+  GitFlow branching, Feature Flags, Azure Monitor / Application Insights / Log Analytics, Elastic
+  Stack (ELK) / Serilog.
 - **Security & Compliance:** OAuth2 / OpenID Connect / JWT, Role-Based Access Control (RBAC),
   Maker-Checker workflows, Entitlement Management, KYC / AML domains, SOX-aligned data
   segregation, data-protection-aware design (POPIA / GDPR).
@@ -154,6 +155,7 @@ the notes in §10. Full detail lives in `SKILLSMATRIX.md`._
 | Visual Studio / GitHub / Azure DevOps / VS Code / Postman / Swagger | 9 |
 | Enterprise Architect (UML) | 8 |
 | Azure CI/CD | 7 |
+| Pipeline-as-code (Azure DevOps YAML) | 6 |
 | Docker | 7 |
 | Message Queues (Azure Service Bus / RabbitMQ) | 6 |
 | Azure Monitor / Log Analytics / App Insights | 5 |
@@ -248,6 +250,11 @@ stay defensible in interviews.
   containerisation concepts and high-level AKS (deployments, scaling), would rely on operational
   support for deep cluster ops. Choose whichever framing matches the audience, but keep it
   consistent within a single application.
+- **Infrastructure as Code:** the declarative infrastructure work is **Azure DevOps YAML
+  pipelines**, used across most roles, and **Docker on Azure hosts** for deployment — heaviest at
+  Dotcom, Payteq and MeterMo, lighter and more intermittent at Raging River. Has **not** used
+  **Terraform, Bicep or ARM templates** in anger. If a role leads on provisioning cloud resources
+  as code, treat that as ramp-up rather than a strength.
 - **Go (GoLang):** no production experience; willing to upskill.
 - **Java:** ~college-level / ~2 years exposure.
 - **Reason for leaving Raging River Trading:** concluded via **voluntary severance during a

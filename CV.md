@@ -44,9 +44,10 @@ FluentValidation, AutoMapper, Polly; SQL / T-SQL; TypeScript, JavaScript, Node.j
 **Messaging & Integration** — Azure Service Bus, RabbitMQ, API Gateway (Azure API Management),
 SignalR / WebSockets.
 
-**Cloud, DevOps & Observability** — Microsoft Azure, Azure DevOps, Docker, AKS / Kubernetes, Azure
-CI/CD, GitHub, Trunk-based & GitFlow branching, Feature Flags, Azure Monitor / Application Insights
-/ Log Analytics, Elastic Stack (ELK) / Serilog.
+**Cloud, DevOps & Observability** — Microsoft Azure, Azure DevOps, **Azure DevOps YAML pipelines
+(pipeline-as-code)**, Docker on Azure hosts, AKS / Kubernetes, Azure CI/CD, GitHub, Trunk-based &
+GitFlow branching, Feature Flags, Azure Monitor / Application Insights / Log Analytics, Elastic
+Stack (ELK) / Serilog.
 
 **Security & Compliance** — OAuth2 / OpenID Connect / JWT, Role-Based Access Control (RBAC), KYC /
 AML domains, SOX-aligned data segregation, data-protection-aware design (POPIA / GDPR).
