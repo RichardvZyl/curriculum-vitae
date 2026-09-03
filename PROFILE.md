@@ -68,8 +68,10 @@ migrations to designing the financial engine that replaced a legacy banking plat
   SignalR / WebSockets, REST, gRPC, SOAP, GraphQL.
 - **Cloud, DevOps & Observability:** Microsoft Azure, Azure DevOps, **Azure DevOps YAML pipelines
   (pipeline-as-code)**, Docker on Azure hosts, AKS / Kubernetes, Azure CI/CD, GitHub, Trunk-based &
-  GitFlow branching, Feature Flags, Azure Monitor / Application Insights / Log Analytics, Elastic
-  Stack (ELK) / Serilog.
+  GitFlow branching, Feature Flags. Observability: **New Relic** (release tracking through the
+  DevOps pipeline, key transactions, alerting into MS Teams), OpenTelemetry, Grafana, Graylog over
+  UDP, ActiveXperts, Azure Monitor / Application Insights / Log Analytics, Elastic Stack (ELK) /
+  Serilog.
 - **Security & Compliance:** OAuth2 / OpenID Connect / JWT, Role-Based Access Control (RBAC),
   Maker-Checker workflows, Entitlement Management, KYC / AML domains, SOX-aligned data
   segregation, data-protection-aware design (POPIA / GDPR).
@@ -255,6 +257,10 @@ stay defensible in interviews.
   Dotcom, Payteq and MeterMo, lighter and more intermittent at Raging River. Has **not** used
   **Terraform, Bicep or ARM templates** in anger. If a role leads on provisioning cloud resources
   as code, treat that as ramp-up rather than a strength.
+- **Python:** not a working language. The production exposure is **IronPython hosted in a C#
+  backend** for integration marshalling — limited, and on a pre-v3 build, so it predates the v3
+  semantic changes and the GAC issues were still unresolved. Some current-at-the-time Python at
+  MeterMo. Treat as read-and-modify, not as a language to be hired for.
 - **Go (GoLang):** no production experience; willing to upskill.
 - **Java:** ~college-level / ~2 years exposure.
 - **Reason for leaving Raging River Trading:** concluded via **voluntary severance during a

@@ -46,7 +46,9 @@ SignalR / WebSockets.
 
 **Cloud, DevOps & Observability** — Microsoft Azure, Azure DevOps, **Azure DevOps YAML pipelines
 (pipeline-as-code)**, Docker on Azure hosts, AKS / Kubernetes, Azure CI/CD, GitHub, Trunk-based &
-GitFlow branching, Feature Flags, Azure Monitor / Application Insights / Log Analytics, Elastic
+GitFlow branching, Feature Flags. Observability: **New Relic** (release tracking wired through the
+DevOps pipeline, key-transaction instrumentation, alerting into MS Teams), OpenTelemetry, Grafana,
+Graylog over UDP, ActiveXperts, Azure Monitor / Application Insights / Log Analytics, Elastic
 Stack (ELK) / Serilog.
 
 **Security & Compliance** — OAuth2 / OpenID Connect / JWT, Role-Based Access Control (RBAC), KYC /
@@ -157,9 +159,15 @@ strategy, and concurrency design, working in close partnership with the Enterpri
   multi-year regulatory retention while keeping hot ledger tables performant.
 - **Resilience:** Used exponential backoff with retries, circuit breakers, and dead-letter queues
   to prevent thundering-herd failures, on high-availability clusters with redundant storage.
-- **Integration layer:** Contributed to the layer abstracting 150+ individual money processors,
-  routing online (callback/polling) and offline (e.g. USSD-reconciled) deposit and withdrawal
-  flows reliably.
+- **Integration platform:** Worked on the platform where integrations are managed, routed and
+  reconciled — abstracting 150+ money processors across online (callback/polling) and offline
+  (e.g. USSD-reconciled) flows — and built integrations on it. Provider payloads were reshaped to
+  the core contract by per-provider **IronPython** marshalling hosted in the .NET backend.
+  **Rewrote the engine that moves each integration into its own instance**, so a single slow or
+  chatty provider could no longer exhaust a shared thread pool or exhaust host sockets.
+- **Large-scale migration:** Moved roughly **150 million records** across a high-throughput
+  Saturday — peak trading rather than a quiet maintenance window — with **no drop in the New Relic
+  Apdex score**.
 - **Delivery & operations:** Practised trunk-based development with feature flags; defined build
   pipelines and shipped to production several times daily via automated CI/CD, with canary
   releases, health checks, and early-warning telemetry.

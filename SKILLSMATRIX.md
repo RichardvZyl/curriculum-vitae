@@ -106,6 +106,10 @@ performance tuning and a full project-by-project breakdown per employer.
 | Telerik | 6 |
 | Message Queues (Azure Service Bus / RabbitMQ) | 6 |
 | Microsoft Azure Insights | 5 |
+| New Relic (APM, release tracking, alerting) | 4 |
+| OpenTelemetry | 3 |
+| Grafana | 3 |
+| Graylog | 3 |
 | Node.js | 5 |
 | MVC | 5 |
 | Azure Monitor / Log Analytics / App Insights | 5 |
@@ -175,8 +179,13 @@ Blob Storage, Keycloak, Prometheus / Grafana / ELK._
   major brands including Betway and Jackpot City.
 - High-volume architecture: engineered the system for horizontal and vertical scalability,
   supporting major gaming brands across multiple African markets.
-- Integration layer: contributed to the layer abstracting the complexities of 150+ individual money
-  processors, ensuring seamless connectivity and reliable transaction routing.
+- Integration platform: worked on the platform where integrations are managed, routed and
+  reconciled — abstracting 150+ individual money processors — and built integrations on it.
+  Per-provider IronPython marshalling hosted in the .NET backend reshaped payloads to the core
+  contract. Rewrote the engine that moves each integration into its own instance, preventing
+  shared thread-pool and socket exhaustion.
+- Large-scale migration: moved roughly 150 million records across a high-throughput Saturday at
+  peak trading, with no drop in the New Relic Apdex score.
 
 **Project 1 — Core Financial Systems** *(Solutions Architect / Technical Lead · Team 1–4 · Backend)*
 Full-scale rewrite of a legacy banking platform into a white-label financial engine handling
