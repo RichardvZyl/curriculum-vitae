@@ -7,7 +7,7 @@
 > writing code, reviewing designs, or reasoning about his systems.
 >
 > _Public, non-proprietary. No client data, credentials, or private project internals._
-> _Last updated: 2026-09-02._
+> _Last updated: 2026-09-04._
 
 ---
 ## 1. Who I'm assisting

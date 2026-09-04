@@ -8,7 +8,7 @@
 > `AI-CONTEXT.md`; for his **open-source projects** (and a note on excluded private repos),
 > see `PROJECTS.md`.
 >
-> _Last compiled: 2026-09-02._
+> _Last compiled: 2026-09-04._
 
 ---
 
@@ -160,6 +160,10 @@ the notes in §10. Full detail lives in `SKILLSMATRIX.md`._
 | Pipeline-as-code (Azure DevOps YAML) | 6 |
 | Docker | 7 |
 | Message Queues (Azure Service Bus / RabbitMQ) | 6 |
+| New Relic (APM, release tracking, alerting) | 4 |
+| OpenTelemetry | 3 |
+| Grafana | 3 |
+| Graylog | 3 |
 | Azure Monitor / Log Analytics / App Insights | 5 |
 | Node.js | 5 |
 | API Gateway (Azure API Management) | 4 |

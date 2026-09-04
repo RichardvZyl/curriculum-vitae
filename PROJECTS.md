@@ -8,7 +8,7 @@
 > Commercial work is described at a high, non-confidential level in [`CV.md`](./CV.md) and
 > [`SKILLSMATRIX.md`](./SKILLSMATRIX.md).
 >
-> _Last updated: 2026-09-02._
+> _Last updated: 2026-09-04._
 
 ---
 
