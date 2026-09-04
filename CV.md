@@ -203,7 +203,8 @@ fintech consulting space for clients including Nedbank, Standard Bank, and PSG W
   BotFramework backend from .NET Standard to .NET 6, resolving critical breaking changes and
   package dependencies — previously attempted and rolled back by others. Live and stable in
   production since February 2022. Also handled monetization design and payment validations.
-  _(Azure SQL, BotFramework, C# .NET 6 (from .NET Standard), MediatR, Q&A Maker.)_
+  _(Azure SQL, BotFramework, C# .NET 6 (from .NET Standard), MediatR, Q&A Maker
+  (historical / retired Microsoft service).)_
 - **Angular Universal SSR (PSG Wealth):** Implemented server-side rendering to resolve a 2-year SEO
   bottleneck in one week. _(C# .NET 6, Angular, Azure SQL, BotFramework, Docker, Node.js, Umbraco
   CMS, MediatR, Bootstrap / Material.)_
