@@ -8,7 +8,7 @@
 > `AI-CONTEXT.md`; for his **open-source projects** (and a note on excluded private repos),
 > see `PROJECTS.md`.
 >
-> _Last compiled: 2026-07-08._
+> _Last compiled: 2026-09-04._
 
 ---
 
@@ -66,9 +66,12 @@ migrations to designing the financial engine that replaced a legacy banking plat
   FluentValidation, AutoMapper, Polly; SQL / T-SQL; TypeScript, JavaScript, Node.js.
 - **Messaging & Integration:** Azure Service Bus, RabbitMQ, API Gateway (Azure API Management),
   SignalR / WebSockets, REST, gRPC, SOAP, GraphQL.
-- **Cloud, DevOps & Observability:** Microsoft Azure, Azure DevOps, Docker, AKS / Kubernetes,
-  Azure CI/CD, GitHub, Trunk-based & GitFlow branching, Feature Flags, Azure Monitor /
-  Application Insights / Log Analytics, Elastic Stack (ELK) / Serilog.
+- **Cloud, DevOps & Observability:** Microsoft Azure, Azure DevOps, **Azure DevOps YAML pipelines
+  (pipeline-as-code)**, Docker on Azure hosts, AKS / Kubernetes, Azure CI/CD, GitHub, Trunk-based &
+  GitFlow branching, Feature Flags. Observability: **New Relic** (release tracking through the
+  DevOps pipeline, key transactions, alerting into MS Teams), OpenTelemetry, Grafana, Graylog over
+  UDP, ActiveXperts, Azure Monitor / Application Insights / Log Analytics, Elastic Stack (ELK) /
+  Serilog.
 - **Security & Compliance:** OAuth2 / OpenID Connect / JWT, Role-Based Access Control (RBAC),
   Maker-Checker workflows, Entitlement Management, KYC / AML domains, SOX-aligned data
   segregation, data-protection-aware design (POPIA / GDPR).
@@ -85,7 +88,7 @@ migrations to designing the financial engine that replaced a legacy banking plat
 
 _From the 2026 Expanded Technical Skills Matrix. **Years are professional only**, counted from
 April 2017 — nothing exceeds 9. Formal study began 2014. Where the CV framing and the matrix differ, see
-the notes in §9. Full detail lives in `SKILLSMATRIX.md`._
+the notes in §10. Full detail lives in `SKILLSMATRIX.md`._
 
 ### Logical Languages
 | Skill | Years (professional) |
@@ -154,8 +157,13 @@ the notes in §9. Full detail lives in `SKILLSMATRIX.md`._
 | Visual Studio / GitHub / Azure DevOps / VS Code / Postman / Swagger | 9 |
 | Enterprise Architect (UML) | 8 |
 | Azure CI/CD | 7 |
+| Pipeline-as-code (Azure DevOps YAML) | 6 |
 | Docker | 7 |
 | Message Queues (Azure Service Bus / RabbitMQ) | 6 |
+| New Relic (APM, release tracking, alerting) | 4 |
+| OpenTelemetry | 3 |
+| Grafana | 3 |
+| Graylog | 3 |
 | Azure Monitor / Log Analytics / App Insights | 5 |
 | Node.js | 5 |
 | API Gateway (Azure API Management) | 4 |
@@ -173,14 +181,15 @@ the notes in §9. Full detail lives in `SKILLSMATRIX.md`._
 
 ## 5. Selected Achievements
 
-- **Multi-tenant, white-label financial engine** serving two separate legal entities (Betway and
-  Jackpot City) from a single, configuration-driven codebase — with per-entity database isolation
-  and per-brand schema separation to satisfy SOX-aligned segregation.
+- **Multi-tenant, white-label financial engine** serving two operators (Betway and Jackpot City)
+  from one configuration-driven codebase — 2 tenants, 25 brands, 150+ payment methods. Target
+  isolation was database-per-brand; production constraint was one SQL Server with schema-per-brand
+  and request-scoped contexts, because separate databases were priced out.
 - **Sustained deposit volumes in excess of €10M on peak trading days**, absorbing steady casino
-  throughput plus large spikes during live sporting events — volumes exceeding conventional
-  banking workloads.
-- **Eliminated double-spend race conditions** under heavy contention via idempotent, exactly-once
-  withdrawal processing with rowversion-based optimistic concurrency on the ledger.
+  throughput plus large spikes during live sporting events.
+- **Eliminated double-spend race conditions** under heavy contention via idempotent attempt
+  records keyed to a unique identifier and rowversion-based optimistic concurrency on the ledger —
+  exactly-once withdrawal processing under contention.
 - **Solved problems others had abandoned:** completed a .NET 6 migration previously attempted and
   rolled back; resolved a 2-year Angular Universal SEO blocker in one week.
 - **IKM C# Assessment:** 73rd percentile of all test takers (assessed twice, six months apart).
@@ -224,7 +233,17 @@ Nedbank, PSG Wealth, Libstar Holdings, Translution.
 
 ---
 
-## 9. Honest Skill Boundaries & Framing Notes
+## 9. Open source
+
+- **CombinatorialOptimiser** — https://github.com/RichardvZyl/CombinatorialOptimiser —
+  dependency-free .NET library; 20+ solvers; registry selects by instance size. Packable NuGet
+  project; not published to nuget.org.
+- **engineering-standards** — repository conventions used across delivery work.
+- **pseudo-random-guaranteed-unique** — T-SQL uniqueness without a random collision window.
+
+---
+
+## 10. Honest Skill Boundaries & Framing Notes
 
 Deliberate self-assessments and framing nuances — useful when tailoring applications so claims
 stay defensible in interviews.
@@ -237,6 +256,15 @@ stay defensible in interviews.
   containerisation concepts and high-level AKS (deployments, scaling), would rely on operational
   support for deep cluster ops. Choose whichever framing matches the audience, but keep it
   consistent within a single application.
+- **Infrastructure as Code:** the declarative infrastructure work is **Azure DevOps YAML
+  pipelines**, used across most roles, and **Docker on Azure hosts** for deployment — heaviest at
+  Dotcom, Payteq and MeterMo, lighter and more intermittent at Raging River. Has **not** used
+  **Terraform, Bicep or ARM templates** in anger. If a role leads on provisioning cloud resources
+  as code, treat that as ramp-up rather than a strength.
+- **Python:** not a working language. The production exposure is **IronPython hosted in a C#
+  backend** for integration marshalling — limited, and on a pre-v3 build, so it predates the v3
+  semantic changes and the GAC issues were still unresolved. Some current-at-the-time Python at
+  MeterMo. Treat as read-and-modify, not as a language to be hired for.
 - **Go (GoLang):** no production experience; willing to upskill.
 - **Java:** ~college-level / ~2 years exposure.
 - **Reason for leaving Raging River Trading:** concluded via **voluntary severance during a
@@ -246,7 +274,7 @@ stay defensible in interviews.
 
 ---
 
-## 10. Availability
+## 11. Availability
 
 - **Notice period:** immediate.
 - **Open to:** permanent or contract opportunities.
@@ -258,7 +286,7 @@ stay defensible in interviews.
 
 ---
 
-## 11. Links
+## 12. Links
 
 - **LinkedIn:** https://www.linkedin.com/in/richardvzyl
 - **GitHub:** https://github.com/RichardvZyl

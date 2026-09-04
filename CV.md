@@ -44,9 +44,12 @@ FluentValidation, AutoMapper, Polly; SQL / T-SQL; TypeScript, JavaScript, Node.j
 **Messaging & Integration** — Azure Service Bus, RabbitMQ, API Gateway (Azure API Management),
 SignalR / WebSockets.
 
-**Cloud, DevOps & Observability** — Microsoft Azure, Azure DevOps, Docker, AKS / Kubernetes, Azure
-CI/CD, GitHub, Trunk-based & GitFlow branching, Feature Flags, Azure Monitor / Application Insights
-/ Log Analytics, Elastic Stack (ELK) / Serilog.
+**Cloud, DevOps & Observability** — Microsoft Azure, Azure DevOps, **Azure DevOps YAML pipelines
+(pipeline-as-code)**, Docker on Azure hosts, AKS / Kubernetes, Azure CI/CD, GitHub, Trunk-based &
+GitFlow branching, Feature Flags. Observability: **New Relic** (release tracking wired through the
+DevOps pipeline, key-transaction instrumentation, alerting into MS Teams), OpenTelemetry, Grafana,
+Graylog over UDP, ActiveXperts, Azure Monitor / Application Insights / Log Analytics, Elastic
+Stack (ELK) / Serilog.
 
 **Security & Compliance** — OAuth2 / OpenID Connect / JWT, Role-Based Access Control (RBAC), KYC /
 AML domains, SOX-aligned data segregation, data-protection-aware design (POPIA / GDPR).
@@ -63,14 +66,15 @@ Architect (UML), Swagger, Postman, SSRS; Angular, Angular Material; Agile, Scrum
 
 ## Selected Achievements
 
-- **Architected a multi-tenant, white-label financial engine** serving two separate legal entities
-  (Betway and Jackpot City) from a single, configuration-driven codebase — with per-entity database
-  isolation and per-brand schema separation to satisfy SOX-aligned segregation.
+- **Architected a multi-tenant, white-label financial engine** serving two operators (Betway and
+  Jackpot City) from one configuration-driven codebase — 2 tenants, 25 brands, 150+ payment
+  methods. Target isolation was database-per-brand; production constraint was one SQL Server with
+  schema-per-brand and request-scoped contexts, because separate databases were priced out.
 - **Sustained deposit volumes in excess of €10M on peak trading days**, absorbing both steady
-  casino throughput and large spikes during live sporting events — transaction volumes that
-  exceeded those of conventional banking workloads.
-- **Eliminated double-spend race conditions** under heavy contention by designing idempotent,
-  exactly-once withdrawal processing with rowversion-based optimistic concurrency on the ledger.
+  casino throughput and large spikes during live sporting events.
+- **Eliminated double-spend race conditions** under heavy contention by designing
+  idempotent attempt records keyed to a unique identifier, with rowversion-based optimistic
+  concurrency on the ledger — exactly-once withdrawal processing under contention.
 - **Solved problems others had abandoned:** completed a .NET 6 migration that had been attempted
   and rolled back by previous developers, and resolved a 2-year Angular Universal SEO blocker in
   one week.
@@ -127,26 +131,43 @@ strategy, and concurrency design, working in close partnership with the Enterpri
   shape and a single migration path instead of 25 divergent ones. Per-brand context instances with
   capped pools, bound to the request by an edge auth filter resolving API key to brand; contexts
   scoped per request and never shared, so isolation followed the request scope.
-- **Concurrency & ledger integrity:** Designed exactly-once, idempotent withdrawal processing to
-  prevent double spends. Each request created an attempt record keyed to a unique identifier; on
-  confirmation that identifier drove the ledger deduction, guarded by a rowversion (SQL timestamp)
-  optimistic-concurrency check so updates only succeeded if the row was unchanged since read.
-  Supported both back-office-reviewed and automated "auto-cash-in" approval flows.
+- **Ledger access boundary:** An orchestration API in front of a locked-down data-access API —
+  only orchestration could mutate the ledger — with brand resolved from an API key at an edge
+  filter, so no caller could reach another brand's data by construction.
+- **Concurrency & ledger integrity:** Designed idempotent withdrawal processing under contention:
+  each request creates an attempt record keyed to a unique identifier; on confirmation that
+  identifier drives the ledger deduction, guarded by a rowversion (SQL timestamp) optimistic-
+  concurrency check so updates only succeed if the row is unchanged since read — exactly-once
+  behaviour for the debit. Supported both back-office-reviewed and automated "auto-cash-in"
+  approval flows.
+- **Request path (withdrawal):** REST initiation → input validation → configured strategy rules
+  (FICA / playthrough / AML as required by brand and method, executed via an integration adapter)
+  → attempt record keyed by a unique trace id (the idempotency key) → confirmation drives the
+  ledger debit under `rowversion` → state change and outbox message commit in the same
+  `SaveChangesAsync` → consumers drain; poison goes to a DLQ. A retry of the same trace id is the
+  same attempt.
 - **Work discovery & delivery:** Replaced chronological state-polling — contention by design, and
   liable to miss a row that commits after the scan has passed its timestamp — with a
   **transactional outbox committed inside `SaveChangesAsync`**, so a state change and the message
   announcing it land together and nothing scans business tables to find work. Drained to per-brand
   queues with dead-lettering, so segregation held to the messaging layer and no brand backlog
   could stall another.
-- **Performance & storage strategy:** Applied in-memory tables with non-sequential keys and tuned
-  fill factors on high-contention paths, and implemented tiered partitioning with progressive
+- **Performance & storage strategy:** Applied in-memory (memory-optimised) tables with
+  non-sequential keys on high-contention paths. Tuned fill factors separately to reduce
+  last-page insert contention on hot indexes. Implemented tiered partitioning with progressive
   cold-archiving (detaching yearly partitions into separate databases on colder servers) to meet
   multi-year regulatory retention while keeping hot ledger tables performant.
 - **Resilience:** Used exponential backoff with retries, circuit breakers, and dead-letter queues
   to prevent thundering-herd failures, on high-availability clusters with redundant storage.
-- **Integration layer:** Contributed to the layer abstracting 150+ individual money processors,
-  routing online (callback/polling) and offline (e.g. USSD-reconciled) deposit and withdrawal
-  flows reliably.
+- **Integration platform:** Worked on the platform where integrations are managed, routed and
+  reconciled — abstracting 150+ money processors across online (callback/polling) and offline
+  (e.g. USSD-reconciled) flows — and built integrations on it. Provider payloads were reshaped to
+  the core contract by per-provider **IronPython** marshalling hosted in the .NET backend.
+  **Rewrote the engine that moves each integration into its own instance**, so a single slow or
+  chatty provider could no longer exhaust a shared thread pool or exhaust host sockets.
+- **Large-scale migration:** Moved roughly **150 million records** across a high-throughput
+  Saturday — peak trading rather than a quiet maintenance window — with **no drop in the New Relic
+  Apdex score**.
 - **Delivery & operations:** Practised trunk-based development with feature flags; defined build
   pipelines and shipped to production several times daily via automated CI/CD, with canary
   releases, health checks, and early-warning telemetry.
@@ -165,12 +186,12 @@ _Role concluded via voluntary severance during a post-acquisition restructure._
 **MeterMo** · Utilities / Automated Metering · Apr 2022 – Dec 2022
 
 Platform development and modernisation across an automated utility-metering estate — electricity,
-water and gas usage capture and reporting.
+water and gas usage capture and reporting from field devices. Two APIs, two cross-platform field
+apps (Xamarin, Cordova) and two websites. Device telemetry and usage integrity: readings that must
+arrive, persist, and not be double-counted.
 
 - Migrated six projects from Team Foundation Server to Azure DevOps.
 - Upgraded projects to current frameworks and package versions.
-- Maintained and supported two APIs, two cross-platform applications (Xamarin, Cordova) and two
-  websites (ASP.NET, Angular).
 
 ### Software Developer (Specialist Problem-Solver)
 **Dotcom Software Solutions** · Fintech consulting · Jan 2022 – Apr 2022
@@ -182,7 +203,8 @@ fintech consulting space for clients including Nedbank, Standard Bank, and PSG W
   BotFramework backend from .NET Standard to .NET 6, resolving critical breaking changes and
   package dependencies — previously attempted and rolled back by others. Live and stable in
   production since February 2022. Also handled monetization design and payment validations.
-  _(Azure SQL, BotFramework, C# .NET 6 (from .NET Standard), MediatR, Q&A Maker.)_
+  _(Azure SQL, BotFramework, C# .NET 6 (from .NET Standard), MediatR, Q&A Maker
+  (historical / retired Microsoft service).)_
 - **Angular Universal SSR (PSG Wealth):** Implemented server-side rendering to resolve a 2-year SEO
   bottleneck in one week. _(C# .NET 6, Angular, Azure SQL, BotFramework, Docker, Node.js, Umbraco
   CMS, MediatR, Bootstrap / Material.)_
@@ -278,6 +300,18 @@ moving, ahead of it becoming standard practice.
 ## Notable Clients Engaged (Across Consulting Roles)
 
 Bankserv (now PayInc), Standard Bank, Nedbank, PSG Wealth, Libstar Holdings, Translution.
+
+---
+
+## Open source
+
+- **CombinatorialOptimiser** — https://github.com/RichardvZyl/CombinatorialOptimiser —
+  permutation (TSP), subset selection (knapsack) and constraint assignment (graph colouring).
+  Exact (Held-Karp, DP, branch-and-bound), construction, improvement (2-opt, Lin-Kernighan) and
+  metaheuristics (simulated annealing, genetic algorithm, ILS). A solver registry recommends by
+  instance size so O(n!) is never the plan. Packable as NuGet; not published to nuget.org.
+- **engineering-standards** — repository conventions used across delivery work.
+- **pseudo-random-guaranteed-unique** — T-SQL uniqueness without a random collision window.
 
 ---
 

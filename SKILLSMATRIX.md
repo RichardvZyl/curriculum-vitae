@@ -101,10 +101,15 @@ performance tuning and a full project-by-project breakdown per employer.
 | Swagger | 9 |
 | Enterprise Architect (UML) | 8 |
 | Azure CI/CD | 7 |
+| Pipeline-as-code (Azure DevOps YAML) | 6 |
 | Docker | 7 |
 | Telerik | 6 |
 | Message Queues (Azure Service Bus / RabbitMQ) | 6 |
 | Microsoft Azure Insights | 5 |
+| New Relic (APM, release tracking, alerting) | 4 |
+| OpenTelemetry | 3 |
+| Grafana | 3 |
+| Graylog | 3 |
 | Node.js | 5 |
 | MVC | 5 |
 | Azure Monitor / Log Analytics / App Insights | 5 |
@@ -142,9 +147,27 @@ systems integrating 150+ money processors across multiple African markets.
 
 ## Employment & Project Profiles
 
+### Yuno Technologies
+- **Industry:** Digital consultancy
+- **Job title:** Co-owner / Solutions Architect
+- **Period:** Apr 2026 – present
+- **Consulting clients:** Yes (client names held private)
+
+**Overall duties:**
+- Half-owner of a South African digital consultancy; leads technical delivery — architecture,
+  backend engineering and security design across client platforms.
+- Four-plane deployment topology with one-way initiation; BFF holding session rather than tokens;
+  response-only identity plane on Keycloak; inter-plane trust specified (mTLS / SPIFFE/SPIRE as
+  phase two behind a documented interim).
+- Ledger-plane isolation under evaluation: KVM-backed microVM separation so a container escape in
+  an adjacent workload cannot reach the ledger.
+- Containerised platforms across four environments; ADRs with formal supersession.
+_Tech: .NET, Vite / React, PostgreSQL, Redis, RabbitMQ, gRPC, Django / DRF, Azure Functions,
+Blob Storage, Keycloak, Prometheus / Grafana / ELK._
+
 ### Raging River Trading (Pty) Ltd
-- **Industry:** Fintech / Financial Technology
-- **Job title:** Technical Lead / Solutions Architect — Core Financial Systems
+- **Industry:** Fintech / Gaming
+- **Job title:** Solutions Architect / Technical Lead — Core Financial Systems
   *(payroll title: Software Developer)*
 - **Period:** Dec 2022 – Mar 2026
 - **Consulting clients:** No
@@ -156,52 +179,62 @@ systems integrating 150+ money processors across multiple African markets.
   major brands including Betway and Jackpot City.
 - High-volume architecture: engineered the system for horizontal and vertical scalability,
   supporting major gaming brands across multiple African markets.
-- Integration layer: contributed to the layer abstracting the complexities of 150+ individual money
-  processors, ensuring seamless connectivity and reliable transaction routing.
+- Integration platform: worked on the platform where integrations are managed, routed and
+  reconciled — abstracting 150+ individual money processors — and built integrations on it.
+  Per-provider IronPython marshalling hosted in the .NET backend reshaped payloads to the core
+  contract. Rewrote the engine that moves each integration into its own instance, preventing
+  shared thread-pool and socket exhaustion.
+- Large-scale migration: moved roughly 150 million records across a high-throughput Saturday at
+  peak trading, with no drop in the New Relic Apdex score.
 
-**Project 1 — Core Financial Systems** *(Software Developer / Architect · Team 1–4 · Backend)*
+**Project 1 — Core Financial Systems** *(Solutions Architect / Technical Lead · Team 1–4 · Backend)*
 Full-scale rewrite of a legacy banking platform into a white-label financial engine handling
 deposits & withdrawals for multiple brands across Africa. Architected for horizontal scalability
 with APIs that safely interact with a concurrent financial ledger during high-volume operations.
-_Tech: Azure SQL, C# .NET._
+Schema-per-brand under one SQL Server (separate databases priced out); transactional outbox to
+per-brand queues with dead-lettering.
+_Tech: Azure SQL, C# .NET, Docker, RabbitMQ, EF Core._
 
-**Project 2 — Integration Layer & Back-Office APIs** *(Software Developer / Architect · Team 5 · Backend)*
+**Project 2 — Integration Layer & Back-Office APIs** *(Solutions Architect / Technical Lead · Team 5 · Backend)*
 Developed the robust integration layer abstracting 150+ individual money processors. Designed and
 exposed the critical APIs allowing back-office tooling to interact safely and concurrently with the
 financial ledger, ensuring data integrity during high-volume operations. _Tech: C# .NET, Azure SQL._
 
-**Project 3 — High-Availability Architecture & Concurrency Design** *(Software Developer / Architect · Team 1 · Backend)*
+**Project 3 — High-Availability Architecture & Concurrency Design** *(Solutions Architect / Technical Lead · Team 1 · Backend)*
 Designed and implemented the high-availability architecture supporting concurrent financial
-transactions across multiple brands and markets, ensuring data integrity, system resilience, and
-reliable ledger operations at scale. _Tech: C# .NET, Azure SQL._
+transactions across multiple brands and markets — idempotent attempt records with rowversion
+optimistic concurrency on the ledger — ensuring data integrity, system resilience, and reliable
+ledger operations at scale. _Tech: C# .NET, Azure SQL._
 
 ### MeterMo
 - **Industry:** Utilities — automated electricity, water and gas usage metering & reporting · **Consulting clients:** No
 - **Job title:** Software Developer · **Period:** Apr 2022 – Dec 2022
 - **Reason for leaving:** Mandate complete; sole developer — sought a larger engineering team with scope to learn and grow.
 
-**Duties:** Platform development and modernisation across an automated utility-metering estate
-(electricity, water and gas usage capture and reporting). Migrated six projects from Team
-Foundation Server to Azure DevOps; upgraded projects to current frameworks and package versions;
-maintenance and support across two APIs, two cross-platform applications (Xamarin, Cordova) and
-two websites (ASP.NET, Angular).
+**Duties:** Platform development and modernisation across an automated utility-metering estate —
+electricity, water and gas usage capture and reporting from field devices. Two APIs, two
+cross-platform field apps (Xamarin, Cordova) and two websites. Device telemetry and usage
+integrity: readings that must arrive, persist, and not be double-counted. Migrated six projects
+from Team Foundation Server to Azure DevOps; upgraded projects to current frameworks and package
+versions.
 _Tech: C# .NET, ASP.NET, Angular, Xamarin, Cordova, Azure DevOps, TFS._
 
 ### Dotcom Software Solutions
 - **Industry:** Consulting (Fintech) · **Consulting clients:** Yes
-- **Job title:** Software Developer · **Period:** Jan 2022 – Apr 2022
+- **Job title:** Software Developer (Specialist Problem-Solver) · **Period:** Jan 2022 – Apr 2022
 - **Reason for leaving:** No longer remote / not a culture fit
 
 **Duties:** Specialist problem-solver tackling complex development challenges other team members
 could not resolve, delivering robust full-stack solutions in the fintech consulting space for major
-clients including Nedbank and PSG Wealth. Business analysis: monetization design for Schemes Bot and
+clients including Nedbank, Standard Bank and PSG Wealth. Business analysis: monetization design for Schemes Bot and
 payment validations.
 
 **Project 1 — Schemes Bot (Standard Bank client)** *(Software Developer · Team 5 · Backend · Jan–Feb 2022)*
-Schemes (Stokvel / Chama) BotFramework backend upgrade to .NET 6, including package-dependency
-updates and breaking-change fixes. Repository history showed this had been attempted and rolled
-back; successfully completed the update — live in production with the changes/fixes. _Tech: Azure
-SQL, BotFramework, C# .NET 6 (from .NET Standard), MediatR, Q&A Maker._
+Schemes (Stokvel / Chama) BotFramework backend upgrade **to .NET 6 from .NET Standard**, including
+package-dependency updates and breaking-change fixes. Repository history showed this had been
+attempted and rolled back; successfully completed the update — live in production with the
+changes/fixes. _Tech: Azure SQL, BotFramework, C# .NET 6 (from .NET Standard), MediatR, Q&A Maker
+(historical / retired Microsoft service)._
 
 **Project 2 — PSG Wealth Website (PSG Wealth client)** *(Software Developer / Analyst / Architect · Team 6 · Backend · Feb–Mar 2022)*
 Implemented Angular Universal for server-side rendering for SEO — Dotcom had struggled with this for
