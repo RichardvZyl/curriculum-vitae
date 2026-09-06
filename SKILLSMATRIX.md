@@ -211,12 +211,10 @@ ledger operations at scale. _Tech: C# .NET, Azure SQL._
 - **Job title:** Software Developer · **Period:** Apr 2022 – Dec 2022
 - **Reason for leaving:** Mandate complete; sole developer — sought a larger engineering team with scope to learn and grow.
 
-**Duties:** Platform development and modernisation across an automated utility-metering estate —
-electricity, water and gas usage capture and reporting from field devices. Two APIs, two
-cross-platform field apps (Xamarin, Cordova) and two websites. Device telemetry and usage
-integrity: readings that must arrive, persist, and not be double-counted. Migrated six projects
-from Team Foundation Server to Azure DevOps; upgraded projects to current frameworks and package
-versions.
+**Duties:** Platform modernisation and maintenance across an automated utility-metering estate —
+electricity, water and gas usage capture and reporting. Migrated six projects from Team Foundation
+Server to Azure DevOps and upgraded them to current frameworks and package versions; maintained
+two APIs, two cross-platform field apps (Xamarin, Cordova) and two websites.
 _Tech: C# .NET, ASP.NET, Angular, Xamarin, Cordova, Azure DevOps, TFS._
 
 ### Dotcom Software Solutions

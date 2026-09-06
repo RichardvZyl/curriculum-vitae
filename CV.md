@@ -185,10 +185,9 @@ _Role concluded via voluntary severance during a post-acquisition restructure._
 ### Software Developer
 **MeterMo** · Utilities / Automated Metering · Apr 2022 – Dec 2022
 
-Platform development and modernisation across an automated utility-metering estate — electricity,
-water and gas usage capture and reporting from field devices. Two APIs, two cross-platform field
-apps (Xamarin, Cordova) and two websites. Device telemetry and usage integrity: readings that must
-arrive, persist, and not be double-counted.
+Platform modernisation and maintenance across an automated utility-metering estate — electricity,
+water and gas usage capture and reporting. Platform debt is a tax on every feature that comes after
+it; this cleared it.
 
 - Migrated six projects from Team Foundation Server to Azure DevOps.
 - Upgraded projects to current frameworks and package versions.
