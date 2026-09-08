@@ -1,0 +1,47 @@
+name: CI
+
+on:
+  push:
+    branches: [master]
+  pull_request:
+    branches: [master]
+
+permissions:
+  contents: read
+
+jobs:
+  docs:
+    name: Required markdown files
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Verify required markdown files exist and are non-empty
+        run: |
+          set -euo pipefail
+          files=(
+            CV.md
+            PROFILE.md
+            SKILLSMATRIX.md
+            AI-CONTEXT.md
+            README.md
+          )
+          failed=0
+          for f in "${files[@]}"; do
+            if [[ ! -f "$f" ]]; then
+              echo "::error file=$f::Required file is missing"
+              failed=1
+              continue
+            fi
+            if ! grep -q '[^[:space:]]' "$f"; then
+              echo "::error file=$f::Required file is empty"
+              failed=1
+              continue
+            fi
+            echo "OK  $f  ($(wc -c < "$f" | tr -d ' ') bytes)"
+          done
+          if [[ "$failed" -ne 0 ]]; then
+            echo "One or more required markdown files are missing or empty."
+            exit 1
+          fi
