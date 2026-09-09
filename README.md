@@ -1,5 +1,9 @@
 # Richard van Zyl — Curriculum Vitae
 
+**[⬇ Download the CV (PDF)](https://richardvzyl.github.io/Richard-van-Zyl-CV.pdf)** ·
+[Word version](https://richardvzyl.github.io/Richard-van-Zyl-CV.docx) ·
+**[richardvzyl.github.io](https://richardvzyl.github.io/)**
+
 Human- and AI-consumable CV for a Solutions Architect / Technical Lead specialising in
 high-throughput, multi-tenant financial systems (C#/.NET, SQL Server, Azure).
 
@@ -20,7 +24,7 @@ without re-deriving context.
 | [`SKILLSMATRIX.md`](./SKILLSMATRIX.md) | Full 2026 skills matrix with years of experience, a SQL performance-tuning deep-dive, and a project-by-project breakdown per employer. |
 | [`AI-CONTEXT.md`](./AI-CONTEXT.md) | **For AI assistants.** How to work with Richard on engineering tasks — stack, coding & database standards, architectural defaults, and a self-update rule. |
 | [`PROJECTS.md`](./PROJECTS.md) | Open-source portfolio, with an explicit note that additional **private** repos/packages exist and are excluded. |
-| [`LICENSE`](./LICENSE) | CC BY-NC-ND 4.0 — share for evaluation; do not republish as your own. |
+| [`LICENSE`](./LICENSE) | All rights reserved — read for evaluation; do not republish as your own. |
 
 ## Contact
 
