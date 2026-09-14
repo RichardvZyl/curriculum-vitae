@@ -118,8 +118,8 @@ A human-readable skills summary for hiring conversations. For the full dense mat
 Keep these framing notes when matching roles — they are deliberate, not soft-pedalling.
 
 - **No AWS experience.** Cloud depth is **Microsoft Azure**. Do not map skills to “AWS equivalents.”
-- **Infrastructure as Code:** declarative work is **Azure DevOps YAML pipelines** (pipeline-as-code) and **Docker on Azure hosts** — not Terraform, Bicep, or ARM templates in anger. Roles that lead on cloud resource provisioning as code are ramp-up, not a strength.
-- **Python:** not a hire-for language. Production exposure is **IronPython hosted in a C# backend** for integration marshalling (pre-v3), plus limited contemporaneous Python at MeterMo. Treat as read-and-modify.
+- **Infrastructure as Code:** declarative work is **Azure DevOps YAML pipelines** (pipeline-as-code) and **Docker on Azure hosts** — not Terraform, Bicep, or ARM templates in anger. Roles that lead on cloud resource provisioning as code need ramp-up; that is not a current strength.
+- **Python:** not a language to hire for. Production exposure is **IronPython hosted in a C# backend** for integration marshalling (pre-v3), plus limited contemporaneous Python at MeterMo. Treat as read-and-modify.
 - **Front-end:** not primary. Angular up to v8 and TypeScript are on the record, but front-end skills are not actively maintained; deep front-end leadership would need ramp-up.
 - **Docker / Kubernetes:** comfortable with containerisation and high-level AKS (deployments, scaling); deep hands-on cluster ops is limited — would rely on operational support for that layer.
 - **ActiveXperts:** used in production observability prose; not given a years row here (no invented span).
