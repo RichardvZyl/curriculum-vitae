@@ -1,8 +1,7 @@
 # Richard van Zyl — Curriculum Vitae
 
-**[⬇ Download the CV (PDF)](https://richardvzyl.github.io/Richard-van-Zyl-CV.pdf)** ·
-[Word version](https://richardvzyl.github.io/Richard-van-Zyl-CV.docx) ·
-**[richardvzyl.github.io](https://richardvzyl.github.io/)**
+**[richardvzyl.github.io](https://richardvzyl.github.io/)** — personal site (PDF/DOCX downloads
+are not published there yet; use the markdown sources in this repo).
 
 Human- and AI-consumable CV for a Solutions Architect / Technical Lead specialising in
 high-throughput, multi-tenant financial systems (C#/.NET, SQL Server, Azure).

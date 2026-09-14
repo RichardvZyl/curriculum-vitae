@@ -213,8 +213,9 @@ ledger operations at scale. _Tech: C# .NET, Azure SQL._
 
 **Duties:** Platform modernisation and maintenance across an automated utility-metering estate —
 electricity, water and gas usage capture and reporting. Migrated six projects from Team Foundation
-Server to Azure DevOps and upgraded them to current frameworks and package versions; maintained
-two APIs, two cross-platform field apps (Xamarin, Cordova) and two websites.
+Server to Azure DevOps and brought them up to current frameworks and package versions; maintained
+two APIs, two cross-platform field apps (Xamarin, Cordova) and two websites. Platform debt is a tax
+on every feature that comes after it; this cleared it.
 _Tech: C# .NET, ASP.NET, Angular, Xamarin, Cordova, Azure DevOps, TFS._
 
 ### Dotcom Software Solutions
