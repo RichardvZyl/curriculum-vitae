@@ -1,7 +1,7 @@
 # Richard van Zyl — Curriculum Vitae
 
-**[⬇ Download the CV (PDF)](https://github.com/RichardvZyl/curriculum-vitae/releases/download/cv-downloads-2026-09-14/Richard-van-Zyl-CV.pdf)** ·
-[Word version](https://github.com/RichardvZyl/curriculum-vitae/releases/download/cv-downloads-2026-09-14/Richard-van-Zyl-CV.docx) ·
+**[⬇ CV (PDF)](https://github.com/RichardvZyl/curriculum-vitae/releases/download/cv-downloads-2026-09-14/Richard-van-Zyl-CV.pdf)** ·
+**[Skills overview (PDF)](https://github.com/RichardvZyl/curriculum-vitae/releases/download/cv-downloads-2026-09-14/Richard-van-Zyl-Skills-Overview.pdf)** ·
 **[richardvzyl.github.io](https://richardvzyl.github.io/)**
 
 Human- and AI-consumable CV for a Solutions Architect / Technical Lead specialising in
@@ -21,6 +21,7 @@ without re-deriving context.
 |---|---|
 | [`PROFILE.md`](./PROFILE.md) | **Start here.** Structured profile and AI context — snapshot, summary, skills matrix, achievements, experience overview, honest skill boundaries. |
 | [`CV.md`](./CV.md) | The CV in narrative form (summary, competencies, achievements, full role history, open source, education). |
+| [`SKILLS-OVERVIEW.md`](./SKILLS-OVERVIEW.md) | Human-readable skills summary (at-a-glance, grouped years, honest boundaries) — source for the Skills Overview PDF. |
 | [`SKILLSMATRIX.md`](./SKILLSMATRIX.md) | Full 2026 skills matrix with years of experience, a SQL performance-tuning deep-dive, and a project-by-project breakdown per employer. |
 | [`AI-CONTEXT.md`](./AI-CONTEXT.md) | **For AI assistants.** How to work with Richard on engineering tasks — stack, coding & database standards, architectural defaults, and a self-update rule. |
 | [`PROJECTS.md`](./PROJECTS.md) | Open-source portfolio, with an explicit note that additional **private** repos/packages exist and are excluded. |
