@@ -23,8 +23,11 @@ dist/**
 
 # --- Career documents anywhere in the tree ----------------------------------
 # Belt-and-braces: these apply wherever they appear, at any depth.
+# Exception: the published CV exports under downloads/ (safe to commit).
 *.pdf
 *.docx
+!downloads/Richard-van-Zyl-CV.pdf
+!downloads/Richard-van-Zyl-CV.docx
 *.doc
 *.xlsx
 *.htm
