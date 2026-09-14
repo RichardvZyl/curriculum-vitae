@@ -32,19 +32,20 @@
 
 ## 2. Professional Summary
 
-Solutions Architect and Technical Lead with nine years across C#/.NET and SQL Server — ~5 of
-them leading teams and ~3.5 as Solutions Architect — building high-throughput, multi-tenant
-financial systems where data integrity is non-negotiable. Deep specialist in backend engineering
-and relational data: execution-plan tuning, concurrency control, partitioning, and idempotent
-transaction design for ledgers operating across African markets. Requirements and solution
-design have run through the whole of that — specifying and modelling systems as a business
-analyst since 2017, pitched to whichever audience had to sign them off.
+Solutions Architect and Technical Lead with nine years of experience across C#/.NET and SQL Server,
+including more than three years in Solutions Architecture and approximately five years leading teams.
+Experienced in designing and delivering high-throughput, multi-tenant financial systems, with deep
+expertise in backend engineering, relational data, performance optimisation, concurrency, partitioning
+and idempotent financial ledgers.
 
-Owns delivery end-to-end — from eliciting the requirement and modelling the solution, through
-concurrency and multi-tenancy strategy, to CI/CD and production telemetry — while leading teams
-and acting as the translation layer between engineering and the business. A problem solver at
-heart; languages and frameworks are treated as tools. Regularly handed the challenges others could not solve, from turning around failed legacy
-migrations to designing the financial engine that replaced a legacy banking platform.
+A Business Analyst since 2017, combining technical depth with strong requirements analysis and
+solution design. Experienced in translating complex business requirements into scalable architectures
+and delivering solutions end-to-end, from discovery and architecture through implementation and
+production optimisation.
+
+A pragmatic problem solver with experience modernising legacy platforms, resolving complex technical
+constraints and delivering a financial engine designed to replace a legacy banking platform. Languages
+and frameworks are tools; the focus is on solving the underlying problem effectively.
 
 ---
 
@@ -178,9 +179,9 @@ the notes in §10. Full detail lives in `SKILLSMATRIX.md`._
 ## 5. Selected Achievements
 
 - **Multi-tenant, white-label financial engine** serving two operators (Betway and Jackpot City)
-  from one configuration-driven codebase — 2 tenants, 25 brands, 150+ payment methods. Target
-  isolation was database-per-brand; production constraint was one SQL Server with schema-per-brand
-  and request-scoped contexts, because separate databases were priced out.
+  from one configuration-driven codebase — 2 operators, 25 brands, 150+ payment methods. Each
+  operator had its own database with schema-per-brand isolation and request-scoped contexts;
+  separate databases per brand were priced out.
 - **Sustained deposit volumes in excess of €10M on peak trading days**, absorbing steady casino
   throughput plus large spikes during live sporting events.
 - **Eliminated double-spend race conditions** under heavy contention via idempotent attempt
@@ -264,9 +265,10 @@ stay defensible in interviews.
 - **Go (GoLang):** no production experience; willing to upskill.
 - **Java:** ~college-level / ~2 years exposure.
 - **Reason for leaving Raging River Trading:** concluded via **voluntary severance during a
-  post-acquisition restructure** (Mar 2026). Keep this neutral, one-line framing on paper. The
-  fuller account — leadership departures and a shift away from the working culture, prompting a
-  deliberate early exit — is interview material, not document material.
+  post-acquisition restructure** (Mar 2026). **Do not put this on the CV, site, or PDF** — omit it
+  from public documents. If asked in interview, keep a neutral one-line framing; the fuller account
+  (leadership departures and a shift away from the working culture, prompting a deliberate early
+  exit) is interview material only.
 
 ---
 

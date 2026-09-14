@@ -156,11 +156,12 @@ systems integrating 150+ money processors across multiple African markets.
 **Overall duties:**
 - Half-owner of a South African digital consultancy; leads technical delivery — architecture,
   backend engineering and security design across client platforms.
-- Four-plane deployment topology with one-way initiation; BFF holding session rather than tokens;
-  response-only identity plane on Keycloak; inter-plane trust specified (mTLS / SPIFFE/SPIRE as
-  phase two behind a documented interim).
-- Ledger-plane isolation under evaluation: KVM-backed microVM separation so a container escape in
-  an adjacent workload cannot reach the ledger.
+- Current production: four-plane deployment topology with one-way initiation; BFF holding session
+  rather than tokens; response-only identity plane on Keycloak; containerised platform across
+  environments.
+- Phase 2 / planned: inter-plane trust via mTLS / SPIFFE/SPIRE behind a documented interim.
+- Under evaluation: ledger-plane isolation via KVM-backed microVM separation so a container escape
+  in an adjacent workload cannot reach the ledger.
 - Containerised platforms across four environments; ADRs with formal supersession.
 _Tech: .NET, Vite / React, PostgreSQL, Redis, RabbitMQ, gRPC, Django / DRF, Azure Functions,
 Blob Storage, Keycloak, Prometheus / Grafana / ELK._
@@ -171,7 +172,7 @@ Blob Storage, Keycloak, Prometheus / Grafana / ELK._
   *(payroll title: Software Developer)*
 - **Period:** Dec 2022 – Mar 2026
 - **Consulting clients:** No
-- **Reason for leaving:** Concluded via voluntary severance during a post-acquisition restructure.
+- **Reason for leaving:** Concluded via voluntary severance during a post-acquisition restructure. _(Interview context only — omit from CV/site.)_
 
 **Overall duties:**
 - Product transformation: led the full-scale rewrite of a legacy banking platform into a white-label
@@ -254,7 +255,7 @@ and automation that transformed a struggling codebase into a maintainable, scala
 C# .NET Core API, PostgreSQL, Azure CI/CD, FluentValidation, Angular, Azure Functions._
 
 **Project 2 — Veriseal** *(Software Developer / Analyst / Architect · Team 1 · Full Stack · side project, migrated whenever there was opportunity)*
-Single-handedly migrated a critical compliance platform from legacy ASP.NET to .NET Core API with
+Independently migrated a critical compliance platform from legacy ASP.NET to .NET Core API with
 Angular 8. Handled mass payments, bank-account verification, KYC, and AML checks — with meticulous
 attention to data integrity and security. _Tech: C# .NET Core (to), SQL, SSRS, Angular (to),
 ASP.NET Core (from), C# .NET Framework (from), IP microservices/integrations, FluentValidation,
