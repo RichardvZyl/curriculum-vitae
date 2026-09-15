@@ -1,23 +1,29 @@
-# Richard van Zyl — Projects & Skills Matrix (2026)
+# Richard van Zyl — Skills Matrix (2026)
 
-Expanded technical skills matrix with years of experience, followed by a deep-dive on SQL
-performance tuning and a full project-by-project breakdown per employer.
+Professional years of experience, a SQL performance deep-dive, and a project-by-project breakdown
+per employer.
 
-> **How to read the Years column.** Values are **professional years only**, counted from the
-> start of paid work in **April 2017** — so nothing exceeds **9**. Formal study began in 2014
-> (National Diploma in IT: Software Development, Varsity College, 2014–2016), during which
-> development was hands-on; those years are deliberately *not* counted here. Skills tied to a
-> specific engagement (PostgreSQL, Redis, MongoDB, Azure Functions) carry the span of that
-> engagement, not the whole career.
+> **Years column.** Professional years only, counted from paid work starting **April 2017** — nothing
+> exceeds **9**. Formal study (Varsity College, 2014–2016) is not counted. Engagement-tied skills
+> (PostgreSQL, Redis, MongoDB, Azure Functions) use that engagement’s span, not the whole career.
+
+| Section | What’s in it |
+|---|---|
+| [Skills by area](#skills-by-area) | Grouped tables, strongest first within each group |
+| [SQL performance deep-dive](#deep-dive-sql-performance-tuning) | Execution plans, indexing, locking, scale patterns |
+| [Employment & projects](#employment--projects) | Employer metadata, duties, and project cards |
 
 ---
 
-## Expanded Technical Skills Matrix
+## Skills by area
 
-### Logical Languages
-| Skill | Years (professional) |
-|---|---|
-| C#/.NET | 9 |
+Within each table, rows are ordered by years (highest first).
+
+### Languages
+
+| Skill | Yrs |
+|---|---:|
+| C# / .NET | 9 |
 | T-SQL | 9 |
 | PostgreSQL | 7 |
 | TypeScript | 5 |
@@ -27,290 +33,356 @@ performance tuning and a full project-by-project breakdown per employer.
 | Visual Basic .NET | 3 |
 | Java | 2 |
 
-### Design Languages / Data Formats
-| Skill | Years (professional) |
-|---|---|
+### Data formats
+
+| Skill | Yrs |
+|---|---:|
 | JSON | 9 |
 | XML | 8 |
 | XAML | 7 |
 | YAML | 6 |
 | HTML | 3 |
 
-### Databases
-| Skill | Years (professional) |
-|---|---|
-| Microsoft SQL Server Management Studio | 9 |
-| SQL Performance Tuning | 8 |
+### Databases & data engineering
+
+| Skill | Yrs |
+|---|---:|
+| SQL Server / SSMS | 9 |
+| SQL performance tuning | 8 |
 | Azure SQL | 7 |
 | MySQL Workbench | 6 |
 | Azure Data Studio | 6 |
+| Redis (distributed caching) | 5 |
 | SSRS | 5 |
-| Redis (Distributed Caching) | 5 |
-| NoSQL (MongoDB) | 4 |
-| Table Partitioning & Archiving | 4 |
+| MongoDB | 4 |
+| Table partitioning & archiving | 4 |
 | In-Memory OLTP | 4 |
 
-### Architecture & Design
-| Skill | Years (professional) |
-|---|---|
+### Architecture & design
+
+| Skill | Yrs |
+|---|---:|
 | Clean Architecture | 9 |
-| Microservices | 7 |
-| Event-Driven Architecture | 5 |
-| Idempotency / Exactly-Once Processing | 4 |
-
-### Business Analysis & Solution Design
-| Skill | Years (professional) |
-|---|---|
-| Business & Problem-Domain Analysis | 9 |
-| Requirements Specification (BRS / URS / FRS / TRS) | 9 |
-| Solution Design & Solution Architecture | 9 |
-| Technical Documentation (audience-tailored) | 9 |
-| Stakeholder Engagement & Translation | 8 |
-| Process & System Modelling (UML) | 8 |
-
-### Frameworks, Libraries & Methodologies
-| Skill | Years (professional) |
-|---|---|
-| Entity Framework | 9 |
 | Domain-Driven Design (DDD) | 8 |
-| Scrum | 8 |
+| Microservices | 7 |
+| Multi-tenancy / tenant isolation | 7 |
+| CQRS | 6 |
+| Event-driven architecture | 5 |
+| Idempotency / exactly-once processing | 4 |
+
+### Business analysis & solution design
+
+| Skill | Yrs |
+|---|---:|
+| Business & problem-domain analysis | 9 |
+| Requirements specification (BRS / URS / FRS / TRS) | 9 |
+| Solution design & solution architecture | 9 |
+| Technical documentation (audience-tailored) | 9 |
+| Stakeholder engagement & translation | 8 |
+| Process & system modelling (UML) | 8 |
+
+### Backend frameworks & libraries
+
+| Skill | Yrs |
+|---|---:|
+| Entity Framework | 9 |
 | MediatR | 7 |
-| Multi-tenancy / Tenant Isolation | 7 |
-| Angular | 6 |
-| Angular Material | 6 |
 | AutoMapper | 6 |
 | FluentValidation | 6 |
-| Ajax | 6 |
-| CQRS | 6 |
-| Unit Testing (xUnit / NUnit / Moq) | 6 |
-| OAuth2 / OpenID Connect / JWT | 6 |
-| Integration Testing (TestContainers) | 5 |
-| Feature Flags (Azure App Configuration) | 4 |
 | ASP.NET | 3 |
-| Circuit Breaker (Polly) | 3 |
+| Circuit breaker (Polly) | 3 |
 | SignalR / WebSockets | 3 |
 
-### Development Tools, Cloud & DevOps
-| Skill | Years (professional) |
-|---|---|
+### Frontend & UI
+
+| Skill | Yrs |
+|---|---:|
+| Angular | 6 |
+| Angular Material | 6 |
+| Ajax | 6 |
+| MVC | 5 |
+| Node.js | 5 |
+
+### Delivery practices
+
+| Skill | Yrs |
+|---|---:|
+| Scrum | 8 |
+| Unit testing (xUnit / NUnit / Moq) | 6 |
+| OAuth2 / OpenID Connect / JWT | 6 |
+| Integration testing (TestContainers) | 5 |
+| Feature flags (Azure App Configuration) | 4 |
+
+### Cloud, DevOps & tooling
+
+| Skill | Yrs |
+|---|---:|
 | Visual Studio | 9 |
+| VS Code | 9 |
 | GitHub | 9 |
 | Azure DevOps (previously TFS) | 9 |
-| VS Code | 9 |
 | Postman | 9 |
 | Swagger | 9 |
 | Enterprise Architect (UML) | 8 |
 | Azure CI/CD | 7 |
-| Pipeline-as-code (Azure DevOps YAML) | 6 |
 | Docker | 7 |
+| Pipeline-as-code (Azure DevOps YAML) | 6 |
+| Message queues (Azure Service Bus / RabbitMQ) | 6 |
 | Telerik | 6 |
-| Message Queues (Azure Service Bus / RabbitMQ) | 6 |
+| Azure Monitor / Log Analytics / App Insights | 5 |
 | Microsoft Azure Insights | 5 |
 | New Relic (APM, release tracking, alerting) | 4 |
+| API Gateway (Azure API Management) | 4 |
+| AKS / Kubernetes | 4 |
+| Elastic Stack (ELK) / Serilog | 4 |
 | OpenTelemetry | 3 |
 | Grafana | 3 |
 | Graylog | 3 |
-| Node.js | 5 |
-| MVC | 5 |
-| Azure Monitor / Log Analytics / App Insights | 5 |
-| API Gateway (Azure API Management) | 4 |
-| Container Orchestration (AKS / Kubernetes) | 4 |
-| Elastic Stack (ELK) / Serilog | 4 |
 | DevExpress | 3 |
 
-### Security & Compliance
-| Skill | Years (professional) |
-|---|---|
-| Role-Based Access Control (RBAC) | 8 |
+### Security & compliance
+
+| Skill | Yrs |
+|---|---:|
+| Role-based access control (RBAC) | 8 |
 | Data-protection-aware design (POPIA / GDPR) | 5 |
 | SOX-aligned data segregation | 4 |
 
 ---
 
-## Deep Dive: SQL Performance Tuning (Execution Plans / Indexing / Locking)
+## Deep dive: SQL performance tuning
 
-**Years of experience:** 8 · **Context:** Built and optimised high-volume financial ledger
-systems integrating 150+ money processors across multiple African markets.
+**8 years** · High-volume financial ledger systems integrating 150+ money processors across African markets.
 
-| Sub-skill | Description |
+| Sub-skill | Focus |
 |---|---|
-| **Execution Plan Analysis** | Reading and interpreting SHOWPLAN, `SET STATISTICS IO`, and `SET STATISTICS TIME` to identify table scans, key lookups, and high-cost operators. |
-| **Indexing Strategy** | Designing clustered, non-clustered, filtered, and covering indexes; analysing index fragmentation and rebuild/reorganise decisions. |
-| **Locking & Concurrency** | Managing transaction isolation levels (READ COMMITTED, REPEATABLE READ, SERIALIZABLE, SNAPSHOT); detecting and resolving deadlocks using SQL Server Profiler / Extended Events. |
-| **Performance Tuning Patterns** | Rewriting correlated subqueries as joins; INNER JOIN vs EXISTS; optimising WHERE clauses with SARGable predicates; avoiding scalar UDFs. |
-| **Database Design for Scale** | Partitioning tables by date/tenant; indexed and materialised views for pre-aggregation; designing for high-volume batch inserts (e.g. ledger entries). |
-| **In-Memory OLTP** | Using memory-optimised tables and natively compiled stored procedures for high-contention financial operations. |
-| **Query Store & Automatic Tuning** | Leveraging Query Store to track regression; using forced parameterization and plan forcing. |
-| **Database Health Monitoring** | Regular `sys.dm_os_wait_stats`, `sys.dm_db_index_usage_stats`, and `sp_WhoIsActive` analysis to identify bottlenecks. |
+| Execution plan analysis | SHOWPLAN, `SET STATISTICS IO` / `TIME`; spotting scans, key lookups, and high-cost operators |
+| Indexing strategy | Clustered, non-clustered, filtered, and covering indexes; fragmentation and rebuild / reorganise decisions |
+| Locking & concurrency | Isolation levels (READ COMMITTED → SNAPSHOT); deadlock detection via Profiler / Extended Events |
+| Tuning patterns | Correlated subqueries → joins; INNER JOIN vs EXISTS; SARGable predicates; avoiding scalar UDFs |
+| Design for scale | Date/tenant partitioning; indexed / materialised views; high-volume batch inserts (ledger entries) |
+| In-Memory OLTP | Memory-optimised tables and natively compiled procedures on high-contention paths |
+| Query Store | Regression tracking, forced parameterization, plan forcing |
+| Health monitoring | `sys.dm_os_wait_stats`, `sys.dm_db_index_usage_stats`, `sp_WhoIsActive` |
 
 ---
 
-## Employment & Project Profiles
+## Employment & projects
+
+Each employer block uses the same shape: metadata → duties → projects (role line, summary, tech).
 
 ### Yuno Technologies
-- **Industry:** Digital consultancy
-- **Job title:** Co-owner / Solutions Architect
-- **Period:** Apr 2026 – present
-- **Consulting clients:** Yes (client names held private)
 
-**Overall duties:**
-- Half-owner of a South African digital consultancy; leads technical delivery — architecture,
-  backend engineering and security design across client platforms.
-- Four-plane deployment topology with one-way initiation; BFF holding session rather than tokens;
-  response-only identity plane on Keycloak; inter-plane trust specified (mTLS / SPIFFE/SPIRE as
-  phase two behind a documented interim).
-- Ledger-plane isolation under evaluation: KVM-backed microVM separation so a container escape in
-  an adjacent workload cannot reach the ledger.
-- Containerised platforms across four environments; ADRs with formal supersession.
-_Tech: .NET, Vite / React, PostgreSQL, Redis, RabbitMQ, gRPC, Django / DRF, Azure Functions,
-Blob Storage, Keycloak, Prometheus / Grafana / ELK._
+| | |
+|---|---|
+| **Industry** | Digital consultancy |
+| **Role** | Co-owner / Solutions Architect |
+| **Period** | Apr 2026 – present |
+| **Consulting** | Yes (client names held private) |
+
+**Duties**
+- Half-owner; leads technical delivery — architecture, backend engineering, and security design across client platforms.
+- **Current production:** four-plane deployment topology with one-way initiation; BFF holding session rather than tokens; response-only identity plane on Keycloak; containerised platform across environments.
+- **Phase 2 / planned:** inter-plane trust via mTLS / SPIFFE/SPIRE behind a documented interim.
+- **Under evaluation:** ledger-plane isolation via KVM-backed microVM separation so a container escape in an adjacent workload cannot reach the ledger.
+- ADRs with formal supersession across topology changes.
+
+**Tech:** .NET · Vite / React · PostgreSQL · Redis · RabbitMQ · gRPC · Django / DRF · Azure Functions · Blob Storage · Keycloak · Prometheus / Grafana / ELK
+
+---
 
 ### Raging River Trading (Pty) Ltd
-- **Industry:** Fintech / Gaming
-- **Job title:** Solutions Architect / Technical Lead — Core Financial Systems
-  *(payroll title: Software Developer)*
-- **Period:** Dec 2022 – Mar 2026
-- **Consulting clients:** No
-- **Reason for leaving:** Concluded via voluntary severance during a post-acquisition restructure.
 
-**Overall duties:**
-- Product transformation: led the full-scale rewrite of a legacy banking platform into a white-label
-  financial engine handling deposits & withdrawals across multiple African markets, supporting
-  major brands including Betway and Jackpot City.
-- High-volume architecture: engineered the system for horizontal and vertical scalability,
-  supporting major gaming brands across multiple African markets.
-- Integration platform: worked on the platform where integrations are managed, routed and
-  reconciled — abstracting 150+ individual money processors — and built integrations on it.
-  Per-provider IronPython marshalling hosted in the .NET backend reshaped payloads to the core
-  contract. Rewrote the engine that moves each integration into its own instance, preventing
-  shared thread-pool and socket exhaustion.
-- Large-scale migration: moved roughly 150 million records across a high-throughput Saturday at
-  peak trading, with no drop in the New Relic Apdex score.
+| | |
+|---|---|
+| **Industry** | Fintech / Gaming |
+| **Role** | Solutions Architect / Technical Lead — Core Financial Systems *(payroll title: Software Developer)* |
+| **Period** | Dec 2022 – Mar 2026 |
+| **Consulting** | No |
+| **Leaving** | Voluntary severance during a post-acquisition restructure *(interview context only — omit from CV/site)* |
 
-**Project 1 — Core Financial Systems** *(Solutions Architect / Technical Lead · Team 1–4 · Backend)*
-Full-scale rewrite of a legacy banking platform into a white-label financial engine handling
-deposits & withdrawals for multiple brands across Africa. Architected for horizontal scalability
-with APIs that safely interact with a concurrent financial ledger during high-volume operations.
-Schema-per-brand under one SQL Server (separate databases priced out); transactional outbox to
-per-brand queues with dead-lettering.
-_Tech: Azure SQL, C# .NET, Docker, RabbitMQ, EF Core._
+**Duties**
+- Led the rewrite of a legacy banking platform into a white-label financial engine for deposits & withdrawals across African markets (including Betway and Jackpot City).
+- Engineered for horizontal and vertical scale under concurrent ledger load.
+- Integration platform for 150+ money processors — IronPython marshalling in .NET; rewrote per-integration isolation to stop shared thread-pool / socket exhaustion.
+- Migrated ~150 million records on a peak-trading Saturday with no New Relic Apdex drop.
 
-**Project 2 — Integration Layer & Back-Office APIs** *(Solutions Architect / Technical Lead · Team 5 · Backend)*
-Developed the robust integration layer abstracting 150+ individual money processors. Designed and
-exposed the critical APIs allowing back-office tooling to interact safely and concurrently with the
-financial ledger, ensuring data integrity during high-volume operations. _Tech: C# .NET, Azure SQL._
+#### Project — Core Financial Systems
+**Solutions Architect / Technical Lead · Team 1–4 · Backend**
 
-**Project 3 — High-Availability Architecture & Concurrency Design** *(Solutions Architect / Technical Lead · Team 1 · Backend)*
-Designed and implemented the high-availability architecture supporting concurrent financial
-transactions across multiple brands and markets — idempotent attempt records with rowversion
-optimistic concurrency on the ledger — ensuring data integrity, system resilience, and reliable
-ledger operations at scale. _Tech: C# .NET, Azure SQL._
+Full-scale rewrite to a white-label engine handling deposits & withdrawals for multiple brands. Horizontal scale with APIs that safely touch a concurrent ledger. Schema-per-brand under one SQL Server (separate databases priced out); transactional outbox to per-brand queues with dead-lettering.
+
+**Tech:** Azure SQL · C# / .NET · Docker · RabbitMQ · EF Core
+
+#### Project — Integration layer & back-office APIs
+**Solutions Architect / Technical Lead · Team 5 · Backend**
+
+Integration layer abstracting 150+ money processors. Back-office APIs for safe concurrent ledger access under high volume.
+
+**Tech:** C# / .NET · Azure SQL
+
+#### Project — High-availability & concurrency design
+**Solutions Architect / Technical Lead · Team 1 · Backend**
+
+HA architecture for concurrent financial transactions — idempotent attempt records with rowversion optimistic concurrency on the ledger.
+
+**Tech:** C# / .NET · Azure SQL
+
+---
 
 ### MeterMo
-- **Industry:** Utilities — automated electricity, water and gas usage metering & reporting · **Consulting clients:** No
-- **Job title:** Software Developer · **Period:** Apr 2022 – Dec 2022
-- **Reason for leaving:** Mandate complete; sole developer — sought a larger engineering team with scope to learn and grow.
 
-**Duties:** Platform modernisation and maintenance across an automated utility-metering estate —
-electricity, water and gas usage capture and reporting. Migrated six projects from Team Foundation
-Server to Azure DevOps and brought them up to current frameworks and package versions; maintained
-two APIs, two cross-platform field apps (Xamarin, Cordova) and two websites. Platform debt is a tax
-on every feature that comes after it; this cleared it.
-_Tech: C# .NET, ASP.NET, Angular, Xamarin, Cordova, Azure DevOps, TFS._
+| | |
+|---|---|
+| **Industry** | Utilities — automated electricity, water and gas metering & reporting |
+| **Role** | Software Developer |
+| **Period** | Apr 2022 – Dec 2022 |
+| **Consulting** | No |
+| **Leaving** | Mandate complete; sought a larger engineering team |
+
+**Duties**
+
+Platform modernisation across the metering estate. Migrated six projects from TFS to Azure DevOps and upgraded frameworks/packages; maintained two APIs, two cross-platform field apps (Xamarin, Cordova), and two websites.
+
+**Tech:** C# / .NET · ASP.NET · Angular · Xamarin · Cordova · Azure DevOps · TFS
+
+---
 
 ### Dotcom Software Solutions
-- **Industry:** Consulting (Fintech) · **Consulting clients:** Yes
-- **Job title:** Software Developer (Specialist Problem-Solver) · **Period:** Jan 2022 – Apr 2022
-- **Reason for leaving:** No longer remote / not a culture fit
 
-**Duties:** Specialist problem-solver tackling complex development challenges other team members
-could not resolve, delivering robust full-stack solutions in the fintech consulting space for major
-clients including Nedbank, Standard Bank and PSG Wealth. Business analysis: monetisation design for Schemes Bot and
-payment validations.
+| | |
+|---|---|
+| **Industry** | Consulting (Fintech) |
+| **Role** | Software Developer (Specialist Problem-Solver) |
+| **Period** | Jan 2022 – Apr 2022 |
+| **Consulting** | Yes |
+| **Leaving** | No longer remote / not a culture fit |
 
-**Project 1 — Schemes Bot (Standard Bank client)** *(Software Developer · Team 5 · Backend · Jan–Feb 2022)*
-Schemes (Stokvel / Chama) BotFramework backend upgrade **to .NET 6 from .NET Standard**, including
-package-dependency updates and breaking-change fixes. Repository history showed this had been
-attempted and rolled back; successfully completed the update — live in production with the
-changes/fixes. _Tech: Azure SQL, BotFramework, C# .NET 6 (from .NET Standard), MediatR, QnA Maker
-(historical / retired Microsoft service)._
+**Duties**
 
-**Project 2 — PSG Wealth Website (PSG Wealth client)** *(Software Developer / Analyst / Architect · Team 6 · Backend · Feb–Mar 2022)*
-Implemented Angular Universal for server-side rendering for SEO — Dotcom had struggled with this for
-two years; solved it in a week. _Tech: Docker, Angular, Bootstrap, Material, Node.js, C# .NET 6,
-Umbraco CMS._
+Specialist problem-solver for challenges others could not resolve — full-stack fintech delivery for Nedbank, Standard Bank, and PSG Wealth. Business analysis including Schemes Bot monetisation design and payment validations.
+
+#### Project — Schemes Bot (Standard Bank)
+**Software Developer · Team 5 · Backend · Jan–Feb 2022**
+
+BotFramework backend upgrade **to .NET 6 from .NET Standard**, including dependency updates and breaking-change fixes. Prior attempts had been rolled back; completed and live in production.
+
+**Tech:** Azure SQL · BotFramework · C# / .NET 6 · MediatR · QnA Maker *(historical / retired)*
+
+#### Project — PSG Wealth website
+**Software Developer / Analyst / Architect · Team 6 · Backend · Feb–Mar 2022**
+
+Angular Universal SSR for SEO — unblocked a two-year struggle in one week.
+
+**Tech:** Docker · Angular · Bootstrap · Material · Node.js · C# / .NET 6 · Umbraco CMS
+
+---
 
 ### Payteq
-- **Industry:** Fintech · **Consulting clients:** No
-- **Job title:** Senior Developer / Business Analyst / Team Lead · **Period:** Apr 2020 – Jan 2022
-- **Reason for leaving:** Career growth
 
-**Duties:** Full-stack development on EDI, GoTrips, and Veriseal; business analysis with the BA team;
-team lead on the GoTrips technical-debt rewrite, optimisation, and architecture.
+| | |
+|---|---|
+| **Industry** | Fintech |
+| **Role** | Senior Developer / Business Analyst / Team Lead |
+| **Period** | Apr 2020 – Jan 2022 |
+| **Consulting** | No |
+| **Leaving** | Career growth |
 
-**Project 1 — GoTrips** *(Software Developer / Analyst / Team Lead · Team 5 · Full Stack · Jan 2021 – Jan 2022)*
-Led the ground-up rewrite of the GoTrips platform, eliminating years of accumulated technical debt;
-implemented coding standards, design principles, and performance optimisations; built abstractions
-and automation that transformed a struggling codebase into a maintainable, scalable system. _Tech:
-C# .NET Core API, PostgreSQL, Azure CI/CD, FluentValidation, Angular, Azure Functions._
+**Duties**
 
-**Project 2 — Veriseal** *(Software Developer / Analyst / Architect · Team 1 · Full Stack · side project, migrated whenever there was opportunity)*
-Single-handedly migrated a critical compliance platform from legacy ASP.NET to .NET Core API with
-Angular 8. Handled mass payments, bank-account verification, KYC, and AML checks — with meticulous
-attention to data integrity and security. _Tech: C# .NET Core (to), SQL, SSRS, Angular (to),
-ASP.NET Core (from), C# .NET Framework (from), IP microservices/integrations, FluentValidation,
-AutoMapper._
+Full-stack work on EDI, GoTrips, and Veriseal; business analysis with the BA team; team lead on the GoTrips rewrite, optimisation, and architecture.
 
-**Project 3 — GoBills** *(Team Lead · Team 2 · Full Stack · Apr 2020 – Jan 2021)*
-Led development of a scalable business-management solution covering inventory, POS, and financials,
-serving businesses from single stores to large chains. Implemented a sophisticated RBAC system
-governing user permissions and client access control. _Tech: C# .NET Core API, Dependency
-Injection, Identity Framework, custom CMS, Angular 8, Bootstrap, Angular Material._
+#### Project — GoTrips
+**Software Developer / Analyst / Team Lead · Team 5 · Full stack · Jan 2021 – Jan 2022**
 
-**Project 4 — Interchange IDE & Insight Server** *(Development & maintenance · Team 2 · Support/Maintenance)*
-Go-to consultant for a highly scalable integration platform functioning as messaging middleware with
-an RBAC system governing user access; ongoing support and maintenance on a SaaS basis. _Tech: SQL,
-C# .NET Core, various IP microservices/integrations._
+Ground-up rewrite eliminating accumulated technical debt; coding standards, design principles, performance work, and automation for a maintainable system.
+
+**Tech:** C# / .NET Core API · PostgreSQL · Azure CI/CD · FluentValidation · Angular · Azure Functions
+
+#### Project — Veriseal
+**Software Developer / Analyst / Architect · Team 1 · Full stack · side project, migrated opportunistically**
+
+Independently migrated a critical compliance platform (KYC, AML, mass payments, bank-account verification) from legacy ASP.NET to .NET Core API with Angular 8.
+
+**Tech:** C# / .NET Core · SQL · SSRS · Angular · ASP.NET · .NET Framework · FluentValidation · AutoMapper
+
+#### Project — GoBills
+**Team Lead · Team 2 · Full stack · Apr 2020 – Jan 2021**
+
+Business-management solution (inventory, POS, financials) with sophisticated RBAC for permissions and client access.
+
+**Tech:** C# / .NET Core API · Identity Framework · DI · custom CMS · Angular 8 · Bootstrap · Angular Material
+
+#### Project — Interchange IDE & Insight Server
+**Development & maintenance · Team 2 · Support**
+
+Messaging-middleware integration platform with RBAC; ongoing SaaS support and maintenance.
+
+**Tech:** SQL · C# / .NET Core · IP microservices / integrations
+
+---
 
 ### iPlan Global
-- **Industry:** Supply Chain / Manufacturing / Farming / Industrial / Automation · **Consulting clients:** Yes
-- **Job title:** Software Developer / Business Analyst · **Period:** Oct 2017 – Apr 2020
-- **Reason for leaving:** Career growth
 
-**Duties:** Team and individual project work; automation for business productivity; work across many
-technologies and systems; occasional IT support. As BA: client needs analysis, business-domain
-analysis, solution design across Mining, Industrial, Supply Chain, Manufacturing, Sales; solution
-architecture.
+| | |
+|---|---|
+| **Industry** | Supply chain / manufacturing / farming / industrial / automation |
+| **Role** | Software Developer / Business Analyst |
+| **Period** | Oct 2017 – Apr 2020 |
+| **Consulting** | Yes |
+| **Leaving** | Career growth |
 
-**Project 1 — Consolidated Job Dashboard** *(Software Developer / Analyst / Architect · Team 1 · Full Stack · May–Jun 2019)*
-Supply-chain solution consolidating job material requirements into new jobs, streamlining a
-previously manual, error-prone process. _Tech: VBScript, SQL._
+**Duties**
 
-**Project 2 — Espresso Quote Application** *(Software Developer / Analyst / Architect · Team 1 · Full Stack · Feb–Apr 2019)*
-Multi-platform mobile app empowering sales reps to work independently — on-the-spot quoting with
-integrated email delivery and manager-approval workflows. _Tech: jQuery, SQL, C# .NET, JavaScript,
-Entity Framework, MVC, Ajax._
+Team and solo delivery; productivity automation; BA work across mining, industrial, supply chain, manufacturing, and sales — needs analysis, domain analysis, solution design and architecture.
 
-**Project 3 — ASP.NET Food Portal** *(Development & maintenance · Team 2 · Full Stack · May–Sep 2019)*
-Distributed food-processing system for farmers to log vegetable/fruit deliveries and track
-poison-testing results, enforcing user security and compliance across multiple locations. _Tech:
-ASP.NET, C# .NET, XAML, MVVM._
+#### Project — Consolidated Job Dashboard
+**Software Developer / Analyst / Architect · Team 1 · Full stack · May–Jun 2019**
 
-**Project 4 — Espresso RepCheckIn** *(Software Developer / Architect · Team 1 · Full Stack · May–Sep 2019)*
-Representative-tracking system letting managers monitor rep locations and plan client visits by
-tiered priority lists, ensuring reps followed optimised routes and improving field-team efficiency.
-_Tech: JavaScript, C# .NET, jQuery, MVC, Ajax._
+Supply-chain consolidation of job material requirements — replaced a manual, error-prone process.
+
+**Tech:** VBScript · SQL
+
+#### Project — Espresso Quote Application
+**Software Developer / Analyst / Architect · Team 1 · Full stack · Feb–Apr 2019**
+
+Multi-platform quoting for sales reps — on-the-spot quotes, email delivery, manager approval.
+
+**Tech:** jQuery · SQL · C# / .NET · JavaScript · Entity Framework · MVC · Ajax
+
+#### Project — ASP.NET Food Portal
+**Development & maintenance · Team 2 · Full stack · May–Sep 2019**
+
+Farmers log deliveries and poison-testing results with multi-location security and compliance.
+
+**Tech:** ASP.NET · C# / .NET · XAML · MVVM
+
+#### Project — Espresso RepCheckIn
+**Software Developer / Architect · Team 1 · Full stack · May–Sep 2019**
+
+Rep tracking and tiered priority visit lists for optimised field routes.
+
+**Tech:** JavaScript · C# / .NET · jQuery · MVC · Ajax
+
+---
 
 ### Novigo (Pty) Ltd
-- **Industry:** Recruitment · **Consulting clients:** Yes (the client was the company)
-- **Job title:** Software Developer C# .NET · **Period:** Apr 2017 – Oct 2017
-- **Reason for leaving:** Contract ended
 
-**Duties:** Business-needs and problem-domain analysis; system solution planning; framework design;
-system and server implementation; management-system maintenance; company server setup and
-maintenance; general IT and domain/hosting support.
+| | |
+|---|---|
+| **Industry** | Recruitment |
+| **Role** | Software Developer (C# / .NET) |
+| **Period** | Apr 2017 – Oct 2017 |
+| **Consulting** | Yes (the company was the client) |
+| **Leaving** | Contract ended |
 
-**Project 1 — Novigo Management System** *(Sole developer · Team 1 · Full Stack · Apr–Sep 2017)*
-Sole developer: designed, built, and deployed a complete ERP solution from the ground up to support
-all core business processes, including server setup, domain hosting, and general IT support. _Tech:
-MySQL, C# .NET, Linux, WinForms._
+**Duties**
+
+Business and problem-domain analysis; solution planning; framework design; system and server implementation; ERP maintenance; Linux server and domain/hosting support.
+
+#### Project — Novigo Management System
+**Sole developer · Team 1 · Full stack · Apr–Sep 2017**
+
+Designed, built, and deployed a complete ERP from scratch, including server setup and IT support.
+
+**Tech:** MySQL · C# / .NET · Linux · WinForms

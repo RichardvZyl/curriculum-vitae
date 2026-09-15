@@ -7,19 +7,20 @@ Pretoria, Gauteng, South Africa · richardvzyl@gmail.com · [linkedin.com/in/ric
 
 ## Professional Summary
 
-Solutions Architect and Technical Lead with **nine years** across C#/.NET and SQL Server —
-~5 of them leading teams and ~3.5 as Solutions Architect — building high-throughput,
-multi-tenant financial systems where data integrity is non-negotiable. Deep specialist in
-backend engineering and relational data: execution-plan tuning, concurrency control,
-partitioning, and idempotent transaction design for ledgers operating across African markets.
-Requirements and solution design have run through the whole of that — specifying and modelling
-systems as a business analyst since 2017, pitched to whichever audience had to sign them off.
+Solutions Architect and Technical Lead with nine years of experience across C#/.NET and SQL Server,
+including more than three years in Solutions Architecture and approximately five years leading teams.
+Experienced in designing and delivering high-throughput, multi-tenant financial systems, with deep
+expertise in backend engineering, relational data, performance optimisation, concurrency, partitioning
+and idempotent financial ledgers.
 
-I own delivery end-to-end — from eliciting the requirement and modelling the solution, through
-concurrency and multi-tenancy strategy, to CI/CD and production telemetry — while leading teams
-and acting as the translation layer between engineering and the business. A problem solver at
-heart; languages and frameworks are simply tools. Regularly handed the challenges others could not solve, from turning around failed legacy migrations to
-designing the financial engine that replaced a legacy banking platform.
+A Business Analyst since 2017, combining technical depth with strong requirements analysis and
+solution design. Experienced in translating complex business requirements into scalable architectures
+and delivering solutions end-to-end, from discovery and architecture through implementation and
+production optimisation.
+
+A pragmatic problem solver with experience modernising legacy platforms, resolving complex technical
+constraints and delivering a financial engine designed to replace a legacy banking platform. Languages
+and frameworks are tools; the focus is on solving the underlying problem effectively.
 
 ---
 
@@ -67,7 +68,7 @@ Architect (UML), Swagger, Postman, SSRS; Angular, Angular Material; Agile, Scrum
 ## Selected Achievements
 
 - **Architected a multi-tenant, white-label financial engine** serving two operators (Betway and
-  Jackpot City) from one configuration-driven codebase — 2 tenants, 25 brands, 150+ payment
+  Jackpot City) from one configuration-driven codebase — 2 operators, 25 brands, 150+ payment
   methods. Target isolation was database-per-brand; production constraint was one SQL Server with
   schema-per-brand and request-scoped contexts, because separate databases were priced out.
 - **Sustained deposit volumes in excess of €10M on peak trading days**, absorbing both steady
@@ -89,25 +90,25 @@ Architect (UML), Swagger, Postman, SSRS; Angular, Angular Material; Agile, Scrum
 Half-owner of a South African digital consultancy, leading technical delivery — architecture,
 backend engineering and security design across client platforms.
 
-- **Four-plane deployment topology** with one-way initiation between planes: a public edge behind
-  CDN and WAF; an SPA plane running a backend-for-frontend that holds the session rather than the
-  tokens; an application plane owning the signing key; and a response-only identity plane on
-  Keycloak issuing OIDC / JWT. Each plane deploys independently with its own secrets, identity and
-  network boundary.
-- **Inter-plane trust model:** specified mutual TLS with SPIFFE/SPIRE workload identities at the
-  service-mesh boundary, sequenced as a phase-two deliverable rather than forcing a
-  Kubernetes-shaped stack onto the first release — with Keycloak service accounts as the
-  documented interim, and the gap recorded as a critical open item rather than left implicit.
+- **Current production architecture:** Designed the four-plane deployment topology and containerised
+  platform. Four planes with one-way initiation: a public edge behind CDN and WAF; an SPA plane
+  running a backend-for-frontend that holds the session rather than the tokens; an application plane
+  owning the signing key; and a response-only identity plane on Keycloak issuing OIDC / JWT. Each
+  plane deploys independently with its own secrets, identity and network boundary. Containerised
+  platform across four environments (development, staging, production and a legacy-migration path)
+  — nginx edge, Django / Django REST Framework on PostgreSQL, Redis, Azure Functions, Azure Blob
+  Storage and Communication Services, with Prometheus, Grafana and the Elastic Stack for
+  observability, behind an isolated container network.
+- **Phase 2 / planned:** Mutual TLS with SPIFFE/SPIRE workload identities at the service-mesh
+  boundary for stronger service-to-service isolation — sequenced rather than forcing a
+  Kubernetes-shaped stack onto the first release, with Keycloak service accounts as the documented
+  interim and the gap recorded as a critical open item rather than left implicit.
   _(Vite / React SPA, .NET services, PostgreSQL, Redis, RabbitMQ, outbox and dispatcher pattern,
   gRPC over HTTP/2 for service-to-service.)_
-- **Isolation strategy for the ledger boundary:** moving the plane that carries the banking core
-  off shared-kernel containers onto **KVM-backed microVM isolation** (RustVMM-based sandboxing —
-  hardware-level separation at tens-of-milliseconds startup), so a container escape in an adjacent
-  workload cannot reach the ledger. Currently under evaluation rather than in production.
-- **Containerised platform across four environments** (development, staging, production and a
-  legacy-migration path) — nginx edge, Django / Django REST Framework on PostgreSQL, Redis, Azure
-  Functions, Azure Blob Storage and Communication Services, with Prometheus, Grafana and the
-  Elastic Stack for observability, behind an isolated container network.
+- **Under evaluation:** Moving the plane that carries the banking core off shared-kernel containers
+  onto **KVM-backed microVM isolation** (RustVMM-based sandboxing — hardware-level separation at
+  tens-of-milliseconds startup), so a container escape in an adjacent workload cannot reach the
+  ledger.
 - Architecture decisions recorded as **ADRs with formal supersession**, so topology changes carry
   their own rationale rather than being reconstructed from commit history.
 
@@ -119,12 +120,11 @@ platform with a modern, white-label engine handling high-volume transactions acr
 largest gaming brands. Architecturally responsible for the processing flow, multi-tenancy
 strategy, and concurrency design, working in close partnership with the Enterprise Architect.
 
-- **Multi-tenancy & data segregation:** Designed a three-level hierarchy — tenant, brand, payment
-  method — in which **configuration inherits top-down and is overridable at any level, while
-  financial data inherits nothing and is hard-segregated per brand**, each brand sitting
-  independently in SOX scope. Brand does not reliably map to country (a cryptocurrency brand maps
-  to none), so resolution ran per brand-and-payment-method with tenant defaults beneath rather
-  than a country lookup. In production: 2 tenants, 25 brands, 150+ payment methods.
+- **Multi-tenancy & data segregation:** Designed a three-level hierarchy — operator, brand and
+  payment method — with configuration inheriting top-down while financial data remained strictly
+  segregated by brand. Separate databases per brand were priced out, so production ran
+  schema-per-brand isolation on shared SQL Server infrastructure, supporting the broader SOX
+  compliance requirements. In production: 2 operators, 25 brands, 150+ payment methods.
 - **Schema-per-brand under a hard constraint:** Separate databases per brand were priced out and
   the data already sat in SQL Server, so 25 brands shared one database by schema separation — one
   EF Core code-first model defined once and deployed 25 times, giving every brand an identical
@@ -175,12 +175,11 @@ strategy, and concurrency design, working in close partnership with the Enterpri
   business analysts, marketing, client retention), translating feature needs into a sustainable
   architecture without sacrificing long-term integrity for short-term wins.
 
-_Segregation was enforced in application code — an auth filter and a resolver deciding which
-schema a request reached. It satisfies an auditor, but a single bug in that path has nothing
-beneath it; the barrier belongs in the engine, which on PostgreSQL is `SET LOCAL search_path`
-scoped to the transaction plus row-level security, where a missed predicate returns zero rows._
-
-_Role concluded via voluntary severance during a post-acquisition restructure._
+> Data segregation was enforced at the application boundary through authentication and brand-to-schema
+> resolution. That path can satisfy an auditor, but a single bug in it has nothing beneath it — isolation
+> belongs in the engine rather than relying solely on application logic (on PostgreSQL:
+> `SET LOCAL search_path` scoped to the transaction plus row-level security, where a missed predicate
+> returns zero rows).
 
 ### Software Developer
 **MeterMo** · Utilities / Automated Metering · Apr 2022 – Dec 2022
@@ -214,7 +213,7 @@ fintech consulting space for clients including Nedbank, Standard Bank, and PSG W
   eliminating years of technical debt and introducing proper coding standards, design principles,
   and performance optimisations. _(C# .NET Core API, PostgreSQL, Angular, Azure CI/CD,
   FluentValidation, Azure Functions.)_
-- **Veriseal (Solo Migration):** Single-handedly migrated a critical compliance platform (KYC,
+- **Veriseal (Solo Migration):** Independently migrated a critical compliance platform (KYC,
   AML, mass payments, bank-account verification) from legacy ASP.NET to .NET Core API with Angular
   8, with meticulous attention to data integrity and security. _(.NET Core, SQL, SSRS,
   FluentValidation, AutoMapper.)_
