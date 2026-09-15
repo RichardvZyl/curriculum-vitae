@@ -179,9 +179,9 @@ the notes in §10. Full detail lives in `SKILLSMATRIX.md`._
 ## 5. Selected Achievements
 
 - **Multi-tenant, white-label financial engine** serving two operators (Betway and Jackpot City)
-  from one configuration-driven codebase — 2 operators, 25 brands, 150+ payment methods. Each
-  operator had its own database with schema-per-brand isolation and request-scoped contexts;
-  separate databases per brand were priced out.
+  from one configuration-driven codebase — 2 operators, 25 brands, 150+ payment methods. Target
+  isolation was database-per-brand; production constraint was one SQL Server with schema-per-brand
+  and request-scoped contexts, because separate databases were priced out.
 - **Sustained deposit volumes in excess of €10M on peak trading days**, absorbing steady casino
   throughput plus large spikes during live sporting events.
 - **Eliminated double-spend race conditions** under heavy contention via idempotent attempt

@@ -69,8 +69,8 @@ Architect (UML), Swagger, Postman, SSRS; Angular, Angular Material; Agile, Scrum
 
 - **Architected a multi-tenant, white-label financial engine** serving two operators (Betway and
   Jackpot City) from one configuration-driven codebase — 2 operators, 25 brands, 150+ payment
-  methods. Each operator had its own database with schema-per-brand isolation and request-scoped
-  contexts; separate databases per brand were priced out.
+  methods. Target isolation was database-per-brand; production constraint was one SQL Server with
+  schema-per-brand and request-scoped contexts, because separate databases were priced out.
 - **Sustained deposit volumes in excess of €10M on peak trading days**, absorbing both steady
   casino throughput and large spikes during live sporting events.
 - **Eliminated double-spend race conditions** under heavy contention by designing
@@ -122,15 +122,15 @@ strategy, and concurrency design, working in close partnership with the Enterpri
 
 - **Multi-tenancy & data segregation:** Designed a three-level hierarchy — operator, brand and
   payment method — with configuration inheriting top-down while financial data remained strictly
-  segregated by brand. Each operator had its own database, with each brand isolated within its own
-  schema, supporting the broader SOX compliance requirements. In production: 2 operators, 25 brands,
-  150+ payment methods.
+  segregated by brand. Separate databases per brand were priced out, so production ran
+  schema-per-brand isolation on shared SQL Server infrastructure, supporting the broader SOX
+  compliance requirements. In production: 2 operators, 25 brands, 150+ payment methods.
 - **Schema-per-brand under a hard constraint:** Separate databases per brand were priced out and
-  the data already sat in SQL Server, so brands within each operator shared that operator's database
-  by schema separation — one EF Core code-first model defined once and deployed per brand, giving
-  every brand an identical shape and a single migration path instead of divergent ones. Per-brand
-  context instances with capped pools, bound to the request by an edge auth filter resolving API key
-  to brand; contexts scoped per request and never shared, so isolation followed the request scope.
+  the data already sat in SQL Server, so 25 brands shared one database by schema separation — one
+  EF Core code-first model defined once and deployed 25 times, giving every brand an identical
+  shape and a single migration path instead of 25 divergent ones. Per-brand context instances with
+  capped pools, bound to the request by an edge auth filter resolving API key to brand; contexts
+  scoped per request and never shared, so isolation followed the request scope.
 - **Ledger access boundary:** An orchestration API in front of a locked-down data-access API —
   only orchestration could mutate the ledger — with brand resolved from an API key at an edge
   filter, so no caller could reach another brand's data by construction.
@@ -175,9 +175,11 @@ strategy, and concurrency design, working in close partnership with the Enterpri
   business analysts, marketing, client retention), translating feature needs into a sustainable
   architecture without sacrificing long-term integrity for short-term wins.
 
-_Data segregation was enforced at the application boundary through authentication and brand-to-schema
-resolution, with the architecture designed to provide additional database-level isolation rather than
-relying solely on application logic._
+> Data segregation was enforced at the application boundary through authentication and brand-to-schema
+> resolution. That path can satisfy an auditor, but a single bug in it has nothing beneath it — isolation
+> belongs in the engine rather than relying solely on application logic (on PostgreSQL:
+> `SET LOCAL search_path` scoped to the transaction plus row-level security, where a missed predicate
+> returns zero rows).
 
 ### Software Developer
 **MeterMo** · Utilities / Automated Metering · Apr 2022 – Dec 2022
