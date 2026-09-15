@@ -186,11 +186,10 @@ _Role concluded via voluntary severance during a post-acquisition restructure._
 **MeterMo** · Utilities / Automated Metering · Apr 2022 – Dec 2022
 
 Platform modernisation and maintenance across an automated utility-metering estate — electricity,
-water and gas usage capture and reporting. Platform debt is a tax on every feature that comes after
-it; this cleared it.
-
-- Migrated six projects from Team Foundation Server to Azure DevOps.
-- Upgraded projects to current frameworks and package versions.
+water and gas usage capture and reporting. Migrated six projects from Team Foundation Server to
+Azure DevOps and brought them up to current frameworks and package versions; maintained two APIs,
+two cross-platform field apps and two websites. Platform debt is a tax on every feature that comes
+after it; this cleared it.
 
 ### Software Developer (Specialist Problem-Solver)
 **Dotcom Software Solutions** · Fintech consulting · Jan 2022 – Apr 2022
@@ -201,8 +200,9 @@ fintech consulting space for clients including Nedbank, Standard Bank, and PSG W
 - **Legacy upgrade (Standard Bank – Schemes Bot):** Upgraded the Schemes (Stokvel / Chama)
   BotFramework backend from .NET Standard to .NET 6, resolving critical breaking changes and
   package dependencies — previously attempted and rolled back by others. Live and stable in
-  production since February 2022. Also handled monetization design and payment validations.
-  _(Azure SQL, BotFramework, C# .NET 6 (from .NET Standard), MediatR, Q&A Maker.)_
+  production since February 2022. Also handled monetisation design and payment validations.
+  _(Azure SQL, BotFramework, C# .NET 6 (from .NET Standard), MediatR, QnA Maker
+  (historical / retired Microsoft service).)_
 - **Angular Universal SSR (PSG Wealth):** Implemented server-side rendering to resolve a 2-year SEO
   bottleneck in one week. _(C# .NET 6, Angular, Azure SQL, BotFramework, Docker, Node.js, Umbraco
   CMS, MediatR, Bootstrap / Material.)_

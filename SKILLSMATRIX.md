@@ -213,8 +213,9 @@ ledger operations at scale. _Tech: C# .NET, Azure SQL._
 
 **Duties:** Platform modernisation and maintenance across an automated utility-metering estate —
 electricity, water and gas usage capture and reporting. Migrated six projects from Team Foundation
-Server to Azure DevOps and upgraded them to current frameworks and package versions; maintained
-two APIs, two cross-platform field apps (Xamarin, Cordova) and two websites.
+Server to Azure DevOps and brought them up to current frameworks and package versions; maintained
+two APIs, two cross-platform field apps (Xamarin, Cordova) and two websites. Platform debt is a tax
+on every feature that comes after it; this cleared it.
 _Tech: C# .NET, ASP.NET, Angular, Xamarin, Cordova, Azure DevOps, TFS._
 
 ### Dotcom Software Solutions
@@ -224,14 +225,14 @@ _Tech: C# .NET, ASP.NET, Angular, Xamarin, Cordova, Azure DevOps, TFS._
 
 **Duties:** Specialist problem-solver tackling complex development challenges other team members
 could not resolve, delivering robust full-stack solutions in the fintech consulting space for major
-clients including Nedbank, Standard Bank and PSG Wealth. Business analysis: monetization design for Schemes Bot and
+clients including Nedbank, Standard Bank and PSG Wealth. Business analysis: monetisation design for Schemes Bot and
 payment validations.
 
 **Project 1 — Schemes Bot (Standard Bank client)** *(Software Developer · Team 5 · Backend · Jan–Feb 2022)*
 Schemes (Stokvel / Chama) BotFramework backend upgrade **to .NET 6 from .NET Standard**, including
 package-dependency updates and breaking-change fixes. Repository history showed this had been
 attempted and rolled back; successfully completed the update — live in production with the
-changes/fixes. _Tech: Azure SQL, BotFramework, C# .NET 6 (from .NET Standard), MediatR, Q&A Maker
+changes/fixes. _Tech: Azure SQL, BotFramework, C# .NET 6 (from .NET Standard), MediatR, QnA Maker
 (historical / retired Microsoft service)._
 
 **Project 2 — PSG Wealth Website (PSG Wealth client)** *(Software Developer / Analyst / Architect · Team 6 · Backend · Feb–Mar 2022)*

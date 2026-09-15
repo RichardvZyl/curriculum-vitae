@@ -23,8 +23,12 @@ dist/**
 
 # --- Career documents anywhere in the tree ----------------------------------
 # Belt-and-braces: these apply wherever they appear, at any depth.
+# Exception: the published PDF exports under downloads/ only (safe to commit).
+# Never commit DOCX or payslip PDFs.
 *.pdf
 *.docx
+!downloads/Richard-van-Zyl-CV.pdf
+!downloads/Richard-van-Zyl-Skills-Overview.pdf
 *.doc
 *.xlsx
 *.htm
