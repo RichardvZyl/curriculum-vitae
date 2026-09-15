@@ -21,7 +21,7 @@ Within each table, rows are ordered by years (highest first).
 
 ### Languages
 
-| Skill | Yrs |
+| Skill | Years |
 |---|---:|
 | C# / .NET | 9 |
 | T-SQL | 9 |
@@ -35,7 +35,7 @@ Within each table, rows are ordered by years (highest first).
 
 ### Data formats
 
-| Skill | Yrs |
+| Skill | Years |
 |---|---:|
 | JSON | 9 |
 | XML | 8 |
@@ -45,7 +45,7 @@ Within each table, rows are ordered by years (highest first).
 
 ### Databases & data engineering
 
-| Skill | Yrs |
+| Skill | Years |
 |---|---:|
 | SQL Server / SSMS | 9 |
 | SQL performance tuning | 8 |
@@ -60,7 +60,7 @@ Within each table, rows are ordered by years (highest first).
 
 ### Architecture & design
 
-| Skill | Yrs |
+| Skill | Years |
 |---|---:|
 | Clean Architecture | 9 |
 | Domain-Driven Design (DDD) | 8 |
@@ -72,7 +72,7 @@ Within each table, rows are ordered by years (highest first).
 
 ### Business analysis & solution design
 
-| Skill | Yrs |
+| Skill | Years |
 |---|---:|
 | Business & problem-domain analysis | 9 |
 | Requirements specification (BRS / URS / FRS / TRS) | 9 |
@@ -83,7 +83,7 @@ Within each table, rows are ordered by years (highest first).
 
 ### Backend frameworks & libraries
 
-| Skill | Yrs |
+| Skill | Years |
 |---|---:|
 | Entity Framework | 9 |
 | MediatR | 7 |
@@ -95,7 +95,7 @@ Within each table, rows are ordered by years (highest first).
 
 ### Frontend & UI
 
-| Skill | Yrs |
+| Skill | Years |
 |---|---:|
 | Angular | 6 |
 | Angular Material | 6 |
@@ -105,7 +105,7 @@ Within each table, rows are ordered by years (highest first).
 
 ### Delivery practices
 
-| Skill | Yrs |
+| Skill | Years |
 |---|---:|
 | Scrum | 8 |
 | Unit testing (xUnit / NUnit / Moq) | 6 |
@@ -115,7 +115,7 @@ Within each table, rows are ordered by years (highest first).
 
 ### Cloud, DevOps & tooling
 
-| Skill | Yrs |
+| Skill | Years |
 |---|---:|
 | Visual Studio | 9 |
 | VS Code | 9 |
@@ -142,7 +142,7 @@ Within each table, rows are ordered by years (highest first).
 
 ### Security & compliance
 
-| Skill | Yrs |
+| Skill | Years |
 |---|---:|
 | Role-based access control (RBAC) | 8 |
 | Data-protection-aware design (POPIA / GDPR) | 5 |
@@ -173,12 +173,12 @@ Each employer block uses the same shape: metadata → duties → projects (role 
 
 ### Yuno Technologies
 
-| | |
+| Field | Detail |
 |---|---|
-| **Industry** | Digital consultancy |
-| **Role** | Co-owner / Solutions Architect |
-| **Period** | Apr 2026 – present |
-| **Consulting** | Yes (client names held private) |
+| Industry | Digital consultancy |
+| Role | Co-owner / Solutions Architect |
+| Period | Apr 2026 – present |
+| Consulting | Yes (client names held private) |
 
 **Duties**
 - Half-owner; leads technical delivery — architecture, backend engineering, and security design across client platforms.
@@ -193,13 +193,13 @@ Each employer block uses the same shape: metadata → duties → projects (role 
 
 ### Raging River Trading (Pty) Ltd
 
-| | |
+| Field | Detail |
 |---|---|
-| **Industry** | Fintech / Gaming |
-| **Role** | Solutions Architect / Technical Lead — Core Financial Systems *(payroll title: Software Developer)* |
-| **Period** | Dec 2022 – Mar 2026 |
-| **Consulting** | No |
-| **Leaving** | Voluntary severance during a post-acquisition restructure *(interview context only — omit from CV/site)* |
+| Industry | Fintech / Gaming |
+| Role | Solutions Architect / Technical Lead — Core Financial Systems *(payroll title: Software Developer)* |
+| Period | Dec 2022 – Mar 2026 |
+| Consulting | No |
+| Leaving | Voluntary severance during a post-acquisition restructure *(interview context only — omit from CV/site)* |
 
 **Duties**
 - Led the rewrite of a legacy banking platform into a white-label financial engine for deposits & withdrawals across African markets (including Betway and Jackpot City).
@@ -232,13 +232,13 @@ HA architecture for concurrent financial transactions — idempotent attempt rec
 
 ### MeterMo
 
-| | |
+| Field | Detail |
 |---|---|
-| **Industry** | Utilities — automated electricity, water and gas metering & reporting |
-| **Role** | Software Developer |
-| **Period** | Apr 2022 – Dec 2022 |
-| **Consulting** | No |
-| **Leaving** | Mandate complete; sought a larger engineering team |
+| Industry | Utilities — automated electricity, water and gas metering & reporting |
+| Role | Software Developer |
+| Period | Apr 2022 – Dec 2022 |
+| Consulting | No |
+| Leaving | Mandate complete; sought a larger engineering team |
 
 **Duties**
 
@@ -250,13 +250,13 @@ Platform modernisation across the metering estate. Migrated six projects from TF
 
 ### Dotcom Software Solutions
 
-| | |
+| Field | Detail |
 |---|---|
-| **Industry** | Consulting (Fintech) |
-| **Role** | Software Developer (Specialist Problem-Solver) |
-| **Period** | Jan 2022 – Apr 2022 |
-| **Consulting** | Yes |
-| **Leaving** | No longer remote / not a culture fit |
+| Industry | Consulting (Fintech) |
+| Role | Software Developer (Specialist Problem-Solver) |
+| Period | Jan 2022 – Apr 2022 |
+| Consulting | Yes |
+| Leaving | No longer remote / not a culture fit |
 
 **Duties**
 
@@ -280,13 +280,13 @@ Angular Universal SSR for SEO — unblocked a two-year struggle in one week.
 
 ### Payteq
 
-| | |
+| Field | Detail |
 |---|---|
-| **Industry** | Fintech |
-| **Role** | Senior Developer / Business Analyst / Team Lead |
-| **Period** | Apr 2020 – Jan 2022 |
-| **Consulting** | No |
-| **Leaving** | Career growth |
+| Industry | Fintech |
+| Role | Senior Developer / Business Analyst / Team Lead |
+| Period | Apr 2020 – Jan 2022 |
+| Consulting | No |
+| Leaving | Career growth |
 
 **Duties**
 
@@ -324,13 +324,13 @@ Messaging-middleware integration platform with RBAC; ongoing SaaS support and ma
 
 ### iPlan Global
 
-| | |
+| Field | Detail |
 |---|---|
-| **Industry** | Supply chain / manufacturing / farming / industrial / automation |
-| **Role** | Software Developer / Business Analyst |
-| **Period** | Oct 2017 – Apr 2020 |
-| **Consulting** | Yes |
-| **Leaving** | Career growth |
+| Industry | Supply chain / manufacturing / farming / industrial / automation |
+| Role | Software Developer / Business Analyst |
+| Period | Oct 2017 – Apr 2020 |
+| Consulting | Yes |
+| Leaving | Career growth |
 
 **Duties**
 
@@ -368,13 +368,13 @@ Rep tracking and tiered priority visit lists for optimised field routes.
 
 ### Novigo (Pty) Ltd
 
-| | |
+| Field | Detail |
 |---|---|
-| **Industry** | Recruitment |
-| **Role** | Software Developer (C# / .NET) |
-| **Period** | Apr 2017 – Oct 2017 |
-| **Consulting** | Yes (the company was the client) |
-| **Leaving** | Contract ended |
+| Industry | Recruitment |
+| Role | Software Developer (C# / .NET) |
+| Period | Apr 2017 – Oct 2017 |
+| Consulting | Yes (the company was the client) |
+| Leaving | Contract ended |
 
 **Duties**
 
