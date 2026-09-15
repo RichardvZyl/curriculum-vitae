@@ -260,14 +260,14 @@ Platform modernisation across the metering estate. Migrated six projects from TF
 
 **Duties**
 
-Specialist problem-solver for challenges others could not resolve — full-stack fintech delivery for Nedbank, Standard Bank, and PSG Wealth. Business analysis including Schemes Bot monetization design and payment validations.
+Specialist problem-solver for challenges others could not resolve — full-stack fintech delivery for Nedbank, Standard Bank, and PSG Wealth. Business analysis including Schemes Bot monetisation design and payment validations.
 
 #### Project — Schemes Bot (Standard Bank)
 **Software Developer · Team 5 · Backend · Jan–Feb 2022**
 
 BotFramework backend upgrade **to .NET 6 from .NET Standard**, including dependency updates and breaking-change fixes. Prior attempts had been rolled back; completed and live in production.
 
-**Tech:** Azure SQL · BotFramework · C# / .NET 6 · MediatR · Q&A Maker *(historical / retired)*
+**Tech:** Azure SQL · BotFramework · C# / .NET 6 · MediatR · QnA Maker *(historical / retired)*
 
 #### Project — PSG Wealth website
 **Software Developer / Analyst / Architect · Team 6 · Backend · Feb–Mar 2022**
