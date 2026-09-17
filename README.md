@@ -26,16 +26,26 @@ without re-deriving context.
 | [`AI-CONTEXT.md`](./AI-CONTEXT.md) | **For AI assistants.** How to work with Richard on engineering tasks — stack, coding & database standards, architectural defaults, and a self-update rule. |
 | [`PROJECTS.md`](./PROJECTS.md) | Open-source portfolio, with an explicit note that additional **private** repos/packages exist and are excluded. |
 | [`LICENSE`](./LICENSE) | All rights reserved — read for evaluation; do not republish as your own. |
-| [`pdf/`](./pdf/) | Print CSS + notes for regenerating the CV PDF (WeasyPrint). |
+| [`docs/adr/`](./docs/adr/) | Architecture decision records for this pack (WeasyPrint pipeline, download home, PDF-only, personality-framework rule). |
+| [`pdf/`](./pdf/) | Print CSS + **rebuild guide** (WeasyPrint canonical, pandoc comparison, local DOCX) and [tool links](./pdf/README.md). |
 
-## Regenerating the CV PDF
+## Regenerating print artefacts
+
+**Canonical (publishes to `downloads/`):**
 
 ```bash
-pip install weasyprint markdown
-python3 scripts/generate-cv-pdf.py
+pip install -r scripts/requirements-pdf.txt
+python3 scripts/rebuild-print-artefacts.py
 ```
 
-Layout lives in [`pdf/cv-print.css`](./pdf/cv-print.css). This pipeline covers **`Richard-van-Zyl-CV.pdf` only** — leave the Skills Overview PDF alone unless you intentionally rebuild that separately.
+**Also historical pandoc PDFs + local DOCX → `dist/` (gitignored, not published):**
+
+```bash
+python3 scripts/rebuild-print-artefacts.py --all
+```
+
+Full commands, stylesheet map, and tool links (WeasyPrint, Pandoc, XeLaTeX, Poppler):
+[`pdf/README.md`](./pdf/README.md). Rulings: [`docs/adr/`](./docs/adr/).
 
 ## Contact
 
