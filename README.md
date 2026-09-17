@@ -1,7 +1,7 @@
 # Richard van Zyl — Curriculum Vitae
 
-**[⬇ CV (PDF)](https://github.com/RichardvZyl/curriculum-vitae/releases/download/cv-downloads-2026-09-14/Richard-van-Zyl-CV.pdf)** ·
-**[Skills overview (PDF)](https://github.com/RichardvZyl/curriculum-vitae/releases/download/cv-downloads-2026-09-14/Richard-van-Zyl-Skills-Overview.pdf)** ·
+**[⬇ CV (PDF)](https://raw.githubusercontent.com/RichardvZyl/curriculum-vitae/master/downloads/Richard-van-Zyl-CV.pdf)** ·
+**[Skills overview (PDF)](https://raw.githubusercontent.com/RichardvZyl/curriculum-vitae/master/downloads/Richard-van-Zyl-Skills-Overview.pdf)** ·
 **[richardvzyl.github.io](https://richardvzyl.github.io/)**
 
 Human- and AI-consumable CV for a Solutions Architect / Technical Lead specialising in
