@@ -175,8 +175,8 @@ strategy, and concurrency design, working in close partnership with the Enterpri
   business analysts, marketing, client retention), translating feature needs into a sustainable
   architecture without sacrificing long-term integrity for short-term wins.
 - **Recognition:** Certificate of Recognition three times; Banking Developer of the Year twice,
-  first place in both years; Employee of the Month, an award made five times company-wide across
-  the three years; and a letter from the CEO on the launch of the Jackpot City platform.
+  first place in both years; Employee of the Month; and a letter from the CEO on the launch of the
+  Jackpot City platform.
 
 > Data segregation was enforced at the application boundary through authentication and brand-to-schema
 > resolution. That path can satisfy an auditor, but a single bug in it has nothing beneath it — isolation
@@ -260,7 +260,7 @@ rather than a single-vendor commitment, with a considered position on where each
 where consistency breaks down. Each assistant is installed as both CLI and GUI, because scripted,
 repeatable and terminal-embedded work wants one surface and exploratory work wants the other. A
 sixth subscription ran alongside them for a period as a fallback layer while routing options were
-evaluated; Omniroute is the settled routing choice. Workflows are kept OpenAI API-compatible so
+evaluated; the routing layer is settled now. Workflows are kept OpenAI API-compatible so
 any conformant provider is a drop-in, and an open-weight model hosted locally (Qwen on Ollama)
 keeps an inference path that survives a provider outage, or no network at all.
 
@@ -299,7 +299,8 @@ through MCP server integration across cloud, design and developer tooling.
 
 **Frontier tooling evaluation.** Runs a standing evaluation of emerging agent infrastructure
 beyond the mainstream assistants — agent frameworks (Hermes / Nous Research), model-routing layers
-(9Router) and persistent memory and context systems (Perseus, Mnemonic AI) — to track
+(Omniroute in production, 9Router under evaluation) and persistent memory and context systems
+(Perseus, Mnemonic AI) — to track
 where the practical ceiling on context persistence, routing economics and agent autonomy is
 moving, ahead of it becoming standard practice.
 
