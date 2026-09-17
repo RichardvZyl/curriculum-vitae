@@ -189,6 +189,9 @@ the notes in §10. Full detail lives in `SKILLSMATRIX.md`._
   exactly-once withdrawal processing under contention.
 - **Solved problems others had abandoned:** completed a .NET 6 migration previously attempted and
   rolled back; resolved a 2-year Angular Universal SEO blocker in one week.
+- **Recognised at Raging River Trading:** Banking Developer of the Year twice, first place in both
+  years; three Certificates of Recognition; Employee of the Month, an award made five times
+  company-wide across three years; and a letter from the CEO on platform launch.
 - **IKM C# Assessment:** 73rd percentile of all test takers (assessed twice, six months apart).
 
 ---
