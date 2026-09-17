@@ -168,25 +168,44 @@ Within each table, rows are ordered by years (highest first).
 
 ## Employment & projects
 
-Each employer block uses the same shape: metadata → duties → projects (role line, summary, tech).
+Each block uses the same shape: metadata → duties → projects (role line, summary, tech).
+Side projects are labelled as such — they are not current employment.
 
-### Yuno Technologies
+### Yuno Technologies *(side project — not employment)*
 
 | Field | Detail |
 |---|---|
 | Industry | Digital consultancy |
-| Role | Co-owner / Solutions Architect |
+| Role | Stakeholder / Solutions Architect |
 | Period | Apr 2026 – present |
+| Operating | Partner-run; Richard contributes architecture, not day-to-day operations |
 | Consulting | Yes (client names held private) |
 
 **Duties**
-- Half-owner; leads technical delivery — architecture, backend engineering, and security design across client platforms.
+- Stakeholder contributing architecture, backend engineering, and security design across client platforms.
 - **Current production:** four-plane deployment topology with one-way initiation; BFF holding session rather than tokens; response-only identity plane on Keycloak; containerised platform across environments.
 - **Phase 2 / planned:** inter-plane trust via mTLS / SPIFFE/SPIRE behind a documented interim.
 - **Under evaluation:** ledger-plane isolation via KVM-backed microVM separation so a container escape in an adjacent workload cannot reach the ledger.
 - ADRs with formal supersession across topology changes.
 
 **Tech:** .NET · Vite / React · PostgreSQL · Redis · RabbitMQ · gRPC · Django / DRF · Azure Functions · Blob Storage · Keycloak · Prometheus / Grafana / ELK
+
+---
+
+### Orchestration Platform *(side project — not employment)*
+
+| Field | Detail |
+|---|---|
+| Industry | Business orchestration |
+| Role | Co-founder |
+| Period | current |
+| Operating | Side project; public at the same altitude as the site “Now” card |
+
+**Duties**
+- Deterministic business-orchestration platform on gRPC and standalone module assemblies; deterministic replay as the differentiator.
+- Owns the core engine, runtime, module execution, configuration and flow state, traces and audit logs.
+
+**Tech:** gRPC · standalone module assemblies
 
 ---
 

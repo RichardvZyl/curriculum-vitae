@@ -201,7 +201,8 @@ _Full detail in `CV.md`._
 
 | Company | Role | Period |
 |---|---|---|
-| Yuno Technologies | Co-owner / Solutions Architect | Apr 2026 – present |
+| Yuno Technologies | Stakeholder / Solutions Architect *(side project; partner-operated)* | Apr 2026 – present |
+| Orchestration Platform | Co-founder *(side project)* | current |
 | Raging River Trading (Pty) Ltd | Solutions Architect / Technical Lead — Core Financial Systems | Dec 2022 – Mar 2026 |
 | MeterMo | Software Developer | Apr 2022 – Dec 2022 |
 | Dotcom Software Solutions | Software Developer (Specialist Problem-Solver) | Jan 2022 – Apr 2022 |

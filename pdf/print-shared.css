@@ -61,6 +61,13 @@ li {
   break-inside: avoid;
 }
 
+/* Generator wraps heading + first block in .keep so a section title cannot
+ * sit alone at the bottom of a page (the black-bar "gap" in PDF viewers). */
+.keep {
+  break-inside: avoid;
+  break-after: avoid;
+}
+
 a {
   color: inherit;
   text-decoration: none;

@@ -49,11 +49,31 @@ def md_to_html(md_text: str) -> str:
     # Drop the thematic break under the header — the print CSS already
     # separates the masthead from the first section.
     md_text = re.sub(r"\n---\n", "\n\n", md_text, count=1)
-    return markdown.markdown(
+    body = markdown.markdown(
         md_text,
         extensions=["tables", "fenced_code", "sane_lists"],
         output_format="html5",
     )
+    return keep_heading_with_content(body)
+
+
+def keep_heading_with_content(html: str) -> str:
+    """Stop h2/h3 being stranded at the bottom of a page.
+
+    WeasyPrint honours break-inside:avoid on a wrapper more reliably than
+    break-after:avoid on the heading alone.
+    """
+    html = re.sub(
+        r"(<h3>[\s\S]*?</h3>(?:\s*<p>[\s\S]*?</p>)*)",
+        r'<div class="keep">\1</div>',
+        html,
+    )
+    html = re.sub(
+        r"(<h2>[\s\S]*?</h2>\s*(?:<div class=\"keep\">[\s\S]*?</div>|<p>[\s\S]*?</p>|<ul>[\s\S]*?</ul>|<table>[\s\S]*?</table>))",
+        r'<div class="keep">\1</div>',
+        html,
+    )
+    return html
 
 
 def build_document(body_html: str, css_text: str, title: str) -> str:

@@ -49,6 +49,11 @@ def markdown_to_body(md: str) -> str:
         '<th class="skill">Skill</th>\n<th class="yrs">Years</th>',
         body,
     )
+    body = re.sub(
+        r"(<h2>[\s\S]*?</h2>\s*(?:<p>[\s\S]*?</p>)?)",
+        r'<div class="keep">\1</div>',
+        body,
+    )
     return body
 
 
