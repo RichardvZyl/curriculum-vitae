@@ -7,7 +7,7 @@
 > writing code, reviewing designs, or reasoning about his systems.
 >
 > _Public, non-proprietary. No client data, credentials, or private project internals._
-> _Last updated: 2026-09-02._
+> _Last updated: 2026-09-17._
 
 ---
 ## 1. Who I'm assisting
@@ -64,7 +64,7 @@ Tables and tight bullets are the preferred shape here — they hold many angles 
 | ORM / access | **Entity Framework Core**; a custom repository / unit-of-work / specification SDK (private) |
 | Patterns | DDD, CQRS, Event-Driven Architecture, SAGA, Clean Architecture, Result types |
 | Messaging | Azure Service Bus, RabbitMQ; gRPC, REST, SignalR |
-| Cloud/DevOps | Azure, Azure DevOps + GitHub, Docker, AKS, CI/CD, feature flags |
+| Cloud/DevOps | Azure, Azure DevOps + GitHub, Docker, CI/CD, feature flags |
 | Testing | xUnit, NUnit, Moq, TestContainers (integration) |
 | Observability | Serilog, App Insights / Log Analytics (KQL), ELK |
 

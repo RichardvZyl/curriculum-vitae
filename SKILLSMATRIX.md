@@ -133,7 +133,6 @@ Within each table, rows are ordered by years (highest first).
 | Microsoft Azure Insights | 5 |
 | New Relic (APM, release tracking, alerting) | 4 |
 | API Gateway (Azure API Management) | 4 |
-| AKS / Kubernetes | 4 |
 | Elastic Stack (ELK) / Serilog | 4 |
 | OpenTelemetry | 3 |
 | Grafana | 3 |

@@ -37,27 +37,27 @@ Both published PDFs are **WeasyPrint + committed CSS**, not pandoc/xelatex and n
 | Piece | Path |
 |---|---|
 | Content source | `CV.md` |
-| Print stylesheet | `pdf/cv-print.css` |
+| Print stylesheet | `pdf/cv-print.css` (plus `pdf/print-shared.css`) |
 | Generator | `scripts/generate-cv-pdf.py` |
 | Notes | `pdf/README.md` |
 | Output | `downloads/Richard-van-Zyl-CV.pdf` |
 
 - After editing `CV.md`, regenerate with:
   `pip install -r scripts/requirements-pdf.txt && python3 scripts/generate-cv-pdf.py`
-- Change appearance only via `pdf/cv-print.css` (tight heading→content gaps, hanging list indents, `margin-break: discard` after page breaks). Do not invent a parallel pipeline.
+- Change appearance only via `pdf/cv-print.css` and `pdf/print-shared.css` (tight heading→content gaps, hanging list indents, `margin-break: discard` after page breaks). Do not invent a parallel pipeline.
 
 ### Skills Overview PDF
 
 | Piece | Path |
 |---|---|
 | Content source | `SKILLS-OVERVIEW.md` |
-| Print stylesheet | `scripts/skills-overview-print.css` |
+| Print stylesheet | `scripts/skills-overview-print.css` (plus `pdf/print-shared.css`) |
 | Generator | `scripts/generate-skills-overview-pdf.py` |
 | Output | `downloads/Richard-van-Zyl-Skills-Overview.pdf` |
 
 - After editing `SKILLS-OVERVIEW.md`, regenerate with:
   `pip install -r scripts/requirements-pdf.txt && python3 scripts/generate-skills-overview-pdf.py`
-- Change appearance only via `scripts/skills-overview-print.css`. Keep **equal left/right page margins** (currently `14mm` all sides); table borders must not eat the right margin (`box-sizing: border-box` is required).
+- Change appearance only via `scripts/skills-overview-print.css` and `pdf/print-shared.css`. Keep **equal left/right page margins** (currently `14mm` all sides); table borders must not eat the right margin (`box-sizing: border-box` is required).
 
 **Shared agent rules:** do not invent pandoc / Chrome print-to-PDF / one-off CSS for *published*
 downloads. Never copy published PDFs back onto the site repo. Historical pandoc and local DOCX

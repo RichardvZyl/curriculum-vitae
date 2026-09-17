@@ -1,57 +1,56 @@
 /* Canonical print stylesheet for Skills Overview PDF.
- * Loaded by scripts/generate-skills-overview-pdf.py — do not invent a parallel style.
- * Changing this file (not SKILLS-OVERVIEW.md) is how you change the look.
+ * Page size, font, and break hygiene live in pdf/print-shared.css (concatenated).
+ * Changing this file (not SKILLS-OVERVIEW.md) is how you change Skills-only look.
  */
-
-@page {
-  size: A4;
-  /* Equal on all sides — left and right must match visually. */
-  margin: 14mm;
-}
 
 * {
   box-sizing: border-box;
 }
 
 html, body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
-  font-size: 9.5pt;
-  line-height: 1.32;
-  color: #1a1a1a;
-  margin: 0;
-  padding: 0;
   width: 100%;
   max-width: 100%;
 }
 
 h1 {
-  font-size: 16pt;
+  font-size: 18pt;
   font-weight: 700;
   margin: 0 0 3pt;
   color: #0b1512;
+  letter-spacing: -0.02em;
+}
+
+h1 + p {
+  font-size: 10.5pt;
+  font-weight: 600;
+  margin: 0 0 3pt;
+}
+
+h1 + p + p {
+  font-size: 9pt;
+  color: #333;
+  margin: 0 0 8pt;
 }
 
 h2 {
-  font-size: 11.5pt;
+  font-size: 11pt;
   font-weight: 700;
-  margin: 11pt 0 5pt;
+  margin: 12pt 0 5pt;
   padding-bottom: 2pt;
   border-bottom: 1px solid #c9cfc9;
   color: #0b1512;
-  page-break-after: avoid;
+  text-transform: none;
+  letter-spacing: 0;
 }
 
 h3 {
-  font-size: 10pt;
+  font-size: 10.5pt;
   font-weight: 700;
   margin: 9pt 0 3pt;
   color: #1f3a32;
-  page-break-after: avoid;
 }
 
 p { margin: 0 0 5pt; }
-strong { font-weight: 700; }
-a { color: inherit; text-decoration: none; }
 
 blockquote {
   margin: 6pt 0 8pt;
@@ -63,8 +62,23 @@ blockquote {
 
 blockquote p { margin: 0; }
 
-ul { margin: 3pt 0 7pt; padding-left: 15pt; }
-li { margin: 0 0 2.5pt; }
+ul {
+  list-style: none;
+  margin: 3pt 0 7pt;
+  padding: 0;
+}
+
+li {
+  margin: 0 0 3pt;
+  padding-left: 0.85em;
+  text-indent: -0.85em;
+}
+
+li::before {
+  content: "•";
+  font-weight: 700;
+  padding-right: 0.3em;
+}
 
 hr {
   border: none;
@@ -77,20 +91,20 @@ table {
   max-width: 100%;
   border-collapse: collapse;
   margin: 2pt 0 8pt;
-  page-break-inside: auto;
+  break-inside: auto;
   table-layout: fixed;
 }
 
 tr {
-  page-break-inside: avoid;
-  page-break-after: auto;
+  break-inside: avoid;
+  break-after: auto;
 }
 
 thead { display: table-header-group; }
 
 th, td {
   border: 1px solid #cfd6cf;
-  padding: 3pt 6pt;
+  padding: 3.5pt 6pt;
   text-align: left;
   vertical-align: top;
   overflow-wrap: break-word;
@@ -100,10 +114,10 @@ th, td {
 th {
   background: #eef2ee;
   font-weight: 700;
-  font-size: 8.5pt;
+  font-size: 9pt;
 }
 
-td { font-size: 9pt; }
+td { font-size: 9.5pt; }
 
 /* Skill | Years tables: narrow right-aligned years column */
 table.skills th.skill,
@@ -116,9 +130,4 @@ table.skills td:last-child {
   width: 12%;
   text-align: right;
   white-space: nowrap;
-}
-
-code {
-  font-family: "SFMono-Regular", Consolas, "Liberation Mono", Menlo, monospace;
-  font-size: 8pt;
 }

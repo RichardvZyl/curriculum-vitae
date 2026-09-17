@@ -46,7 +46,7 @@ FluentValidation, AutoMapper, Polly; SQL / T-SQL; TypeScript, JavaScript, Node.j
 SignalR / WebSockets.
 
 **Cloud, DevOps & Observability** — Microsoft Azure, Azure DevOps, **Azure DevOps YAML pipelines
-(pipeline-as-code)**, Docker on Azure hosts, AKS / Kubernetes, Azure CI/CD, GitHub, Trunk-based &
+(pipeline-as-code)**, Docker on Azure hosts, Azure CI/CD, GitHub, Trunk-based &
 GitFlow branching, Feature Flags. Observability: **New Relic** (release tracking wired through the
 DevOps pipeline, key-transaction instrumentation, alerting into MS Teams), OpenTelemetry, Grafana,
 Graylog over UDP, ActiveXperts, Azure Monitor / Application Insights / Log Analytics, Elastic
@@ -100,8 +100,8 @@ backend engineering and security design across client platforms.
   Storage and Communication Services, with Prometheus, Grafana and the Elastic Stack for
   observability, behind an isolated container network.
 - **Phase 2 / planned:** Mutual TLS with SPIFFE/SPIRE workload identities at the service-mesh
-  boundary for stronger service-to-service isolation — sequenced rather than forcing a
-  Kubernetes-shaped stack onto the first release, with Keycloak service accounts as the documented
+  boundary for stronger service-to-service isolation — sequenced rather than forcing an
+  orchestrated-cluster stack onto the first release, with Keycloak service accounts as the documented
   interim and the gap recorded as a critical open item rather than left implicit.
   _(Vite / React SPA, .NET services, PostgreSQL, Redis, RabbitMQ, outbox and dispatcher pattern,
   gRPC over HTTP/2 for service-to-service.)_

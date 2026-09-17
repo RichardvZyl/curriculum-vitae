@@ -6,6 +6,7 @@ Usage (from repo root):
   python3 scripts/generate-cv-pdf.py --out /path/to/Richard-van-Zyl-CV.pdf
 
 Requires: weasyprint, markdown (see pdf/README.md).
+Concatenates pdf/print-shared.css ahead of pdf/cv-print.css.
 Does not touch the Skills Overview / skills-matrix PDF.
 """
 
@@ -29,8 +30,18 @@ except ImportError as exc:  # pragma: no cover
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MD = ROOT / "CV.md"
+SHARED_CSS = ROOT / "pdf" / "print-shared.css"
 DEFAULT_CSS = ROOT / "pdf" / "cv-print.css"
 DEFAULT_OUT = ROOT / "downloads" / "Richard-van-Zyl-CV.pdf"
+
+
+def combined_css(specific: Path) -> str:
+    parts = []
+    for path in (SHARED_CSS, specific):
+        if not path.is_file():
+            raise FileNotFoundError(path)
+        parts.append(path.read_text(encoding="utf-8"))
+    return "\n".join(parts)
 
 
 def md_to_html(md_text: str) -> str:
@@ -64,7 +75,7 @@ def build_document(body_html: str, css_text: str, title: str) -> str:
 
 def generate(md_path: Path, css_path: Path, out_path: Path, keep_html: Path | None) -> None:
     md_text = md_path.read_text(encoding="utf-8")
-    css_text = css_path.read_text(encoding="utf-8")
+    css_text = combined_css(css_path)
     body = md_to_html(md_text)
     title = "Richard van Zyl — CV"
     document = build_document(body, css_text, title)
@@ -90,7 +101,7 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    for path, label in ((args.md, "markdown"), (args.css, "css")):
+    for path, label in ((args.md, "markdown"), (SHARED_CSS, "shared css"), (args.css, "css")):
         if not path.is_file():
             sys.stderr.write(f"Missing {label} file: {path}\n")
             return 1
