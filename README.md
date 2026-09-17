@@ -26,6 +26,16 @@ without re-deriving context.
 | [`AI-CONTEXT.md`](./AI-CONTEXT.md) | **For AI assistants.** How to work with Richard on engineering tasks — stack, coding & database standards, architectural defaults, and a self-update rule. |
 | [`PROJECTS.md`](./PROJECTS.md) | Open-source portfolio, with an explicit note that additional **private** repos/packages exist and are excluded. |
 | [`LICENSE`](./LICENSE) | All rights reserved — read for evaluation; do not republish as your own. |
+| [`pdf/`](./pdf/) | Print CSS + notes for regenerating the CV PDF (WeasyPrint). |
+
+## Regenerating the CV PDF
+
+```bash
+pip install weasyprint markdown
+python3 scripts/generate-cv-pdf.py
+```
+
+Layout lives in [`pdf/cv-print.css`](./pdf/cv-print.css). This pipeline covers **`Richard-van-Zyl-CV.pdf` only** — leave the Skills Overview PDF alone unless you intentionally rebuild that separately.
 
 ## Contact
 
