@@ -9,25 +9,38 @@ Canonical agent entry for the public CV/portfolio repo.
 
 This repository is PUBLIC. Other agent files in this folder (`CLAUDE.md`, `.cursorrules`, `.github/copilot-instructions.md`) reference this file rather than duplicating it.
 
-## Skills Overview PDF (canonical style)
+## Downloadable PDFs (canonical style)
 
-The downloadable Skills Overview look is **WeasyPrint + committed CSS**, not pandoc/xelatex and not an ad-hoc print HTML.
+Both downloadable PDFs are **WeasyPrint + committed CSS**, not pandoc/xelatex and not ad-hoc print HTML. Shared deps: `scripts/requirements-pdf.txt`.
+
+### CV PDF
+
+| Piece | Path |
+|---|---|
+| Content source | `CV.md` |
+| Print stylesheet | `pdf/cv-print.css` |
+| Generator | `scripts/generate-cv-pdf.py` |
+| Notes | `pdf/README.md` |
+| Output | `downloads/Richard-van-Zyl-CV.pdf` |
+
+- After editing `CV.md`, regenerate with:
+  `pip install -r scripts/requirements-pdf.txt && python3 scripts/generate-cv-pdf.py`
+- Change appearance only via `pdf/cv-print.css` (tight heading→content gaps, hanging list indents, `margin-break: discard` after page breaks). Do not invent a parallel pipeline.
+
+### Skills Overview PDF
 
 | Piece | Path |
 |---|---|
 | Content source | `SKILLS-OVERVIEW.md` |
-| Print stylesheet (layout, fonts, margins, tables) | `scripts/skills-overview-print.css` |
+| Print stylesheet | `scripts/skills-overview-print.css` |
 | Generator | `scripts/generate-skills-overview-pdf.py` |
-| Python deps | `scripts/requirements-pdf.txt` |
 | Output | `downloads/Richard-van-Zyl-Skills-Overview.pdf` |
-
-**Rules for agents**
 
 - After editing `SKILLS-OVERVIEW.md`, regenerate with:
   `pip install -r scripts/requirements-pdf.txt && python3 scripts/generate-skills-overview-pdf.py`
-- **Do not** invent a new pipeline (pandoc, Chrome print-to-PDF, inline one-off CSS). Style must come from `skills-overview-print.css` so regenerations stay visually identical when only markdown content changes.
-- Change appearance only by editing `scripts/skills-overview-print.css` (and the markdown→HTML mapping in the generator if structure requires it). Keep **equal left/right page margins** (currently `14mm` all sides); table borders must not eat the right margin (`box-sizing: border-box` is required).
-- Sync the site copy of the PDF when `RichardvZyl.github.io` still hosts it locally.
+- Change appearance only via `scripts/skills-overview-print.css`. Keep **equal left/right page margins** (currently `14mm` all sides); table borders must not eat the right margin (`box-sizing: border-box` is required).
+
+**Shared agent rules:** do not invent pandoc / Chrome print-to-PDF / one-off CSS. Sync site copies when `RichardvZyl.github.io` still hosts the PDFs locally.
 
 ## Memory and workspace context (Perseus)
 
