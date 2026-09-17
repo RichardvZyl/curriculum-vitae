@@ -6,6 +6,8 @@ Canonical agent entry for the public CV/portfolio repo.
 - Public profile / CV / skills: `PROFILE.md`, `CV.md`, `SKILLSMATRIX.md`, `SKILLS-OVERVIEW.md`
 - Public project list: `PROJECTS.md` (public remotes only)
 - Private inventory: `PROJECTS.private.md` (git-ignored). Never copy private/client detail into public files.
+- **Session / pack rulings (ADRs):** [`docs/adr/`](./docs/adr/) — format per [engineering-standards `05-decision-records`](https://github.com/RichardvZyl/engineering-standards/blob/main/standards/05-decision-records.md) (Template Repository `standards/`).
+- **Rebuild PDFs / local DOCX:** [`pdf/README.md`](./pdf/README.md) (tool links + WeasyPrint / pandoc / DOCX commands).
 
 This repository is PUBLIC. Other agent files in this folder (`CLAUDE.md`, `.cursorrules`, `.github/copilot-instructions.md`) reference this file rather than duplicating it.
 
@@ -57,7 +59,9 @@ Both published PDFs are **WeasyPrint + committed CSS**, not pandoc/xelatex and n
   `pip install -r scripts/requirements-pdf.txt && python3 scripts/generate-skills-overview-pdf.py`
 - Change appearance only via `scripts/skills-overview-print.css`. Keep **equal left/right page margins** (currently `14mm` all sides); table borders must not eat the right margin (`box-sizing: border-box` is required).
 
-**Shared agent rules:** do not invent pandoc / Chrome print-to-PDF / one-off CSS. Never copy published PDFs back onto the site repo.
+**Shared agent rules:** do not invent pandoc / Chrome print-to-PDF / one-off CSS for *published*
+downloads. Never copy published PDFs back onto the site repo. Historical pandoc and local DOCX
+rebuilds are documented in `pdf/README.md` and must not silently overwrite `downloads/`.
 
 ## Memory and workspace context (Perseus)
 
