@@ -9,9 +9,26 @@ Canonical agent entry for the public CV/portfolio repo.
 
 This repository is PUBLIC. Other agent files in this folder (`CLAUDE.md`, `.cursorrules`, `.github/copilot-instructions.md`) reference this file rather than duplicating it.
 
+## Downloadable artefacts (canonical source)
+
+**This repo (`curriculum-vitae`) owns the published downloads.** The site (`RichardvZyl.github.io`) does **not** keep local PDF copies — its hero/contact buttons link here:
+
+- CV: `https://raw.githubusercontent.com/RichardvZyl/curriculum-vitae/master/downloads/Richard-van-Zyl-CV.pdf`
+- Skills Overview: `https://raw.githubusercontent.com/RichardvZyl/curriculum-vitae/master/downloads/Richard-van-Zyl-Skills-Overview.pdf`
+
+Same URLs are used from this repo’s README. After regenerating a PDF, commit it under `downloads/` on `master` — that is what the site serves. Do not re-add PDFs to the site repo.
+
+| Published | Path | On the website? |
+|---|---|---|
+| CV PDF | `downloads/Richard-van-Zyl-CV.pdf` | Linked (points here) |
+| Skills Overview PDF | `downloads/Richard-van-Zyl-Skills-Overview.pdf` | Linked (points here) |
+| Word / DOCX | May exist locally for editing; `*.docx` is gitignored | **Not linked** — deliberately unpublished |
+
+Word/DOCX is not a public download. Do not add DOCX links to the site or README. The dated GitHub release `cv-downloads-2026-09-14` is stale; do not point new links at it.
+
 ## Downloadable PDFs (canonical style)
 
-Both downloadable PDFs are **WeasyPrint + committed CSS**, not pandoc/xelatex and not ad-hoc print HTML. Shared deps: `scripts/requirements-pdf.txt`.
+Both published PDFs are **WeasyPrint + committed CSS**, not pandoc/xelatex and not ad-hoc print HTML. Shared deps: `scripts/requirements-pdf.txt`.
 
 ### CV PDF
 
@@ -40,7 +57,7 @@ Both downloadable PDFs are **WeasyPrint + committed CSS**, not pandoc/xelatex an
   `pip install -r scripts/requirements-pdf.txt && python3 scripts/generate-skills-overview-pdf.py`
 - Change appearance only via `scripts/skills-overview-print.css`. Keep **equal left/right page margins** (currently `14mm` all sides); table borders must not eat the right margin (`box-sizing: border-box` is required).
 
-**Shared agent rules:** do not invent pandoc / Chrome print-to-PDF / one-off CSS. Sync site copies when `RichardvZyl.github.io` still hosts the PDFs locally.
+**Shared agent rules:** do not invent pandoc / Chrome print-to-PDF / one-off CSS. Never copy published PDFs back onto the site repo.
 
 ## Memory and workspace context (Perseus)
 
