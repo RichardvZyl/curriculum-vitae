@@ -1,9 +1,8 @@
 # AI Collaboration Context — Working with Richard van Zyl
 
-> **Purpose.** This is the operational companion to `PROFILE.md`. Where `PROFILE.md`
-> frames Richard for recruiters and role-matching, this file tells an AI assistant
-> *how to actually work with him* on engineering tasks — his stack, standards,
-> architectural defaults, and the way he likes help delivered. Load this before
+> **Purpose.** Operational companion to `PROFILE.md`. Profile holds career/context;
+> this file tells an assistant *how to work with Richard* on engineering tasks — stack,
+> standards, architectural defaults, and how he likes help delivered. Load before
 > writing code, reviewing designs, or reasoning about his systems.
 >
 > _Public, non-proprietary. No client data, credentials, or private project internals._
