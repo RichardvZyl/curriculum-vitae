@@ -186,8 +186,8 @@ strategy, and concurrency design, working in close partnership with the Enterpri
   business analysts, marketing, client retention), translating feature needs into a sustainable
   architecture without sacrificing long-term integrity for short-term wins.
 - **Recognition:** Certificate of Recognition three times; Banking Developer of the Year twice,
-  first place in both years; Employee of the Month; and a letter from the CEO on the launch of the
-  Jackpot City platform.
+  first place in both years; and a letter from the CEO on the launch of the Jackpot City
+  platform.
 
 > Data segregation was enforced at the application boundary through authentication and brand-to-schema
 > resolution. That path can satisfy an auditor, but a single bug in it has nothing beneath it — isolation
