@@ -21,6 +21,17 @@ Python pins for the canonical path: [`../scripts/requirements-pdf.txt`](../scrip
 pip install -r scripts/requirements-pdf.txt
 ```
 
+**Inter must be installed on the build machine.** It is not vendored here, and WeasyPrint does not
+warn when it falls back — a machine without Inter silently publishes a Liberation Sans render that
+looks nothing like the intended one. Check with `fc-list | grep -i inter` (or `pdffonts` on the
+output, which must list embedded `Inter` faces).
+
+```bash
+sudo apt-get install -y fonts-inter        # Debian / Ubuntu
+# macOS:   brew install --cask font-inter
+# Windows: install from https://rsms.me/inter/ before regenerating
+```
+
 ## Published artefacts (what’s condensed vs full)
 
 | Artefact | Role | Source | Output |
