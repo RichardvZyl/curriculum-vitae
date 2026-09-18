@@ -31,18 +31,21 @@ without re-deriving context.
 
 ## Regenerating print artefacts
 
-**Canonical (publishes to `downloads/`):**
+**Canonical PDFs → `downloads/` plus local DOCX → `dist/` (DOCX is gitignored, not published):**
 
 ```bash
 pip install -r scripts/requirements-pdf.txt
+# pandoc required for DOCX — https://pandoc.org/  (e.g. sudo apt-get install -y pandoc)
 python3 scripts/rebuild-print-artefacts.py
 ```
 
-**Also historical pandoc PDFs + local DOCX → `dist/` (gitignored, not published):**
+**Also historical pandoc+xelatex PDFs → `dist/`:**
 
 ```bash
 python3 scripts/rebuild-print-artefacts.py --all
 ```
+
+PDF-only: `python3 scripts/rebuild-print-artefacts.py --skip-docx`.
 
 Full commands, stylesheet map, and tool links (WeasyPrint, Pandoc, XeLaTeX, Poppler):
 [`pdf/README.md`](./pdf/README.md). Rulings: [`docs/adr/`](./docs/adr/).

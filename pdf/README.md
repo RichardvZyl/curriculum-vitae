@@ -22,12 +22,14 @@ pip install -r scripts/requirements-pdf.txt
 
 ## Canonical publish path (WeasyPrint) — writes `downloads/`
 
-These are the only commands that may update published PDFs.
+These are the only commands that may update published PDFs. Prefer the one-shot helper below
+(it also writes local DOCX under `dist/`).
 
 ```bash
 # From curriculum-vitae repo root
 python3 scripts/generate-cv-pdf.py
 python3 scripts/generate-skills-overview-pdf.py
+# Local Word (unpublished): python3 scripts/generate-local-docx.py
 ```
 
 | Output | Stylesheet | Generator |
@@ -80,24 +82,37 @@ pandoc SKILLS-OVERVIEW.md -o dist/Richard-van-Zyl-Skills-Overview.pandoc-xelatex
 
 Or: `python3 scripts/generate-historical-pandoc-pdfs.py` (same flags; writes `dist/`).
 
-## Local Word / DOCX — unpublished
+## Local Word / DOCX — unpublished (always with default rebuild)
 
-Per ADR 0003, DOCX is **not** a public download. Generate under `dist/` for editing or
-on-request sends only:
+Per ADR 0003, DOCX is **not** a public download. Output is under gitignored `dist/` for editing
+or on-request sends only.
+
+**Install pandoc** (once): https://pandoc.org/ — e.g. `sudo apt-get install -y pandoc`.
 
 ```bash
+# Preferred: same one-shot as published PDFs (DOCX is included by default)
+python3 scripts/rebuild-print-artefacts.py
+
+# DOCX only
+python3 scripts/generate-local-docx.py
+
+# Equivalent manual commands
 mkdir -p dist
 pandoc CV.md -o dist/Richard-van-Zyl-CV.docx
 pandoc SKILLS-OVERVIEW.md -o dist/Richard-van-Zyl-Skills-Overview.docx
 ```
 
-Or: `python3 scripts/generate-local-docx.py`.
+| Output | Generator |
+|---|---|
+| `dist/Richard-van-Zyl-CV.docx` | `scripts/generate-local-docx.py` |
+| `dist/Richard-van-Zyl-Skills-Overview.docx` | same |
 
 Do **not** commit these files (`*.docx` is gitignored) and do **not** link them from the site.
 
 ## One-shot helper
 
 ```bash
-python3 scripts/rebuild-print-artefacts.py           # canonical WeasyPrint → downloads/
-python3 scripts/rebuild-print-artefacts.py --all    # also pandoc PDFs + DOCX → dist/
+python3 scripts/rebuild-print-artefacts.py              # WeasyPrint → downloads/ + DOCX → dist/
+python3 scripts/rebuild-print-artefacts.py --skip-docx  # PDFs only
+python3 scripts/rebuild-print-artefacts.py --all        # also historical pandoc PDFs → dist/
 ```

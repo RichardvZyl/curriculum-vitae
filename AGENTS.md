@@ -63,6 +63,23 @@ Both published PDFs are **WeasyPrint + committed CSS**, not pandoc/xelatex and n
 downloads. Never copy published PDFs back onto the site repo. Historical pandoc and local DOCX
 rebuilds are documented in `pdf/README.md` and must not silently overwrite `downloads/`.
 
+### Local DOCX (always with rebuild; unpublished)
+
+Word exports live under gitignored `dist/` only — never under `downloads/`, never linked from the
+site (ADR 0003).
+
+| Piece | Path |
+|---|---|
+| Generator | `scripts/generate-local-docx.py` |
+| Outputs | `dist/Richard-van-Zyl-CV.docx`, `dist/Richard-van-Zyl-Skills-Overview.docx` |
+| Tool | **pandoc** — https://pandoc.org/ (e.g. `sudo apt-get install -y pandoc`) |
+
+- Default rebuild always writes DOCX after the published PDFs:
+  `pip install -r scripts/requirements-pdf.txt && python3 scripts/rebuild-print-artefacts.py`
+- DOCX only: `python3 scripts/generate-local-docx.py`
+- PDF-only (skip Word): `python3 scripts/rebuild-print-artefacts.py --skip-docx`
+- Do **not** commit `*.docx`.
+
 ## Memory and workspace context (Perseus)
 
 - **Vault** (shared across clients on this machine): `perseus_vault_*` MCP tools. Session start: `perseus_vault_context`. Durable facts: `perseus_vault_remember`. No secrets. Never remember anything that cannot appear in a public repo.
