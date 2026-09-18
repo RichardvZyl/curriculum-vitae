@@ -13,7 +13,8 @@
 }
 
 html, body {
-  font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+  /* Font family comes from pdf/print-shared.css (Inter) so all three
+   * published PDFs share typography; only the size is tighter here. */
   font-size: 9pt;
   line-height: 1.3;
   color: #1a1a1a;

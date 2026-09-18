@@ -58,3 +58,17 @@ jobs:
 
       - name: Forbidden content
         run: python3 scripts/content-guard.py
+
+      - name: Published PDFs embed Inter
+        run: |
+          set -euo pipefail
+          failed=0
+          for f in downloads/*.pdf; do
+            if pdffonts "$f" | grep -q 'Inter'; then
+              echo "OK  $f"
+            else
+              echo "::error file=$f::no embedded Inter face - built on a machine without Inter, so WeasyPrint silently fell back"
+              failed=1
+            fi
+          done
+          exit "$failed"
