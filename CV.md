@@ -268,12 +268,12 @@ support. _(C# .NET WinForms, MySQL, Linux.)_
 **Multi-model evaluation practice.** Runs five commercial assistants concurrently — Claude
 (primary), GitHub Copilot, Cursor, OpenAI Codex and Grok — as a deliberate comparison harness
 rather than a single-vendor commitment, with a considered position on where each is strongest and
-where consistency breaks down. Each assistant is installed as both CLI and GUI, because scripted,
-repeatable and terminal-embedded work wants one surface and exploratory work wants the other. A
-sixth subscription ran alongside them for a period as a fallback layer while routing options were
-evaluated; the routing layer is settled now. Workflows are kept OpenAI API-compatible so
-any conformant provider is a drop-in, and an open-weight model hosted locally (Qwen on Ollama)
-keeps an inference path that survives a provider outage, or no network at all.
+where consistency breaks down. Each is installed as both CLI and GUI, because scripted, repeatable
+and terminal-embedded work wants one surface and exploratory work wants the other. A sixth
+subscription, [Sixth](https://trysixth.com), ran alongside them as a fallback layer while routing
+options were evaluated; the routing layer is settled now. Workflows are kept OpenAI
+API-compatible so any conformant provider is a drop-in, and Qwen runs locally on Ollama — an
+inference path that depends on no provider, no subscription and no network.
 
 **Agent orchestration framework.** Designed and built an end-to-end pipeline that decomposes a
 brief into a dependency-aware DAG of work items — each tagged with complexity, a preferred model
@@ -311,9 +311,8 @@ through MCP server integration across cloud, design and developer tooling.
 **Frontier tooling evaluation.** Runs a standing evaluation of emerging agent infrastructure
 beyond the mainstream assistants — agent frameworks (Hermes / Nous Research), model-routing layers
 (Omniroute in production, 9Router under evaluation) and persistent memory and context systems
-(Perseus, Mnemonic AI) — to track
-where the practical ceiling on context persistence, routing economics and agent autonomy is
-moving, ahead of it becoming standard practice.
+(Perseus, Mnemonic AI) — to track where the practical ceiling on context persistence, routing
+economics and agent autonomy is moving, ahead of it becoming standard practice.
 
 ---
 
