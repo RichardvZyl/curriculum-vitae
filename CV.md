@@ -46,7 +46,7 @@ FluentValidation, AutoMapper, Polly; SQL / T-SQL; TypeScript, JavaScript, Node.j
 SignalR / WebSockets.
 
 **Cloud, DevOps & Observability** — Microsoft Azure, Azure DevOps, **Azure DevOps YAML pipelines
-(pipeline-as-code)**, Docker on Azure hosts, AKS / Kubernetes, Azure CI/CD, GitHub, Trunk-based &
+(pipeline-as-code)**, Docker on Azure hosts, Azure CI/CD, GitHub, Trunk-based &
 GitFlow branching, Feature Flags. Observability: **New Relic** (release tracking wired through the
 DevOps pipeline, key-transaction instrumentation, alerting into MS Teams), OpenTelemetry, Grafana,
 Graylog over UDP, ActiveXperts, Azure Monitor / Application Insights / Log Analytics, Elastic
@@ -82,13 +82,15 @@ Architect (UML), Swagger, Postman, SSRS; Angular, Angular Material; Agile, Scrum
 
 ---
 
-## Professional Experience
+## Side projects
 
-### Co-owner / Solutions Architect
-**Yuno Technologies** · Digital consultancy · Apr 2026 – present
+Not employment — a partner runs the consultancy; I contribute technically. Available immediately.
 
-Half-owner of a South African digital consultancy, leading technical delivery — architecture,
-backend engineering and security design across client platforms.
+### Stakeholder / Solutions Architect
+**Yuno Technologies** · Digital consultancy · Apr 2026 – present · side project
+
+Stakeholder in a consultancy operated by a partner. I contribute architecture and technical
+delivery; I do not run the business day to day.
 
 - **Current production architecture:** Designed the four-plane deployment topology and containerised
   platform. Four planes with one-way initiation: a public edge behind CDN and WAF; an SPA plane
@@ -100,8 +102,8 @@ backend engineering and security design across client platforms.
   Storage and Communication Services, with Prometheus, Grafana and the Elastic Stack for
   observability, behind an isolated container network.
 - **Phase 2 / planned:** Mutual TLS with SPIFFE/SPIRE workload identities at the service-mesh
-  boundary for stronger service-to-service isolation — sequenced rather than forcing a
-  Kubernetes-shaped stack onto the first release, with Keycloak service accounts as the documented
+  boundary for stronger service-to-service isolation — sequenced rather than forcing an
+  orchestrated-cluster stack onto the first release, with Keycloak service accounts as the documented
   interim and the gap recorded as a critical open item rather than left implicit.
   _(Vite / React SPA, .NET services, PostgreSQL, Redis, RabbitMQ, outbox and dispatcher pattern,
   gRPC over HTTP/2 for service-to-service.)_
@@ -111,6 +113,15 @@ backend engineering and security design across client platforms.
   ledger.
 - Architecture decisions recorded as **ADRs with formal supersession**, so topology changes carry
   their own rationale rather than being reconstructed from commit history.
+
+### Co-founder
+**Orchestration Platform** · side project
+
+A deterministic business-orchestration platform on gRPC and standalone module assemblies, with
+deterministic replay as the differentiator. Owns the core engine, runtime, module execution,
+configuration and flow state, traces and audit logs.
+
+## Professional Experience
 
 ### Solutions Architect / Technical Lead — Core Financial Systems
 **Raging River Trading (Pty) Ltd** · Fintech / Gaming · Dec 2022 – Mar 2026

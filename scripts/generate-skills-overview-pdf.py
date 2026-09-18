@@ -22,7 +22,12 @@ from weasyprint import HTML
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "SKILLS-OVERVIEW.md"
 OUTPUT = ROOT / "downloads" / "Richard-van-Zyl-Skills-Overview.pdf"
+SHARED_CSS = ROOT / "pdf" / "print-shared.css"
 CSS_PATH = Path(__file__).resolve().parent / "skills-overview-print.css"
+
+
+def combined_css() -> str:
+    return SHARED_CSS.read_text(encoding="utf-8") + "\n" + CSS_PATH.read_text(encoding="utf-8")
 
 
 def markdown_to_body(md: str) -> str:
@@ -44,6 +49,11 @@ def markdown_to_body(md: str) -> str:
         '<th class="skill">Skill</th>\n<th class="yrs">Years</th>',
         body,
     )
+    body = re.sub(
+        r"(<h2>[\s\S]*?</h2>\s*(?:<p>[\s\S]*?</p>)?)",
+        r'<div class="keep">\1</div>',
+        body,
+    )
     return body
 
 
@@ -61,16 +71,19 @@ def main() -> int:
     if not SOURCE.is_file():
         print(f"missing source: {SOURCE}", file=sys.stderr)
         return 1
+    if not SHARED_CSS.is_file():
+        print(f"missing stylesheet: {SHARED_CSS}", file=sys.stderr)
+        return 1
     if not CSS_PATH.is_file():
         print(f"missing stylesheet: {CSS_PATH}", file=sys.stderr)
         return 1
 
-    css = CSS_PATH.read_text(encoding="utf-8")
+    css = combined_css()
     html = build_html(SOURCE.read_text(encoding="utf-8"), css)
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     HTML(string=html, base_url=str(ROOT)).write_pdf(str(OUTPUT))
     print(f"wrote {OUTPUT} ({OUTPUT.stat().st_size} bytes)")
-    print(f"style: {CSS_PATH.relative_to(ROOT)}")
+    print(f"style: {SHARED_CSS.relative_to(ROOT)} + {CSS_PATH.relative_to(ROOT)}")
     return 0
 
 

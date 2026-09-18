@@ -8,7 +8,8 @@
 > Commercial work is described at a high, non-confidential level in [`CV.md`](./CV.md) and
 > [`SKILLSMATRIX.md`](./SKILLSMATRIX.md).
 >
-> _Last updated: 2026-09-02._
+> _Last updated: 2026-09-17._ Re-checked against github.com/RichardvZyl the same day:
+> eight public remotes (five active below, three archived). Private remotes stay out.
 
 ---
 

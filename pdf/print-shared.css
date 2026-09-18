@@ -1,0 +1,83 @@
+/* Shared print tokens for both published PDFs (CV + Skills Overview).
+ * Concatenated ahead of the artefact-specific stylesheet by the generators.
+ * Keep artefact-only rules (CV hanging lists, Skills tables) out of this file.
+ */
+
+@page {
+  /* Explicit A4 — US Letter is WeasyPrint's fallback if size is omitted. */
+  size: A4 portrait;
+  /* Equal on all sides. 14mm is enough gutter that a moved block does not
+   * paint into the next page box; 16mm left a near-empty last CV page. */
+  margin: 14mm;
+}
+
+html {
+  color: #1a1a1a;
+}
+
+html, body {
+  /* Inter: large x-height, readable at 10pt. Liberation Sans is the
+   * metric-compatible fallback when Inter is not installed. */
+  font-family: Inter, "Liberation Sans", "Noto Sans", sans-serif;
+  font-size: 10pt;
+  line-height: 1.32;
+  font-weight: 400;
+  margin: 0;
+  padding: 0;
+  max-width: none;
+}
+
+/* Discard collapsed top margin after a fragmentation break, so a heading
+ * that starts a page does not inherit the "space after previous section". */
+h1, h2, h3, h4, p, ul, ol, blockquote, table, tr, td, th, li, hr {
+  margin-break: discard;
+}
+
+h2, h3 {
+  break-after: avoid;
+  break-inside: avoid;
+}
+
+/* Keep the line under an h2 with the following table rather than
+ * stranding the heading at the bottom of a page. */
+h2 + p,
+h2 + ul,
+h2 + table,
+h3 + p,
+h3 + ul,
+h3 + table {
+  break-before: avoid;
+}
+
+p {
+  orphans: 3;
+  widows: 3;
+}
+
+/* Keep a list item on one page when it fits. Combined with the 14mm page
+ * gutter, WeasyPrint moves the whole item instead of painting past the
+ * page box. Do not set this on elements taller than one page. */
+li {
+  break-inside: avoid;
+}
+
+/* Generator wraps heading + first block in .keep so a section title cannot
+ * sit alone at the bottom of a page (the black-bar "gap" in PDF viewers). */
+.keep {
+  break-inside: avoid;
+  break-after: avoid;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+code {
+  font-family: "Liberation Mono", ui-monospace, "Cascadia Mono", Consolas, monospace;
+  font-size: 0.9em;
+}
+
+strong {
+  font-weight: 600;
+}
