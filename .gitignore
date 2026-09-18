@@ -29,6 +29,7 @@ dist/**
 *.docx
 !downloads/Richard-van-Zyl-CV.pdf
 !downloads/Richard-van-Zyl-Skills-Overview.pdf
+!downloads/Richard-van-Zyl-Skills-Matrix.pdf
 *.doc
 *.xlsx
 *.htm

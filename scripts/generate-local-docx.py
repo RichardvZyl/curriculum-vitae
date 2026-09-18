@@ -16,6 +16,7 @@ DIST = ROOT / "dist"
 JOBS = [
     (ROOT / "CV.md", DIST / "Richard-van-Zyl-CV.docx"),
     (ROOT / "SKILLS-OVERVIEW.md", DIST / "Richard-van-Zyl-Skills-Overview.docx"),
+    (ROOT / "SKILLSMATRIX.md", DIST / "Richard-van-Zyl-Skills-Matrix.docx"),
 ]
 
 

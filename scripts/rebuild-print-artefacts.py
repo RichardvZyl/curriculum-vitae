@@ -40,6 +40,7 @@ def main() -> int:
 
     run("generate-cv-pdf.py")
     run("generate-skills-overview-pdf.py")
+    run("generate-skills-matrix-pdf.py")
     if not args.skip_docx:
         run("generate-local-docx.py")
     if args.all:

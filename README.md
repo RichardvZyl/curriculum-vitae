@@ -1,7 +1,8 @@
 # Richard van Zyl — Curriculum Vitae
 
 **[⬇ CV (PDF)](https://raw.githubusercontent.com/RichardvZyl/curriculum-vitae/master/downloads/Richard-van-Zyl-CV.pdf)** ·
-**[Skills overview (PDF)](https://raw.githubusercontent.com/RichardvZyl/curriculum-vitae/master/downloads/Richard-van-Zyl-Skills-Overview.pdf)** ·
+**[Skills overview — condensed (PDF)](https://raw.githubusercontent.com/RichardvZyl/curriculum-vitae/master/downloads/Richard-van-Zyl-Skills-Overview.pdf)** ·
+**[Skills matrix — full (PDF)](https://raw.githubusercontent.com/RichardvZyl/curriculum-vitae/master/downloads/Richard-van-Zyl-Skills-Matrix.pdf)** ·
 **[richardvzyl.github.io](https://richardvzyl.github.io/)**
 
 Curriculum vitae and skills pack for a Solutions Architect / Technical Lead specialising in
@@ -17,8 +18,8 @@ high-throughput, multi-tenant financial systems (C#/.NET, SQL Server, Azure).
 |---|---|
 | [`PROFILE.md`](./PROFILE.md) | Structured profile — snapshot, summary, skills matrix, achievements, experience overview, honest skill boundaries. |
 | [`CV.md`](./CV.md) | CV (summary, competencies, achievements, full role history, open source, education). |
-| [`SKILLS-OVERVIEW.md`](./SKILLS-OVERVIEW.md) | Skills summary — source for the Skills Overview PDF (`scripts/generate-skills-overview-pdf.py`; see `AGENTS.md`). |
-| [`SKILLSMATRIX.md`](./SKILLSMATRIX.md) | 2026 skills matrix with years of experience, a SQL performance-tuning deep-dive, and a project-by-project breakdown per employer. |
+| [`SKILLS-OVERVIEW.md`](./SKILLS-OVERVIEW.md) | **Condensed** skills — source for Skills Overview PDF. |
+| [`SKILLSMATRIX.md`](./SKILLSMATRIX.md) | **Full** skills matrix — source for Skills Matrix PDF (years, SQL deep-dive, project-by-project). |
 | [`AI-CONTEXT.md`](./AI-CONTEXT.md) | How to work with Richard on engineering tasks — stack, coding & database standards, architectural defaults, and a self-update rule. |
 | [`PROJECTS.md`](./PROJECTS.md) | Open-source portfolio, with an explicit note that additional **private** repos/packages exist and are excluded. |
 | [`LICENSE`](./LICENSE) | All rights reserved — read for evaluation; do not republish as your own. |

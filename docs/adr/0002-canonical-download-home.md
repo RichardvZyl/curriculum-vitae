@@ -27,12 +27,14 @@ possible.
 **Canonical published PDFs live only in this repository:**
 
 - `downloads/Richard-van-Zyl-CV.pdf`
-- `downloads/Richard-van-Zyl-Skills-Overview.pdf`
+- `downloads/Richard-van-Zyl-Skills-Overview.pdf` (condensed)
+- `downloads/Richard-van-Zyl-Skills-Matrix.pdf` (full) — see [0005](./0005-dual-skills-pdfs.md)
 
 Served as:
 
 - `https://raw.githubusercontent.com/RichardvZyl/curriculum-vitae/master/downloads/Richard-van-Zyl-CV.pdf`
 - `https://raw.githubusercontent.com/RichardvZyl/curriculum-vitae/master/downloads/Richard-van-Zyl-Skills-Overview.pdf`
+- `https://raw.githubusercontent.com/RichardvZyl/curriculum-vitae/master/downloads/Richard-van-Zyl-Skills-Matrix.pdf`
 
 The site (`RichardvZyl.github.io`) **does not** keep local PDF copies. Its hero/contact buttons
 use the URLs above. GitHub serves them as `application/octet-stream` with `nosniff`, so they still

@@ -142,8 +142,6 @@ Keep these framing notes when matching roles — they are deliberate, not soft-p
 
 ## Career timeline (condensed)
 
-Detail stays in [`CV.md`](./CV.md).
-
 | Period | Role | Organisation |
 |---|---|---|
 | Apr 2026 – present | Co-owner / Solutions Architect | Yuno Technologies |
@@ -163,4 +161,4 @@ Detail stays in [`CV.md`](./CV.md).
 
 ---
 
-*All rights reserved. For evaluation by employers and collaborators; do not republish as your own. See [`LICENSE`](./LICENSE).*
+*All rights reserved. For evaluation by employers and collaborators; do not republish as your own.*

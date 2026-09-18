@@ -39,9 +39,12 @@ checked-in generators:
 | Artefact | Content | Stylesheet | Generator |
 |---|---|---|---|
 | `downloads/Richard-van-Zyl-CV.pdf` | `CV.md` | `pdf/cv-print.css` | `scripts/generate-cv-pdf.py` |
-| `downloads/Richard-van-Zyl-Skills-Overview.pdf` | `SKILLS-OVERVIEW.md` | `scripts/skills-overview-print.css` | `scripts/generate-skills-overview-pdf.py` |
+| `downloads/Richard-van-Zyl-Skills-Overview.pdf` (**condensed**) | `SKILLS-OVERVIEW.md` | `scripts/skills-overview-print.css` | `scripts/generate-skills-overview-pdf.py` |
+| `downloads/Richard-van-Zyl-Skills-Matrix.pdf` (**full**) | `SKILLSMATRIX.md` | `scripts/skills-matrix-print.css` | `scripts/generate-skills-matrix-pdf.py` |
 
 Deps: `scripts/requirements-pdf.txt`. Rebuild notes and tool links: [`pdf/README.md`](../../pdf/README.md).
+
+Third published skills artefact: see [0005](./0005-dual-skills-pdfs.md).
 
 **pandoc + xelatex remains a documented historical / comparison path** so the original look can be
 reproduced; it is not allowed to overwrite `downloads/` unless a new ADR supersedes this one.
