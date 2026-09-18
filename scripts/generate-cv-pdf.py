@@ -6,6 +6,7 @@ Usage (from repo root):
   python3 scripts/generate-cv-pdf.py --out /path/to/Richard-van-Zyl-CV.pdf
 
 Requires: weasyprint, markdown (see pdf/README.md).
+Concatenates pdf/print-shared.css ahead of pdf/cv-print.css.
 Does not touch the Skills Overview / skills-matrix PDF.
 """
 
@@ -29,8 +30,18 @@ except ImportError as exc:  # pragma: no cover
 
 ROOT = Path(__file__).resolve().parents[1]
 DEFAULT_MD = ROOT / "CV.md"
+SHARED_CSS = ROOT / "pdf" / "print-shared.css"
 DEFAULT_CSS = ROOT / "pdf" / "cv-print.css"
 DEFAULT_OUT = ROOT / "downloads" / "Richard-van-Zyl-CV.pdf"
+
+
+def combined_css(specific: Path) -> str:
+    parts = []
+    for path in (SHARED_CSS, specific):
+        if not path.is_file():
+            raise FileNotFoundError(path)
+        parts.append(path.read_text(encoding="utf-8"))
+    return "\n".join(parts)
 
 
 def md_to_html(md_text: str) -> str:
@@ -38,11 +49,31 @@ def md_to_html(md_text: str) -> str:
     # Drop the thematic break under the header — the print CSS already
     # separates the masthead from the first section.
     md_text = re.sub(r"\n---\n", "\n\n", md_text, count=1)
-    return markdown.markdown(
+    body = markdown.markdown(
         md_text,
         extensions=["tables", "fenced_code", "sane_lists"],
         output_format="html5",
     )
+    return keep_heading_with_content(body)
+
+
+def keep_heading_with_content(html: str) -> str:
+    """Stop h2/h3 being stranded at the bottom of a page.
+
+    WeasyPrint honours break-inside:avoid on a wrapper more reliably than
+    break-after:avoid on the heading alone.
+    """
+    html = re.sub(
+        r"(<h3>[\s\S]*?</h3>(?:\s*<p>[\s\S]*?</p>)*)",
+        r'<div class="keep">\1</div>',
+        html,
+    )
+    html = re.sub(
+        r"(<h2>[\s\S]*?</h2>\s*(?:<div class=\"keep\">[\s\S]*?</div>|<p>[\s\S]*?</p>|<ul>[\s\S]*?</ul>|<table>[\s\S]*?</table>))",
+        r'<div class="keep">\1</div>',
+        html,
+    )
+    return html
 
 
 def build_document(body_html: str, css_text: str, title: str) -> str:
@@ -64,7 +95,7 @@ def build_document(body_html: str, css_text: str, title: str) -> str:
 
 def generate(md_path: Path, css_path: Path, out_path: Path, keep_html: Path | None) -> None:
     md_text = md_path.read_text(encoding="utf-8")
-    css_text = css_path.read_text(encoding="utf-8")
+    css_text = combined_css(css_path)
     body = md_to_html(md_text)
     title = "Richard van Zyl — CV"
     document = build_document(body, css_text, title)
@@ -90,7 +121,7 @@ def main() -> int:
     )
     args = parser.parse_args()
 
-    for path, label in ((args.md, "markdown"), (args.css, "css")):
+    for path, label in ((args.md, "markdown"), (SHARED_CSS, "shared css"), (args.css, "css")):
         if not path.is_file():
             sys.stderr.write(f"Missing {label} file: {path}\n")
             return 1

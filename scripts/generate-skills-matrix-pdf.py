@@ -20,6 +20,7 @@ from weasyprint import HTML
 ROOT = Path(__file__).resolve().parents[1]
 SOURCE = ROOT / "SKILLSMATRIX.md"
 OUTPUT = ROOT / "downloads" / "Richard-van-Zyl-Skills-Matrix.pdf"
+SHARED_CSS = ROOT / "pdf" / "print-shared.css"
 CSS_PATH = Path(__file__).resolve().parent / "skills-matrix-print.css"
 
 # Rows marked for CV/site omission must not appear in the published PDF.
@@ -81,12 +82,12 @@ def main() -> int:
         print(f"missing stylesheet: {CSS_PATH}", file=sys.stderr)
         return 1
 
-    css = CSS_PATH.read_text(encoding="utf-8")
+    css = SHARED_CSS.read_text(encoding="utf-8") + "\n" + CSS_PATH.read_text(encoding="utf-8")
     html = build_html(SOURCE.read_text(encoding="utf-8"), css)
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     HTML(string=html, base_url=str(ROOT)).write_pdf(str(OUTPUT))
     print(f"wrote {OUTPUT} ({OUTPUT.stat().st_size} bytes)")
-    print(f"style: {CSS_PATH.relative_to(ROOT)}")
+    print(f"style: {SHARED_CSS.relative_to(ROOT)} + {CSS_PATH.relative_to(ROOT)}")
     return 0
 
 

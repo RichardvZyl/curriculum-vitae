@@ -46,9 +46,9 @@ python3 scripts/generate-skills-matrix-pdf.py
 
 | Output | Stylesheet | Generator |
 |---|---|---|
-| `downloads/Richard-van-Zyl-CV.pdf` | [`cv-print.css`](./cv-print.css) | `scripts/generate-cv-pdf.py` |
-| `downloads/Richard-van-Zyl-Skills-Overview.pdf` | `scripts/skills-overview-print.css` | `scripts/generate-skills-overview-pdf.py` |
-| `downloads/Richard-van-Zyl-Skills-Matrix.pdf` | `scripts/skills-matrix-print.css` | `scripts/generate-skills-matrix-pdf.py` |
+| `downloads/Richard-van-Zyl-CV.pdf` | [`print-shared.css`](./print-shared.css) + [`cv-print.css`](./cv-print.css) | `scripts/generate-cv-pdf.py` |
+| `downloads/Richard-van-Zyl-Skills-Overview.pdf` | [`print-shared.css`](./print-shared.css) + `scripts/skills-overview-print.css` | `scripts/generate-skills-overview-pdf.py` |
+| `downloads/Richard-van-Zyl-Skills-Matrix.pdf` | [`print-shared.css`](./print-shared.css) + `scripts/skills-matrix-print.css` | `scripts/generate-skills-matrix-pdf.py` |
 
 Optional HTML debug for the CV:
 
@@ -56,12 +56,14 @@ Optional HTML debug for the CV:
 python3 scripts/generate-cv-pdf.py --keep-html /tmp/cv-print.html
 ```
 
-Layout rules encoded in `cv-print.css` (see also ADR 0001):
+Layout rules encoded in `print-shared.css` + `cv-print.css` (see also ADR 0001):
 
+- Both PDFs share **A4 portrait**, **14mm equal margins**, and **Inter** (Liberation Sans fallback).
 - Sub-headings sit tight above company / body lines.
 - Top margin on headings is discarded after a page break (`margin-break: discard`).
 - Lists use a hanging indent on the body column.
 - Bold lead-ins in list items stay inline.
+- List items stay on one page when they fit (`break-inside: avoid`) so a bullet is never split mid-sentence.
 
 Skills Overview / Matrix CSS keep **equal 14mm** page margins and border-box tables.
 

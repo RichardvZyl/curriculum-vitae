@@ -97,7 +97,6 @@ Pretoria, Gauteng, South Africa · richardvzyl@gmail.com · [linkedin.com/in/ric
 | Message queues (Azure Service Bus / RabbitMQ) | 6 |
 | Azure Monitor / App Insights / Log Analytics | 5 |
 | New Relic | 4 |
-| AKS / Kubernetes | 4 |
 | API Gateway (Azure API Management) | 4 |
 | OpenTelemetry / Grafana / Graylog | 3 |
 
@@ -119,7 +118,7 @@ Keep these framing notes when matching roles — they are deliberate, not soft-p
 - **Infrastructure as Code:** declarative work is **Azure DevOps YAML pipelines** (pipeline-as-code) and **Docker on Azure hosts** — not Terraform, Bicep, or ARM templates in anger. Roles that lead on cloud resource provisioning as code need ramp-up; that is not a current strength.
 - **Python:** not a language to hire for. Production exposure is **IronPython hosted in a C# backend** for integration marshalling (pre-v3), plus limited contemporaneous Python at MeterMo. Treat as read-and-modify.
 - **Front-end:** not primary. Angular up to v8 and TypeScript are on the record, but front-end skills are not actively maintained; deep front-end leadership would need ramp-up.
-- **Docker / Kubernetes:** comfortable with containerisation and high-level AKS (deployments, scaling); deep hands-on cluster ops is limited — would rely on operational support for that layer.
+- **Docker / containerisation:** production use of Docker on Azure hosts and containerised platforms. Cluster orchestration is not a current skill — would rely on operational support for that layer.
 - **ActiveXperts:** used in production observability prose; not given a years row here (no invented span).
 
 ---
@@ -144,7 +143,8 @@ Keep these framing notes when matching roles — they are deliberate, not soft-p
 
 | Period | Role | Organisation |
 |---|---|---|
-| Apr 2026 – present | Co-owner / Solutions Architect | Yuno Technologies |
+| Apr 2026 – present | Stakeholder / Solutions Architect *(side project)* | Yuno Technologies (partner-operated) |
+| current | Co-founder *(side project)* | Orchestration Platform |
 | Dec 2022 – Mar 2026 | Solutions Architect / Technical Lead — Core Financial Systems | Raging River Trading |
 | Apr 2022 – Dec 2022 | Software Developer | MeterMo (utilities metering; six projects TFS→Azure DevOps; APIs, field apps, websites; platform-debt close) |
 | Jan 2022 – Apr 2022 | Software Developer (Specialist Problem-Solver) | Dotcom Software Solutions |

@@ -41,34 +41,34 @@ All published PDFs are **WeasyPrint + committed CSS**, not pandoc/xelatex and no
 | Piece | Path |
 |---|---|
 | Content source | `CV.md` |
-| Print stylesheet | `pdf/cv-print.css` |
+| Print stylesheet | `pdf/cv-print.css` (plus `pdf/print-shared.css`) |
 | Generator | `scripts/generate-cv-pdf.py` |
 | Notes | `pdf/README.md` |
 | Output | `downloads/Richard-van-Zyl-CV.pdf` |
 
 - After editing `CV.md`, regenerate with:
   `pip install -r scripts/requirements-pdf.txt && python3 scripts/generate-cv-pdf.py`
-- Change appearance only via `pdf/cv-print.css`. Do not invent a parallel “full CV” PDF unless a new ADR says so (`PROFILE.md` is agent context, not a human full-CV twin).
+- Change appearance only via `pdf/cv-print.css` and `pdf/print-shared.css` (tight heading→content gaps, hanging list indents, `margin-break: discard` after page breaks). Do not invent a parallel pipeline, and do not invent a parallel “full CV” PDF unless a new ADR says so (`PROFILE.md` is agent context, not a human full-CV twin).
 
 ### Skills Overview PDF (**condensed**)
 
 | Piece | Path |
 |---|---|
 | Content source | `SKILLS-OVERVIEW.md` |
-| Print stylesheet | `scripts/skills-overview-print.css` |
+| Print stylesheet | `scripts/skills-overview-print.css` (plus `pdf/print-shared.css`) |
 | Generator | `scripts/generate-skills-overview-pdf.py` |
 | Output | `downloads/Richard-van-Zyl-Skills-Overview.pdf` |
 
 - After editing `SKILLS-OVERVIEW.md`, regenerate with:
   `pip install -r scripts/requirements-pdf.txt && python3 scripts/generate-skills-overview-pdf.py`
-- Equal left/right page margins (`14mm`); `box-sizing: border-box` on tables. Do not point readers at markdown for the full matrix — that is the Skills Matrix PDF.
+- Change appearance only via `scripts/skills-overview-print.css` and `pdf/print-shared.css`. Keep **equal left/right page margins** (currently `14mm` all sides); table borders must not eat the right margin (`box-sizing: border-box` is required). Do not point readers at markdown for the full matrix — that is the Skills Matrix PDF.
 
 ### Skills Matrix PDF (**full / uncondensed**)
 
 | Piece | Path |
 |---|---|
 | Content source | `SKILLSMATRIX.md` |
-| Print stylesheet | `scripts/skills-matrix-print.css` |
+| Print stylesheet | `pdf/print-shared.css` + `scripts/skills-matrix-print.css` |
 | Generator | `scripts/generate-skills-matrix-pdf.py` |
 | Output | `downloads/Richard-van-Zyl-Skills-Matrix.pdf` |
 

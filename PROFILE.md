@@ -8,7 +8,7 @@
 > `AI-CONTEXT.md`; for his **open-source projects** (and a note on excluded private repos),
 > see `PROJECTS.md`.
 >
-> _Last compiled: 2026-09-02._
+> _Last compiled: 2026-09-17._
 
 ---
 
@@ -68,7 +68,7 @@ and frameworks are tools; the focus is on solving the underlying problem effecti
 - **Messaging & Integration:** Azure Service Bus, RabbitMQ, API Gateway (Azure API Management),
   SignalR / WebSockets, REST, gRPC, SOAP, GraphQL.
 - **Cloud, DevOps & Observability:** Microsoft Azure, Azure DevOps, **Azure DevOps YAML pipelines
-  (pipeline-as-code)**, Docker on Azure hosts, AKS / Kubernetes, Azure CI/CD, GitHub, Trunk-based &
+  (pipeline-as-code)**, Docker on Azure hosts, Azure CI/CD, GitHub, Trunk-based &
   GitFlow branching, Feature Flags. Observability: **New Relic** (release tracking through the
   DevOps pipeline, key transactions, alerting into MS Teams), OpenTelemetry, Grafana, Graylog over
   UDP, ActiveXperts, Azure Monitor / Application Insights / Log Analytics, Elastic Stack (ELK) /
@@ -164,7 +164,6 @@ the notes in §10. Full detail lives in `SKILLSMATRIX.md`._
 | Azure Monitor / Log Analytics / App Insights | 5 |
 | Node.js | 5 |
 | API Gateway (Azure API Management) | 4 |
-| Container Orchestration (AKS / Kubernetes) | 4 |
 | Elastic Stack (ELK) / Serilog | 4 |
 
 ### Security & Compliance
@@ -190,8 +189,7 @@ the notes in §10. Full detail lives in `SKILLSMATRIX.md`._
 - **Solved problems others had abandoned:** completed a .NET 6 migration previously attempted and
   rolled back; resolved a 2-year Angular Universal SEO blocker in one week.
 - **Recognised at Raging River Trading:** Banking Developer of the Year twice, first place in both
-  years; three Certificates of Recognition; Employee of the Month; and a letter from the CEO on
-  platform launch.
+  years; three Certificates of Recognition; and a letter from the CEO on platform launch.
 - **IKM C# Assessment:** 73rd percentile of all test takers (assessed twice, six months apart).
 
 ---
@@ -202,7 +200,8 @@ _Full detail in `CV.md`._
 
 | Company | Role | Period |
 |---|---|---|
-| Yuno Technologies | Co-owner / Solutions Architect | Apr 2026 – present |
+| Yuno Technologies | Stakeholder / Solutions Architect *(side project; partner-operated)* | Apr 2026 – present |
+| Orchestration Platform | Co-founder *(side project)* | current |
 | Raging River Trading (Pty) Ltd | Solutions Architect / Technical Lead — Core Financial Systems | Dec 2022 – Mar 2026 |
 | MeterMo | Software Developer | Apr 2022 – Dec 2022 |
 | Dotcom Software Solutions | Software Developer (Specialist Problem-Solver) | Jan 2022 – Apr 2022 |
@@ -251,11 +250,10 @@ stay defensible in interviews.
 - **Front-end / full-stack:** primary focus is backend engineering, system architecture, and
   integration. Worked with Angular up to v8 and TypeScript, but **not actively maintaining**
   front-end skills; would need ramp-up for deep front-end leadership roles.
-- **Docker / Kubernetes:** the CV/skills matrix list Docker (7 yrs) and AKS/K8s (4 yrs), but the
-  candid framing is that deep hands-on cluster management is **limited** — comfortable with
-  containerisation concepts and high-level AKS (deployments, scaling), would rely on operational
-  support for deep cluster ops. Choose whichever framing matches the audience, but keep it
-  consistent within a single application.
+- **Docker / containerisation:** Docker on Azure hosts (7 yrs) and containerised platforms are
+  real skills. Cluster orchestration (deployments, scaling, service mesh ops) is **not** — do
+  not list it, even as a weak row. Comfortable with containerisation; would rely on operational
+  support for that layer.
 - **Infrastructure as Code:** the declarative infrastructure work is **Azure DevOps YAML
   pipelines**, used across most roles, and **Docker on Azure hosts** for deployment — heaviest at
   Dotcom, Payteq and MeterMo, lighter and more intermittent at Raging River. Has **not** used

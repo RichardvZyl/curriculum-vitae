@@ -1,37 +1,15 @@
 /* CV print layout — WeasyPrint.
  * Regenerated via: python3 scripts/generate-cv-pdf.py
- * Keep Skills Overview / matrix styling out of this file.
+ * Page size, font, and break hygiene live in print-shared.css (concatenated).
+ * Keep Skills Overview / matrix table styling out of this file.
  */
 
-@page {
-  size: A4;
-  margin: 12mm 12mm 14mm 12mm;
-}
-
-html {
-  color: #1a1a1a;
-}
-
-body {
-  font-family: "Segoe UI", "Helvetica Neue", Arial, sans-serif;
-  font-size: 10pt;
-  line-height: 1.28;
-  margin: 0;
-  padding: 0;
-  max-width: none;
-}
-
-/* Collapse top margin when a block starts a new page (page-break case). */
-h1, h2, h3, h4, p, ul, blockquote {
-  margin-break: discard;
-}
-
 h1 {
-  font-size: 20pt;
+  font-size: 18pt;
   font-weight: 700;
   letter-spacing: -0.02em;
   margin: 0 0 1pt;
-  line-height: 1.15;
+  line-height: 1.2;
 }
 
 /* Subtitle under the name (markdown ### under H1). */
@@ -43,11 +21,12 @@ h1 + h3 {
   border: 0;
   margin: 0 0 3pt;
   padding: 0;
+  break-after: auto;
 }
 
 /* Contact line immediately under the subtitle. */
 h1 + h3 + p {
-  margin: 0 0 6pt;
+  margin: 0 0 8pt;
   font-size: 9pt;
   color: #333;
 }
@@ -57,11 +36,9 @@ h2 {
   font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.04em;
-  margin: 10pt 0 0;
-  padding: 0 0 1pt;
+  margin: 11pt 0 0;
+  padding: 0 0 1.5pt;
   border-bottom: 1px solid #222;
-  break-after: avoid;
-  break-inside: avoid;
 }
 
 /* Role / job titles — flush content underneath; keep above-space when
@@ -69,11 +46,9 @@ h2 {
 h3 {
   font-size: 10.5pt;
   font-weight: 700;
-  margin: 8pt 0 0;
+  margin: 9pt 0 0;
   padding: 0;
-  line-height: 1.2;
-  break-after: avoid;
-  break-inside: avoid;
+  line-height: 1.25;
 }
 
 /* Company line and any paragraph that follows a sub-heading sit tight. */
@@ -90,10 +65,8 @@ h3 + p {
 }
 
 p {
-  margin: 0 0 3.5pt;
+  margin: 0 0 4pt;
   padding: 0;
-  orphans: 2;
-  widows: 2;
 }
 
 /* Core-competency style: bold lead-in paragraphs stacked tightly. */
@@ -102,12 +75,11 @@ p + p {
   margin-top: 0;
 }
 
-/* Lists: left-aligned with the body column (green-line target).
- * Hanging indent so wrap lines align with the text after the bullet,
- * not the page edge and not under the marker. */
+/* Lists: left-aligned with the body column.
+ * Hanging indent so wrap lines align with the text after the bullet. */
 ul {
   list-style: none;
-  margin: 1pt 0 5pt;
+  margin: 2pt 0 6pt;
   padding: 0;
 }
 
@@ -117,10 +89,9 @@ ul ul {
 }
 
 li {
-  margin: 0 0 2.5pt;
+  margin: 0 0 3pt;
   padding-left: 0.85em;
   text-indent: -0.85em;
-  break-inside: avoid;
 }
 
 li::before {
@@ -129,10 +100,9 @@ li::before {
   padding-right: 0.3em;
 }
 
-/* Keep bold lead-ins inline with the body (no block gap under the label). */
 li strong,
 p strong {
-  font-weight: 700;
+  font-weight: 600;
 }
 
 li > p {
@@ -161,20 +131,10 @@ blockquote p {
   margin: 0;
 }
 
-a {
-  color: #1a1a1a;
-  text-decoration: none;
-}
-
 hr {
   border: 0;
   border-top: 1px solid #bbb;
-  margin: 6pt 0;
-}
-
-code {
-  font-family: ui-monospace, "SF Mono", Menlo, Consolas, monospace;
-  font-size: 8.5pt;
+  margin: 7pt 0;
 }
 
 em {

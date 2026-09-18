@@ -38,9 +38,9 @@ checked-in generators:
 
 | Artefact | Content | Stylesheet | Generator |
 |---|---|---|---|
-| `downloads/Richard-van-Zyl-CV.pdf` | `CV.md` | `pdf/cv-print.css` | `scripts/generate-cv-pdf.py` |
-| `downloads/Richard-van-Zyl-Skills-Overview.pdf` (**condensed**) | `SKILLS-OVERVIEW.md` | `scripts/skills-overview-print.css` | `scripts/generate-skills-overview-pdf.py` |
-| `downloads/Richard-van-Zyl-Skills-Matrix.pdf` (**full**) | `SKILLSMATRIX.md` | `scripts/skills-matrix-print.css` | `scripts/generate-skills-matrix-pdf.py` |
+| `downloads/Richard-van-Zyl-CV.pdf` | `CV.md` | `pdf/print-shared.css` + `pdf/cv-print.css` | `scripts/generate-cv-pdf.py` |
+| `downloads/Richard-van-Zyl-Skills-Overview.pdf` (**condensed**) | `SKILLS-OVERVIEW.md` | `pdf/print-shared.css` + `scripts/skills-overview-print.css` | `scripts/generate-skills-overview-pdf.py` |
+| `downloads/Richard-van-Zyl-Skills-Matrix.pdf` (**full**) | `SKILLSMATRIX.md` | `pdf/print-shared.css` + `scripts/skills-matrix-print.css` | `scripts/generate-skills-matrix-pdf.py` |
 
 Deps: `scripts/requirements-pdf.txt`. Rebuild notes and tool links: [`pdf/README.md`](../../pdf/README.md).
 
@@ -55,5 +55,6 @@ reproduced; it is not allowed to overwrite `downloads/` unless a new ADR superse
 - Visual changes go through the CSS files (and the markdown→HTML mapping in the generators), then
   regenerate into `downloads/`.
 - Skills Overview CSS keeps **equal left/right page margins** (`14mm`) and `box-sizing: border-box`
-  so table borders do not eat the right margin.
+  so table borders do not eat the right margin. Shared page size, typeface and break hygiene live
+  in [`pdf/print-shared.css`](../../pdf/print-shared.css).
 - Content-guard scans published PDF text (`pdftotext`); CI installs `poppler-utils`.
