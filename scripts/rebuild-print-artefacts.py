@@ -1,8 +1,11 @@
 #!/usr/bin/env python3
 """Rebuild print artefacts.
 
-Default: canonical WeasyPrint PDFs → downloads/
-  --all: also historical pandoc PDFs + local DOCX → dist/
+Default:
+  - canonical WeasyPrint PDFs → downloads/
+  - local DOCX → dist/ (gitignored; requires pandoc)
+
+  --all: also historical pandoc+xelatex PDFs → dist/
 
 See pdf/README.md and docs/adr/0001–0003.
 """
@@ -26,15 +29,22 @@ def main() -> int:
     parser.add_argument(
         "--all",
         action="store_true",
-        help="Also write pandoc+xelatex PDFs and DOCX under dist/",
+        help="Also write historical pandoc+xelatex PDFs under dist/",
+    )
+    parser.add_argument(
+        "--skip-docx",
+        action="store_true",
+        help="Skip local DOCX under dist/ (PDF-only publish path)",
     )
     args = parser.parse_args()
 
     run("generate-cv-pdf.py")
     run("generate-skills-overview-pdf.py")
+    run("generate-skills-matrix-pdf.py")
+    if not args.skip_docx:
+        run("generate-local-docx.py")
     if args.all:
         run("generate-historical-pandoc-pdfs.py")
-        run("generate-local-docx.py")
     return 0
 
 

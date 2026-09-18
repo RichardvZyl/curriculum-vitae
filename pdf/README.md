@@ -2,7 +2,8 @@
 
 Canonical decisions: [`docs/adr/0001`](../docs/adr/0001-weasyprint-canonical-pdf-pipeline.md),
 [`0002`](../docs/adr/0002-canonical-download-home.md),
-[`0003`](../docs/adr/0003-pdf-only-public-downloads.md).
+[`0003`](../docs/adr/0003-pdf-only-public-downloads.md),
+[`0005`](../docs/adr/0005-dual-skills-pdfs.md).
 
 ## Tools (links)
 
@@ -20,20 +21,34 @@ Python pins for the canonical path: [`../scripts/requirements-pdf.txt`](../scrip
 pip install -r scripts/requirements-pdf.txt
 ```
 
+## Published artefacts (what’s condensed vs full)
+
+| Artefact | Role | Source | Output |
+|---|---|---|---|
+| CV | Single narrative (no twin) | `CV.md` | `downloads/Richard-van-Zyl-CV.pdf` |
+| Skills Overview | **Condensed** skills | `SKILLS-OVERVIEW.md` | `downloads/Richard-van-Zyl-Skills-Overview.pdf` |
+| Skills Matrix | **Full** skills | `SKILLSMATRIX.md` | `downloads/Richard-van-Zyl-Skills-Matrix.pdf` |
+
+Humans download these PDFs; do not print “see `*.md`” pointers into them.
+
 ## Canonical publish path (WeasyPrint) — writes `downloads/`
 
-These are the only commands that may update published PDFs.
+These are the only commands that may update published PDFs. Prefer the one-shot helper below
+(it also writes local DOCX under `dist/`).
 
 ```bash
 # From curriculum-vitae repo root
 python3 scripts/generate-cv-pdf.py
 python3 scripts/generate-skills-overview-pdf.py
+python3 scripts/generate-skills-matrix-pdf.py
+# Local Word (unpublished): python3 scripts/generate-local-docx.py
 ```
 
 | Output | Stylesheet | Generator |
 |---|---|---|
 | `downloads/Richard-van-Zyl-CV.pdf` | [`print-shared.css`](./print-shared.css) + [`cv-print.css`](./cv-print.css) | `scripts/generate-cv-pdf.py` |
 | `downloads/Richard-van-Zyl-Skills-Overview.pdf` | [`print-shared.css`](./print-shared.css) + `scripts/skills-overview-print.css` | `scripts/generate-skills-overview-pdf.py` |
+| `downloads/Richard-van-Zyl-Skills-Matrix.pdf` | [`print-shared.css`](./print-shared.css) + `scripts/skills-matrix-print.css` | `scripts/generate-skills-matrix-pdf.py` |
 
 Optional HTML debug for the CV:
 
@@ -50,7 +65,7 @@ Layout rules encoded in `print-shared.css` + `cv-print.css` (see also ADR 0001):
 - Bold lead-ins in list items stay inline.
 - List items stay on one page when they fit (`break-inside: avoid`) so a bullet is never split mid-sentence.
 
-Skills Overview CSS keeps **equal 14mm** page margins and border-box tables.
+Skills Overview / Matrix CSS keep **equal 14mm** page margins and border-box tables.
 
 ## Historical / comparison path (pandoc + xelatex) — do not overwrite `downloads/` casually
 
@@ -82,24 +97,39 @@ pandoc SKILLS-OVERVIEW.md -o dist/Richard-van-Zyl-Skills-Overview.pandoc-xelatex
 
 Or: `python3 scripts/generate-historical-pandoc-pdfs.py` (same flags; writes `dist/`).
 
-## Local Word / DOCX — unpublished
+## Local Word / DOCX — unpublished (always with default rebuild)
 
-Per ADR 0003, DOCX is **not** a public download. Generate under `dist/` for editing or
-on-request sends only:
+Per ADR 0003, DOCX is **not** a public download. Output is under gitignored `dist/` for editing
+or on-request sends only.
+
+**Install pandoc** (once): https://pandoc.org/ — e.g. `sudo apt-get install -y pandoc`.
 
 ```bash
+# Preferred: same one-shot as published PDFs (DOCX is included by default)
+python3 scripts/rebuild-print-artefacts.py
+
+# DOCX only
+python3 scripts/generate-local-docx.py
+
+# Equivalent manual commands
 mkdir -p dist
 pandoc CV.md -o dist/Richard-van-Zyl-CV.docx
 pandoc SKILLS-OVERVIEW.md -o dist/Richard-van-Zyl-Skills-Overview.docx
+pandoc SKILLSMATRIX.md -o dist/Richard-van-Zyl-Skills-Matrix.docx
 ```
 
-Or: `python3 scripts/generate-local-docx.py`.
+| Output | Generator |
+|---|---|
+| `dist/Richard-van-Zyl-CV.docx` | `scripts/generate-local-docx.py` |
+| `dist/Richard-van-Zyl-Skills-Overview.docx` | same |
+| `dist/Richard-van-Zyl-Skills-Matrix.docx` | same |
 
 Do **not** commit these files (`*.docx` is gitignored) and do **not** link them from the site.
 
 ## One-shot helper
 
 ```bash
-python3 scripts/rebuild-print-artefacts.py           # canonical WeasyPrint → downloads/
-python3 scripts/rebuild-print-artefacts.py --all    # also pandoc PDFs + DOCX → dist/
+python3 scripts/rebuild-print-artefacts.py              # WeasyPrint → downloads/ + DOCX → dist/
+python3 scripts/rebuild-print-artefacts.py --skip-docx  # PDFs only
+python3 scripts/rebuild-print-artefacts.py --all        # also historical pandoc PDFs → dist/
 ```

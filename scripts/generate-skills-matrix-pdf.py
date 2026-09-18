@@ -1,12 +1,10 @@
 #!/usr/bin/env python3
-"""Generate downloads/Richard-van-Zyl-Skills-Overview.pdf from SKILLS-OVERVIEW.md.
+"""Generate downloads/Richard-van-Zyl-Skills-Matrix.pdf from SKILLSMATRIX.md.
 
-Condensed skills PDF (companion to the full Skills Matrix). Style lives in
-scripts/skills-overview-print.css — content changes in SKILLS-OVERVIEW.md must
-not alter layout; only edit the CSS (or this script's markdown→HTML mapping)
-to change appearance.
+Full / uncondensed skills artefact (companion to the condensed Skills Overview).
+Style: scripts/skills-matrix-print.css.
 
-  python3 scripts/generate-skills-overview-pdf.py
+  python3 scripts/generate-skills-matrix-pdf.py
 
 Requires: pip install -r scripts/requirements-pdf.txt
 """
@@ -20,21 +18,25 @@ import markdown
 from weasyprint import HTML
 
 ROOT = Path(__file__).resolve().parents[1]
-SOURCE = ROOT / "SKILLS-OVERVIEW.md"
-OUTPUT = ROOT / "downloads" / "Richard-van-Zyl-Skills-Overview.pdf"
+SOURCE = ROOT / "SKILLSMATRIX.md"
+OUTPUT = ROOT / "downloads" / "Richard-van-Zyl-Skills-Matrix.pdf"
 SHARED_CSS = ROOT / "pdf" / "print-shared.css"
-CSS_PATH = Path(__file__).resolve().parent / "skills-overview-print.css"
+CSS_PATH = Path(__file__).resolve().parent / "skills-matrix-print.css"
 
-
-def combined_css() -> str:
-    return SHARED_CSS.read_text(encoding="utf-8") + "\n" + CSS_PATH.read_text(encoding="utf-8")
+# Rows marked for CV/site omission must not appear in the published PDF.
+_OMIT_LEAVING = re.compile(
+    r"^\| Leaving \|[^\n]*omit from CV/site[^\n]*\|\s*$",
+    re.MULTILINE | re.IGNORECASE,
+)
 
 
 def prepare_markdown(md: str) -> str:
-    """Human-facing PDF: never send readers to repo markdown paths."""
+    """Human-facing PDF: no repo markdown paths; strip interview-only rows."""
+    md = _OMIT_LEAVING.sub("", md)
+    # Drop links that point at local markdown (keep link text only if useful).
     md = re.sub(r"\[`([^`]+)`\]\(\./[^)]+\.md\)", r"\1", md)
     md = re.sub(r"\[([^\]]+)\]\(\./[^)]+\.md\)", r"\1", md)
-    md = re.sub(r"\[`([^`]+)`\]\(\./[^)]+\)", r"\1", md)
+    # External URLs: keep visible label only (no raw URL noise in print).
     md = re.sub(r"\[([^\]]+)\]\((https?://[^)]+)\)", r"\1", md)
     return md
 
@@ -53,9 +55,10 @@ def markdown_to_body(md: str) -> str:
         '<th class="skill">Skill</th>\n<th class="yrs">Years</th>',
         body,
     )
+    # Employer metadata tables: first header cell is Field.
     body = re.sub(
-        r"(<h2>[\s\S]*?</h2>\s*(?:<p>[\s\S]*?</p>)?)",
-        r'<div class="keep">\1</div>',
+        r"<table>\s*<thead>\s*<tr>\s*<th>Field</th>\s*<th>Detail</th>",
+        '<table class="meta">\n<thead>\n<tr>\n<th>Field</th>\n<th>Detail</th>',
         body,
     )
     return body
@@ -66,7 +69,7 @@ def build_html(md: str, css: str) -> str:
     return (
         "<!DOCTYPE html>\n"
         '<html lang="en"><head><meta charset="utf-8"/>'
-        "<title>Richard van Zyl — Skills Overview</title>"
+        "<title>Richard van Zyl — Skills Matrix</title>"
         f"<style>{css}</style></head><body>\n{body}\n</body></html>"
     )
 
@@ -75,14 +78,11 @@ def main() -> int:
     if not SOURCE.is_file():
         print(f"missing source: {SOURCE}", file=sys.stderr)
         return 1
-    if not SHARED_CSS.is_file():
-        print(f"missing stylesheet: {SHARED_CSS}", file=sys.stderr)
-        return 1
     if not CSS_PATH.is_file():
         print(f"missing stylesheet: {CSS_PATH}", file=sys.stderr)
         return 1
 
-    css = combined_css()
+    css = SHARED_CSS.read_text(encoding="utf-8") + "\n" + CSS_PATH.read_text(encoding="utf-8")
     html = build_html(SOURCE.read_text(encoding="utf-8"), css)
     OUTPUT.parent.mkdir(parents=True, exist_ok=True)
     HTML(string=html, base_url=str(ROOT)).write_pdf(str(OUTPUT))

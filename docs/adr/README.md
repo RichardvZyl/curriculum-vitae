@@ -19,6 +19,7 @@ purpose so agents stop re-deriving it.
 | [0002](./0002-canonical-download-home.md) | curriculum-vitae owns published PDF downloads; site links out | Accepted | Costly | 2026-09-17 |
 | [0003](./0003-pdf-only-public-downloads.md) | Public downloads are PDF-only; DOCX unpublished | Accepted | Costly | 2026-09-17 |
 | [0004](./0004-exclude-personality-frameworks-from-public-cv.md) | Exclude personality frameworks from the public CV pack | Accepted | Reversible | 2026-09-17 |
+| [0005](./0005-dual-skills-pdfs.md) | Publish condensed and full skills PDFs (no MD for humans) | Accepted | Costly | 2026-09-18 |
 
 <!-- Add newest at the bottom. Status: Proposed | Accepted | Superseded by NNNN | Deprecated.
      Cost to reverse: Reversible | Costly | One-way — must match the record header. -->

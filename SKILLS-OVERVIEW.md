@@ -4,8 +4,6 @@
 
 Pretoria, Gauteng, South Africa · richardvzyl@gmail.com · [linkedin.com/in/richardvzyl](https://www.linkedin.com/in/richardvzyl) · [github.com/RichardvZyl](https://github.com/RichardvZyl) · [richardvzyl.github.io](https://richardvzyl.github.io/)
 
-A human-readable skills summary for hiring conversations. For the full dense matrix with every row and project breakdown, see [`SKILLSMATRIX.md`](./SKILLSMATRIX.md). Narrative CV: [`CV.md`](./CV.md).
-
 > **Years column.** Professional years only, counted from paid work starting **April 2017** — nothing exceeds **9**. Study years (2014–2016) are not counted.
 
 ---
@@ -143,8 +141,6 @@ Keep these framing notes when matching roles — they are deliberate, not soft-p
 
 ## Career timeline (condensed)
 
-Detail stays in [`CV.md`](./CV.md).
-
 | Period | Role | Organisation |
 |---|---|---|
 | Apr 2026 – present | Stakeholder / Solutions Architect *(side project)* | Yuno Technologies (partner-operated) |
@@ -165,4 +161,4 @@ Detail stays in [`CV.md`](./CV.md).
 
 ---
 
-*All rights reserved. For evaluation by employers and collaborators; do not republish as your own. See [`LICENSE`](./LICENSE).*
+*All rights reserved. For evaluation by employers and collaborators; do not republish as your own.*

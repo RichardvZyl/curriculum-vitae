@@ -67,9 +67,8 @@ contact. GitHub Pages at https://richardvzyl.github.io/.
 ### curriculum-vitae *(this repo)*
 **Repo:** https://github.com/RichardvZyl/curriculum-vitae
 
-A human- **and** AI-consumable CV: structured profile, narrative CV, skills matrix, and
-an AI-collaboration context file. Built so an assistant can do role-matching,
-cover-letter generation, and interview prep without re-deriving context.
+Public CV and skills pack: profile, CV, skills matrix, and an AI-collaboration context
+file (`AI-CONTEXT.md`) for assistants working with Richard on engineering tasks.
 
 ---
 

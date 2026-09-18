@@ -270,7 +270,7 @@ support. _(C# .NET WinForms, MySQL, Linux.)_
 rather than a single-vendor commitment, with a considered position on where each is strongest and
 where consistency breaks down. Each is installed as both CLI and GUI, because scripted, repeatable
 and terminal-embedded work wants one surface and exploratory work wants the other. A sixth
-subscription, [Sixth](https://trysixth.com), ran alongside them as a fallback layer while routing
+subscription, [Sixth (trysixth.com)](https://trysixth.com), ran alongside them as a fallback layer while routing
 options were evaluated; the routing layer is settled now. Workflows are kept OpenAI
 API-compatible so any conformant provider is a drop-in, and Qwen runs locally on Ollama — an
 inference path that depends on no provider, no subscription and no network.
